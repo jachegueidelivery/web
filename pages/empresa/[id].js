@@ -20,7 +20,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { Menu, Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { useRouter } from "next/router";
 
-import cards from "../../../empresas";
+import { Cards, Footers } from "../../../dados";
 
 function MadeWithLove() {
   return (
@@ -291,7 +291,7 @@ export default function Pricing() {
       {router.query.id}
         {/* End hero unit */}
         <Grid container spacing={4} style={{cursor:"pointer"}}>
-          {cards.map((card, id) => (
+          {Cards.map((card, id) => (
             <Grid item key={card.id} title={"Clique para entrar em " + card.title} xs={12} sm={6} md={4} onClick={()=>{
               console.log(card);
               window.location ="/post/"+card.id
@@ -327,7 +327,7 @@ export default function Pricing() {
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          {footers.map(footer => (
+          {Footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}

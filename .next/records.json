@@ -8,13 +8,12 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 2,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\_app.js": 3,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\_error.js": 4,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\empresa.js": 5,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\empresa\\[id].js": 6,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\home.js": 7,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\index.js": 8,
-      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\post.js": 9
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\_app.js": 3,
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\_error.js": 4,
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\empresa\\[id].js": 5,
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\home.js": 6,
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\index.js": 7,
+      "static\\JWnmf3I3DARtoLni6bzIx\\pages\\post.js": 8
     },
     "bySource": {},
     "usedIds": [
@@ -26,8 +25,7 @@
       5,
       6,
       7,
-      8,
-      9
+      8
     ]
   }
 }

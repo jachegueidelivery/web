@@ -93,16 +93,18 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "../empresas.js":
-/*!**********************!*\
-  !*** ../empresas.js ***!
-  \**********************/
-/*! exports provided: default */
+/***/ "../dados.js":
+/*!*******************!*\
+  !*** ../dados.js ***!
+  \*******************/
+/*! exports provided: Cards, Footers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var tileData = [
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cards", function() { return Cards; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Footers", function() { return Footers; });
+var Cards = [
   {
     id: 1,
     title: "Produto 1",
@@ -236,7 +238,37 @@ var tileData = [
     img: "https://source.unsplash.com/random"
   }
 ];
-/* harmony default export */ __webpack_exports__["default"] = (tileData);
+
+var Footers = [
+  {
+    title: "Company",
+    description: ["Team", "History", "Contact us", "Locations"]
+  },
+  {
+    title: "Features",
+    description: [
+      "Cool stuff",
+      "Random feature",
+      "Team feature",
+      "Developer stuff",
+      "Another one"
+    ]
+  },
+  {
+    title: "Resources",
+    description: [
+      "Resource",
+      "Resource name",
+      "Another resource",
+      "Final resource"
+    ]
+  },
+  {
+    title: "Legal",
+    description: ["Privacy policy", "Terms of use"]
+  }
+];
+
 
 
 /***/ }),
@@ -333,7 +365,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons */ "@material-ui/icons");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _empresas__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../empresas */ "../empresas.js");
+/* harmony import */ var _dados__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../dados */ "../dados.js");
 
 var _jsxFileName = "D:\\node\\blog\\web\\pages\\index.js";
 
@@ -365,7 +397,7 @@ function MadeWithLove() {
     align: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 35
     },
     __self: this
   }, "Criado por ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -373,25 +405,12 @@ function MadeWithLove() {
     href: "https://material-ui.com/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 37
     },
     __self: this
   }, "Teste"), " team.");
 }
 
-var footers = [{
-  title: "Company",
-  description: ["Team", "History", "Contact us", "Locations"]
-}, {
-  title: "Features",
-  description: ["Cool stuff", "Random feature", "Team feature", "Developer stuff", "Another one"]
-}, {
-  title: "Resources",
-  description: ["Resource", "Resource name", "Another resource", "Final resource"]
-}, {
-  title: "Legal",
-  description: ["Privacy policy", "Terms of use"]
-}];
 var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_13__["makeStyles"])(function (theme) {
   return {
     "@global": {
@@ -414,6 +433,11 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_13__["m
     },
     toolbar: {
       flexWrap: "wrap"
+    },
+    toolbar2: {
+      flexWrap: "wrap",
+      padding: 0,
+      margin: 0
     },
     toolbarTitle: {
       flexGrow: 1
@@ -507,13 +531,13 @@ function Pricing() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 161
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 162
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -523,14 +547,14 @@ function Pricing() {
     className: classes.appBar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 163
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_10___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 169
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -540,23 +564,17 @@ function Pricing() {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 170
     },
     __self: this
-  }, "Delivery"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 194
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, "Delivery"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "#",
     color: "primary",
     variant: "outlined",
     className: classes.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 178
     },
     __self: this
   }, "Entrar"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -566,61 +584,73 @@ function Pricing() {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 186
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["ShoppingCartOutlined"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
+      lineNumber: 192
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239
+      lineNumber: 197
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 240
+      lineNumber: 198
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 199
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 242
+      lineNumber: 200
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243
+      lineNumber: 201
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 244
+      lineNumber: 202
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 245
+      lineNumber: 203
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246
+      lineNumber: 204
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 205
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 206
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -629,7 +659,7 @@ function Pricing() {
     className: classes.heroContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 247
+      lineNumber: 207
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -640,20 +670,20 @@ function Pricing() {
     gutterBottom: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 248
+      lineNumber: 208
     },
     __self: this
   }, "Onde est\xE1 a sua fome?", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 256
+      lineNumber: 216
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_16___default.a, {
     className: classes.rootinput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 259
+      lineNumber: 219
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -661,13 +691,13 @@ function Pricing() {
     "aria-label": "Menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 260
+      lineNumber: 220
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["Menu"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 261
+      lineNumber: 221
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -678,14 +708,14 @@ function Pricing() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 263
+      lineNumber: 223
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_18___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268
+      lineNumber: 228
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -693,13 +723,13 @@ function Pricing() {
     "aria-label": "Search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269
+      lineNumber: 229
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["Search"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 270
+      lineNumber: 230
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -709,24 +739,90 @@ function Pricing() {
     component: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 273
+      lineNumber: 233
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 279
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14___default.a, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14___default.a, {
     className: classes.cardGrid,
     maxWidth: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 283
+      lineNumber: 242
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    position: "static",
+    color: "default",
+    elevation: 0,
+    className: classes.appBar,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 243
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    className: classes.toolbar2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 249
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    variant: "h6",
+    color: "primary",
+    noWrap: true,
+    className: classes.toolbarTitle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 250
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default.a, {
+    "aria-label": "Account of current user",
+    "aria-controls": "menu-appbar",
+    "aria-haspopup": "true",
+    color: "primary",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 256
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["GridOn"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 262
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_18___default.a, {
+    className: classes.divider,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 264
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default.a, {
+    "aria-label": "Account of current user",
+    "aria-controls": "menu-appbar",
+    "aria-haspopup": "true",
+    color: "primary",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 265
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["ReorderRounded"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 271
+    },
+    __self: this
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 276
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
     container: true,
     spacing: 4,
     style: {
@@ -734,10 +830,10 @@ function Pricing() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 285
+      lineNumber: 278
     },
     __self: this
-  }, _empresas__WEBPACK_IMPORTED_MODULE_21__["default"].map(function (card, id) {
+  }, _dados__WEBPACK_IMPORTED_MODULE_21__["Cards"].map(function (card, id) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
       item: true,
       key: card.id,
@@ -750,14 +846,14 @@ function Pricing() {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 288
+        lineNumber: 281
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default.a, {
       className: classes.card,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 291
+        lineNumber: 292
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -765,14 +861,14 @@ function Pricing() {
       image: card.img,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 292
+        lineNumber: 293
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default.a, {
       className: classes.cardContent,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 296
+        lineNumber: 294
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -781,19 +877,19 @@ function Pricing() {
       component: "h2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 297
+        lineNumber: 295
       },
       __self: this
     }, card.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 300
+        lineNumber: 298
       },
       __self: this
     }, card.description)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_5___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 304
+        lineNumber: 300
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -803,7 +899,7 @@ function Pricing() {
       onClick: handleClick,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 305
+        lineNumber: 301
       },
       __self: this
     }, "Detalhes..."))));
@@ -813,7 +909,7 @@ function Pricing() {
     className: classes.footer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 321
+      lineNumber: 316
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -822,10 +918,10 @@ function Pricing() {
     justify: "space-evenly",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 322
+      lineNumber: 317
     },
     __self: this
-  }, footers.map(function (footer) {
+  }, _dados__WEBPACK_IMPORTED_MODULE_21__["Footers"].map(function (footer) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
       item: true,
       xs: 6,
@@ -833,7 +929,7 @@ function Pricing() {
       key: footer.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 324
+        lineNumber: 319
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -842,13 +938,13 @@ function Pricing() {
       gutterBottom: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 325
+        lineNumber: 320
       },
       __self: this
     }, footer.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 328
+        lineNumber: 323
       },
       __self: this
     }, footer.description.map(function (item) {
@@ -856,7 +952,7 @@ function Pricing() {
         key: item,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 330
+          lineNumber: 325
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -865,7 +961,7 @@ function Pricing() {
         color: "textSecondary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331
+          lineNumber: 326
         },
         __self: this
       }, item));
@@ -874,13 +970,13 @@ function Pricing() {
     mt: 5,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 340
+      lineNumber: 335
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MadeWithLove, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 341
+      lineNumber: 336
     },
     __self: this
   }))));
