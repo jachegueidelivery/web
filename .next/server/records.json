@@ -1,0 +1,47 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/_app.js": 0,
+      "multi private-next-pages/_document.js": 1,
+      "multi private-next-pages/empresa.js": 2,
+      "multi private-next-pages/empresa/[id].js": 3,
+      "multi private-next-pages/home.js": 4,
+      "multi private-next-pages/index.js": 5,
+      "multi private-next-pages/post.js": 6,
+      "multi next/dist/pages/_error": 7
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\_app.js": 0,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\_document.js": 1,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\_error.js": 2,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\empresa.js": 3,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\empresa\\[id].js": 4,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\home.js": 5,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\index.js": 6,
+      "static\\IgjT9ImGeLo_3Git1vkFG\\pages\\post.js": 7
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  }
+}
