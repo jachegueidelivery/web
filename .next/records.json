@@ -13,19 +13,25 @@
       "static\\yylx5DbaeYaf1URHbwKdj\\pages\\empresa\\[id].js": 5,
       "static\\yylx5DbaeYaf1URHbwKdj\\pages\\home.js": 6,
       "static\\yylx5DbaeYaf1URHbwKdj\\pages\\index.js": 7,
-      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\post.js": 8
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\post.js": 8,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\_app.js": 9,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\_error.js": 10,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\empresa\\[id].js": 11,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\home.js": 12,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\index.js": 13,
+      "static\\FnJKUVxVaKLRBc8mo4A7d\\pages\\post.js": 14
     },
     "bySource": {},
     "usedIds": [
       0,
       1,
+      10,
+      11,
+      12,
+      13,
+      14,
       2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8
+      9
     ]
   }
 }
