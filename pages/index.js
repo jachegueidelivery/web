@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
@@ -358,7 +358,7 @@ const Index = props =>  {
 
 Index.getInitialProps = async function() {
 
-  const res = await fetch('http://127.0.0.1:3333');
+  const res = await fetch('http://delivery.rsvtelecom.com.br/');
 
   const data = await res.json();
 
