@@ -1,24 +1,40 @@
 {
-  "devFiles": [
-    "static/development/dll/dll_92fa9139568d8c3d8f78.js",
-    "static/development/dll/dll_92fa9139568d8c3d8f78.js.map"
-  ],
+  "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
     ],
     "/_app": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
     ],
     "/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
+    ],
+    "/empresa/[id]": [
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
+    ],
+    "/home": [
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
     ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
+    ],
+    "/post": [
+      "static/runtime/webpack-3df6523e264ff2ac6548.js",
+      "static/chunks/commons.3cfaad1c296bae78c52f.js",
+      "static/runtime/main-7530ea2b1941df3d5b61.js"
     ]
   }
 }

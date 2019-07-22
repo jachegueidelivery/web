@@ -1,0 +1,31 @@
+{
+  "modules": {
+    "byIdentifier": {},
+    "usedIds": {}
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/runtime/main.js": 2,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\_app.js": 3,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\_error.js": 4,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\empresa\\[id].js": 5,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\home.js": 6,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\index.js": 7,
+      "static\\yylx5DbaeYaf1URHbwKdj\\pages\\post.js": 8
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}
