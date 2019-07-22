@@ -20,7 +20,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { Menu, Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { useRouter } from "next/router";
 
-import { Cards, Footers } from "../../../dados";
+import Footers from "../components/footer";
 
 function MadeWithLove() {
   return (
@@ -34,35 +34,6 @@ function MadeWithLove() {
   );
 }
 
-const footers = [
-  {
-    title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"]
-  },
-  {
-    title: "Features",
-    description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-      "Another one"
-    ]
-  },
-  {
-    title: "Resources",
-    description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource"
-    ]
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"]
-  }
-];
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
