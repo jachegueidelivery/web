@@ -1651,27 +1651,6 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            // Resolution order
-            //
-            // On the server:
-            // 1. app.getInitialProps
-            // 2. page.getInitialProps
-            // 3. document.getInitialProps
-            // 4. app.render
-            // 5. page.render
-            // 6. document.render
-            //
-            // On the server with error:
-            // 1. document.getInitialProps
-            // 2. app.render
-            // 3. page.render
-            // 4. document.render
-            //
-            // On the client
-            // 1. app.getInitialProps
-            // 2. page.getInitialProps
-            // 3. app.render
-            // 4. page.render
             // Render app and page and get the context of the page with collected side effects.
             sheets = new _material_ui_styles__WEBPACK_IMPORTED_MODULE_11__["ServerStyleSheets"]();
             originalRenderPage = ctx.renderPage;
@@ -1683,7 +1662,7 @@ function () {
                     return sheets.collect(react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(App, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 62
+                        lineNumber: 41
                       },
                       __self: this
                     })));
@@ -1703,7 +1682,7 @@ function () {
                 key: "styles",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 71
+                  lineNumber: 50
                 },
                 __self: this
               }, initialProps.styles, sheets.getStyleElement())]

@@ -1,6 +1,7 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import Badge from "@material-ui/core/Badge";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -17,6 +18,7 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
+import fetch from 'isomorphic-unfetch';
 
 import {
   Menu,
@@ -34,7 +36,7 @@ function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Criado por "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="#">
         Teste
       </Link>
       {" team."}
@@ -67,8 +69,8 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar2: {
     flexWrap: "wrap",
-    padding:0,
-    margin:0
+    padding: 0,
+    margin: 0
   },
   toolbarTitle: {
     flexGrow: 1
@@ -151,15 +153,18 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Pricing() {
+const Index = props =>  {
+
   const handleClick = () => {
     console.log("this is:", this);
   };
 
   const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
+      {/* BARRA DE MENU SUPERIOR */}
       <AppBar
         position="fixed"
         color="default"
@@ -189,7 +194,9 @@ export default function Pricing() {
             aria-haspopup="true"
             color="inherit"
           >
-            <ShoppingCartOutlined />
+            <Badge className={classes.margin} badgeContent={10} color="primary">
+              <ShoppingCartOutlined />
+            </Badge>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -212,6 +219,15 @@ export default function Pricing() {
           color="primary"
           gutterBottom
         >
+           <ul>
+      {props.shows.map(show => (
+        <li key={show.id}>
+          <Link href="/p/[id]" as={`/p/${show.id}`}>
+            <a>{show.name}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
           Onde está a sua fome?
           <br />
         </Typography>
@@ -235,8 +251,7 @@ export default function Pricing() {
           align="center"
           color="textSecondary"
           component="p"
-        >
-        </Typography>
+        />
       </Container>
       {/* End hero unit */}
       <Container className={classes.cardGrid} maxWidth="md">
@@ -252,14 +267,14 @@ export default function Pricing() {
               color="primary"
               noWrap
               className={classes.toolbarTitle}
-            ></Typography>
+            />
             <IconButton
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               color="primary"
             >
-              <GridOn  />
+              <GridOn />
             </IconButton>
             <Divider className={classes.divider} />
             <IconButton
@@ -268,7 +283,7 @@ export default function Pricing() {
               aria-haspopup="true"
               color="primary"
             >
-              <ReorderRounded></ReorderRounded>
+              <ReorderRounded />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -277,7 +292,6 @@ export default function Pricing() {
         {/* End hero unit */}
         <Grid container spacing={4} style={{ cursor: "pointer" }}>
           {Cards.map((card, id) => (
-            
             <Grid
               item
               key={card.id}
@@ -340,3 +354,20 @@ export default function Pricing() {
     </React.Fragment>
   );
 }
+
+
+Index.getInitialProps = async function() {
+
+  const res = await fetch('http://127.0.0.1:3333');
+
+  const data = await res.json();
+
+  console.log(data);
+
+ return {
+    shows: data
+  };
+};
+
+
+export default Index;
