@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "cross-env node_env=production next build",
-    "start": "next start"
+    "start": "next"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "@material-ui/icons": "^4.2.1",
     "clsx": "^1.0.4",
     "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

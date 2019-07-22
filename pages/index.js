@@ -30,7 +30,7 @@ import {
   ShoppingCartOutlined
 } from "@material-ui/icons";
 
-import { Cards, Footers } from "../../dados";
+//import { Cards, Footers } from "../../dados";
 
 function MadeWithLove() {
   return (
@@ -49,9 +49,10 @@ const useStyles = makeStyles(theme => ({
     body: {
       background:
         "url(https://res.cloudinary.com/delivery-com/image/fetch/https%3A%2F%2Fs3.amazonaws.com%2Fs3.delivery.com%2FHomepage%2Fdefault-small.jpg)",
-      backgroundRepeat: "repeat",
-      backgroundSize: "contain",
-      backgroundPosition: "5% 1%"
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
     },
     ul: {
       margin: 0,
@@ -60,6 +61,15 @@ const useStyles = makeStyles(theme => ({
     li: {
       listStyle: "none"
     }
+  },
+  SiteSearchPanel__Background:{
+	background: "-webkit-gradient(linear, left top, left bottom, color-stop(2%, rgba(236, 233, 233, 0.7)), color-stop(30%, rgba(255,255,255,0)))",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+    left: "0",
+    right: "0",
+    width: "100%"
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -165,6 +175,7 @@ const Index = props =>  {
     <React.Fragment>
       <CssBaseline />
       {/* BARRA DE MENU SUPERIOR */}
+	  <div className={classes.SiteSearchPanel__Background}></div>
       <AppBar
         position="fixed"
         color="default"
@@ -219,15 +230,6 @@ const Index = props =>  {
           color="primary"
           gutterBottom
         >
-           <ul>
-      {props.shows.map(show => (
-        <li key={show.id}>
-          <Link href="/p/[id]" as={`/p/${show.id}`}>
-            <a>{show.name}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
           Onde está a sua fome?
           <br />
         </Typography>
@@ -291,7 +293,7 @@ const Index = props =>  {
         <br />
         {/* End hero unit */}
         <Grid container spacing={4} style={{ cursor: "pointer" }}>
-          {Cards.map((card, id) => (
+          {/* {Cards.map((card, id) => (
             <Grid
               item
               key={card.id}
@@ -323,13 +325,13 @@ const Index = props =>  {
                 </CardActions>
               </Card>
             </Grid>
-          ))}
+          ))} */}
         </Grid>
       </Container>
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          {Footers.map(footer => (
+          {/* {Footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}
@@ -344,7 +346,7 @@ const Index = props =>  {
                 ))}
               </ul>
             </Grid>
-          ))}
+          ))} */}
         </Grid>
         <Box mt={5}>
           <MadeWithLove />
@@ -355,10 +357,10 @@ const Index = props =>  {
   );
 }
 
-
+/*
 Index.getInitialProps = async function() {
 
-  const res = await fetch('http://delivery.rsvtelecom.com.br/');
+  const res = await fetch('http://api.rsvtelecom.com.br/empresas');
 
   const data = await res.json();
 
@@ -367,7 +369,7 @@ Index.getInitialProps = async function() {
  return {
     shows: data
   };
-};
+};*/
 
 
 export default Index;
