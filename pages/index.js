@@ -313,7 +313,7 @@ const Index = props => {
               md={4}
               className={classes._grid}
               onClick={() => {
-                window.location = "/empresa/" + empresa.id;
+                window.location = "/p/" + empresa.id;
               }}
             >
               <Card className={classes.card}>
