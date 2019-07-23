@@ -14,7 +14,14 @@
       "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\home.js": 7,
       "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\index.js": 8,
       "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\p\\[id].js": 9,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\teste.js": 10
+      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\teste.js": 10,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\_app.js": 12,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\_error.js": 13,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\empresa\\[id].js": 14,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\home.js": 15,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\index.js": 16,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\p\\[id].js": 17,
+      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\teste.js": 18
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../db/empresas.json": 2,
@@ -24,16 +31,16 @@
     "usedIds": [
       0,
       1,
-      10,
       11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
       2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      3
     ]
   }
 }
