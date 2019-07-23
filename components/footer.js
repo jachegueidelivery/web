@@ -1,4 +1,4 @@
-const Footers = [
+let Footers = [
     {
       title: "Company",
       description: ["Team", "History", "Contact us", "Locations"]
@@ -28,4 +28,4 @@ const Footers = [
     }
   ];
 
-  export { Footers };
+  export { Footers as default};

@@ -20,8 +20,7 @@ import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import fetch from "isomorphic-unfetch";
-
-import { Footers } from "./components/footer";
+import Footers from "../components/footer";
 
 import {
   Menu,

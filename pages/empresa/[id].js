@@ -25,7 +25,7 @@ import { Menu, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { useRouter } from "next/router";
 import { green } from "@material-ui/core/colors";
 import Zoom from "@material-ui/core/Zoom";
-import { Footers } from "../components/footer";
+import Footers from "../../components/footer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
