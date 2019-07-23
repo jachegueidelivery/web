@@ -1,4 +1,4 @@
-export default Footers = [
+const Footers = [
     {
       title: "Company",
       description: ["Team", "History", "Contact us", "Locations"]
@@ -27,3 +27,5 @@ export default Footers = [
       description: ["Privacy policy", "Terms of use"]
     }
   ];
+
+  export { Footers };

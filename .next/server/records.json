@@ -1,0 +1,59 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/_app.js": 0,
+      "multi private-next-pages/_document.js": 1,
+      "multi private-next-pages/components/footer.js": 2,
+      "multi private-next-pages/components/index.js": 3,
+      "multi private-next-pages/empresa/[id].js": 4,
+      "multi private-next-pages/home.js": 5,
+      "multi private-next-pages/index.js": 6,
+      "multi private-next-pages/p/[id].js": 7,
+      "multi private-next-pages/post.js": 8,
+      "multi private-next-pages/teste.js": 9,
+      "multi next/dist/pages/_error": 10
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\_app.js": 0,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\_document.js": 1,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\_error.js": 2,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\components.js": 3,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\components\\footer.js": 4,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\empresa\\[id].js": 5,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\home.js": 6,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\index.js": 7,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\p\\[id].js": 8,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\post.js": 9,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\teste.js": 10
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      10,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

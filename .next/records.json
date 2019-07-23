@@ -1,0 +1,39 @@
+{
+  "modules": {
+    "byIdentifier": {},
+    "usedIds": {}
+  },
+  "chunks": {
+    "byName": {
+      "static/runtime/webpack.js": 0,
+      "commons": 1,
+      "static/runtime/main.js": 2,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\_app.js": 3,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\_error.js": 4,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\components.js": 5,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\components\\footer.js": 6,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\empresa\\[id].js": 7,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\home.js": 8,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\index.js": 9,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\p\\[id].js": 10,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\post.js": 11,
+      "static\\oFY82OQJRkTv5IKEhSvSt\\pages\\teste.js": 12
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      10,
+      11,
+      12,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

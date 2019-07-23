@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
+import Icon from "@material-ui/core/Icon";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -18,7 +19,9 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import fetch from "isomorphic-fetch";
+import fetch from "isomorphic-unfetch";
+
+import { Footers } from "./components/footer";
 
 import {
   Menu,
@@ -29,8 +32,6 @@ import {
   ReorderRounded,
   ShoppingCartOutlined
 } from "@material-ui/icons";
-
-//import { Cards, Footers } from "../../dados";
 
 function MadeWithLove() {
   return (
@@ -49,10 +50,10 @@ const useStyles = makeStyles(theme => ({
     body: {
       background:
         "url(https://res.cloudinary.com/delivery-com/image/fetch/https%3A%2F%2Fs3.amazonaws.com%2Fs3.delivery.com%2FHomepage%2Fdefault-small.jpg)",
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
+      backgroundAttachment: "fixed",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"
     },
     ul: {
       margin: 0,
@@ -62,11 +63,12 @@ const useStyles = makeStyles(theme => ({
       listStyle: "none"
     }
   },
-  SiteSearchPanel__Background:{
-	background: "-webkit-gradient(linear, left top, left bottom, color-stop(2%, rgba(236, 233, 233, 0.7)), color-stop(30%, rgba(255,255,255,0)))",
+  SiteSearchPanel__Background: {
+    background:
+      "-webkit-gradient(linear, left top, left bottom, color-stop(2%, rgba(236, 233, 233, 0.7)), color-stop(30%, rgba(255,255,255,0)))",
     position: "absolute",
     top: "0",
-    bottom: "0",
+    bottom: "40%",
     left: "0",
     right: "0",
     width: "100%"
@@ -117,7 +119,11 @@ const useStyles = makeStyles(theme => ({
   card: {
     height: "100%",
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    cursor: "pointer !important"
+  },
+  _grid: {
+    cursor: "pointer !important"
   },
   cardMedia: {
     paddingTop: "56.25%" // 16:9
@@ -129,7 +135,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 40,
     display: "flex",
     alignItems: "center",
-    width: 400,
+    width: "80%",
     margin: "0px auto",
     paddingLeft: 10,
     paddingRight: 10,
@@ -160,11 +166,16 @@ const useStyles = makeStyles(theme => ({
     width: 1,
     height: 28,
     margin: 4
+  },
+  button: {
+    margin: theme.spacing(1)
+  },
+  rightIcon: {
+    marginLeft: theme.spacing(1)
   }
 }));
 
-const Index = props =>  {
-
+const Index = props => {
   const handleClick = () => {
     console.log("this is:", this);
   };
@@ -175,7 +186,7 @@ const Index = props =>  {
     <React.Fragment>
       <CssBaseline />
       {/* BARRA DE MENU SUPERIOR */}
-	  <div className={classes.SiteSearchPanel__Background}></div>
+      <div className={classes.SiteSearchPanel__Background} />
       <AppBar
         position="fixed"
         color="default"
@@ -292,46 +303,57 @@ const Index = props =>  {
 
         <br />
         {/* End hero unit */}
-        <Grid container spacing={4} style={{ cursor: "pointer" }}>
-          {/* {Cards.map((card, id) => (
+        <Grid container spacing={4}>
+          {props.shows.map(empresa => (
             <Grid
               item
-              key={card.id}
-              title={"Clique para entrar em " + card.title}
+              key={empresa.id}
+              title={"Clique para entrar em " + empresa.nome_fantasia}
               xs={12}
               sm={6}
               md={4}
+              className={classes._grid}
               onClick={() => {
-                window.location = "/empresa/" + card.id;
+                window.location = "/empresa/" + empresa.id;
               }}
             >
               <Card className={classes.card}>
-                <CardMedia className={classes.cardMedia} image={card.img} />
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={empresa.logomarca}
+                />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {card.title}
+                    {empresa.nome_fantasia}
                   </Typography>
-                  <Typography>{card.description}</Typography>
+                  <div> {empresa.telefone}</div>
+                  <Typography>{empresa.descricao}</Typography>
                 </CardContent>
                 <CardActions>
                   <Button
                     size="small"
                     color="primary"
-                    dataobj={card}
-                    onClick={handleClick}
+                    dataobj={empresa}
                   >
-                    Detalhes...
+                    IR PARA A LOJA
                   </Button>
+                  {/* <Button
+                    variant="contained"
+                    color="primary"
+                  >
+                   IR PARA A LOJA
+                    <Icon className={classes.rightIcon}></Icon>
+                  </Button> */}
                 </CardActions>
               </Card>
             </Grid>
-          ))} */}
+          ))}
         </Grid>
       </Container>
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          {/* {Footers.map(footer => (
+          {Footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}
@@ -346,7 +368,7 @@ const Index = props =>  {
                 ))}
               </ul>
             </Grid>
-          ))} */}
+          ))}
         </Grid>
         <Box mt={5}>
           <MadeWithLove />
@@ -355,21 +377,16 @@ const Index = props =>  {
       {/* End footer */}
     </React.Fragment>
   );
-}
+};
 
-/*
 Index.getInitialProps = async function() {
-
-  const res = await fetch('http://api.rsvtelecom.com.br/empresas');
+  const res = await fetch("http://api.rsvtelecom.com.br/empresas");
 
   const data = await res.json();
 
-  console.log(data);
-
- return {
+  return {
     shows: data
   };
-};*/
-
+};
 
 export default Index;
