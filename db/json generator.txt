@@ -3,7 +3,17 @@
   '{{repeat(20)}}',
   {
     id: '{{index()+1}}',
-    logomarca: 'http://placehold.it/32x32',
+    logomarca: function (tags) {
+      var fruits = ['https://material-ui.com/static/images/grid-list/burgers.jpg',
+                    'https://material-ui.com/static/images/grid-list/camera.jpg', 
+                    'https://material-ui.com/static/images/grid-list/morning.jpg',
+                    'https://material-ui.com/static/images/grid-list/vegetables.jpg', 
+                    'https://material-ui.com/static/images/grid-list/honey.jpg',
+                    'https://material-ui.com/static/images/grid-list/hats.jpg',
+                    'https://material-ui.com/static/images/grid-list/breakfast.jpg'
+                   ];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    },
     nome_fantasia: '{{firstName()}} {{surname()}}',
     bairro:'{{integer(1, 999)}}',
     estado:'{{state()}}',
@@ -17,7 +27,7 @@
 
 //Produtos
 [
-  '{{repeat(1000)}}',
+  '{{repeat(100)}}',
   {
      id: '{{index()+1}}',
     empresa_fk_id: '{{integer(1, 4)}}',
@@ -25,8 +35,19 @@
       var fruits = ['apple', 'banana', 'strawberry','banana', 'limão'];
       return fruits[tags.integer(0, fruits.length - 1)];
     },
-    balance: 'R{{floating(1, 30, 2, "$ 0,0.00")}}',
-    descricao: '{{lorem(0)}}'
+    preco: 'R{{floating(1, 30, 2, "$ 0,0.00")}}',
+    descricao: '{{lorem(0)}}',
+    imagem: function (tags) {
+      var fruits = ['https://material-ui.com/static/images/grid-list/burgers.jpg',
+                    'https://material-ui.com/static/images/grid-list/camera.jpg', 
+                    'https://material-ui.com/static/images/grid-list/morning.jpg',
+                    'https://material-ui.com/static/images/grid-list/vegetables.jpg', 
+                    'https://material-ui.com/static/images/grid-list/honey.jpg',
+                    'https://material-ui.com/static/images/grid-list/hats.jpg',
+                    'https://material-ui.com/static/images/grid-list/breakfast.jpg'
+                   ];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    }
   }
 ]
 //https://www.json-generator.com/
