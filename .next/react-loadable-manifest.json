@@ -1,1 +1,18 @@
-{}
+{
+  "../../db/produtos.json": [
+    {
+      "id": "ATgf",
+      "name": "./db/produtos.json",
+      "file": "static/chunks/11.931ef6c7b38595a7314e.js",
+      "publicPath": "static/chunks/11.931ef6c7b38595a7314e.js"
+    }
+  ],
+  "../db/empresas.json": [
+    {
+      "id": "NLn7",
+      "name": "./db/empresas.json",
+      "file": "static/chunks/2.9c0293979c3a2f33b899.js",
+      "publicPath": "static/chunks/2.9c0293979c3a2f33b899.js"
+    }
+  ]
+}

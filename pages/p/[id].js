@@ -371,11 +371,11 @@ const Index = props => {
             </Typography>
           </Container>
           <Grid container spacing={4}>
-            {props.shows.map(empresa => (
+            {Object.values(props.shows).map(produto => (
               <Grid
                 item
-                key={empresa.id}
-                title={"Clique para entrar em " + empresa.nome_fantasia}
+                key={produto.id}
+                title={"Clique para entrar em " + produto.nome}
                 xs={12}
                 sm={6}
                 md={4}
@@ -384,17 +384,17 @@ const Index = props => {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={empresa.logomarca}
+                    image={produto.imagem}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {empresa.nome_fantasia}
+                      {produto.nome}
                     </Typography>
-                    <div> {empresa.telefone}</div>
-                    <Typography>{empresa.descricao}</Typography>
+                    <div> {produto.nome}</div>
+                    <Typography>{produto.descricao}</Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary" dataobj={empresa}>
+                    <Button size="small" color="primary" dataobj={produto}>
                       IR PARA A LOJA
                     </Button>
                     {/* <Button
@@ -418,18 +418,18 @@ const Index = props => {
             </Typography>
             <div className={classes.demo}>
               <List dense={dense}>
-                {props.shows.map(empresa => (
+                {Object.values(props.shows).map(produto => (
                   <div>
-                    <ListItem key={empresa.id}>
+                    <ListItem key={produto.id}>
                       <ListItemAvatar>
                         <CardMedia
                           className={classes.cardMediaList}
-                          image={empresa.logomarca}
+                          image={produto.imagem}
                         />
                       </ListItemAvatar>
                       <ListItemText
-                        primary={empresa.nome_fantasia}
-                        secondary={empresa.descricao}
+                        primary={produto.nome}
+                        secondary={produto.descricao}
                       />
                       <ListItemSecondaryAction>
                         <IconButton edge="end" aria-label="Delete">
@@ -483,13 +483,13 @@ const Index = props => {
 };
 
 Index.getInitialProps = async function() {
-  const res = await fetch("http://api.rsvtelecom.com.br/empresas");
 
-  const data = await res.json();
+  const res = await import("../../db/produtos.json");
 
   return {
-    shows: data
+    shows:  res
   };
+
 };
 
 export default Index;

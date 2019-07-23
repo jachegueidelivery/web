@@ -1,0 +1,32 @@
+//Empresa
+[
+  '{{repeat(20)}}',
+  {
+    id: '{{index()+1}}',
+    logomarca: 'http://placehold.it/32x32',
+    nome_fantasia: '{{firstName()}} {{surname()}}',
+    bairro:'{{integer(1, 999)}}',
+    estado:'{{state()}}',
+    cidade:'{{city()}}',
+    telefone: '+1 {{phone()}}',
+    rua: ' {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(0)}}'
+  }
+]
+
+
+//Produtos
+[
+  '{{repeat(1000)}}',
+  {
+     id: '{{index()+1}}',
+    empresa_fk_id: '{{integer(1, 4)}}',
+    nome: function (tags) {
+      var fruits = ['apple', 'banana', 'strawberry','banana', 'limão'];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    },
+    balance: 'R{{floating(1, 30, 2, "$ 0,0.00")}}',
+    descricao: '{{lorem(0)}}'
+  }
+]
+//https://www.json-generator.com/

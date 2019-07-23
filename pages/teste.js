@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import SwipeableViews from "react-swipeable-views";
@@ -14,6 +14,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import UpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { green } from "@material-ui/core/colors";
 import Box from "@material-ui/core/Box";
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,8 +68,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function FloatingActionButtonZoom() {
-
+const Teste = props => {
+	
   const classes = useStyles();
 
   const theme = useTheme();
@@ -130,7 +132,11 @@ export default function FloatingActionButtonZoom() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+       	{ Object.values(props.dados).map((empresa) => {
+        return (
+            <p>Empresa {empresa.id}</p>
+        )
+    })}
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
@@ -163,3 +169,16 @@ export default function FloatingActionButtonZoom() {
     </div>
   );
 }
+
+
+Teste.getInitialProps = async function() {
+
+  const data = await import(`../db/empresas.json`);
+
+  return {
+    dados: data
+  };
+
+};
+
+export default Teste;

@@ -2,44 +2,44 @@
   "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/_app": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/_error": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/empresa/[id]": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/home": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/index": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/p/[id]": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ],
     "/teste": [
-      "static/runtime/webpack-02abf031fc7e13766d3d.js",
-      "static/chunks/commons.7e5cde69eefd652dd2b8.js",
-      "static/runtime/main-6b92949c4b845a74408e.js"
+      "static/runtime/webpack-62bb3fb57ec51e2cd96e.js",
+      "static/chunks/commons.b4286b50cc9908ee3b2d.js",
+      "static/runtime/main-f35900a061e80ddf8cbe.js"
     ]
   }
 }

@@ -303,7 +303,7 @@ const Index = props => {
         <br />
         {/* End hero unit */}
         <Grid container spacing={4}>
-          {props.shows.map(empresa => (
+          {Object.values(props.shows).map((empresa) => (
             <Grid
               item
               key={empresa.id}
@@ -378,14 +378,15 @@ const Index = props => {
   );
 };
 
-Index.getInitialProps = async function() {
-  const res = await fetch("http://api.rsvtelecom.com.br/empresas");
 
-  const data = await res.json();
+Index.getInitialProps = async function() {
+
+  const data = await import("../db/empresas.json");
 
   return {
     shows: data
   };
+
 };
 
 export default Index;
