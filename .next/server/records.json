@@ -23,38 +23,32 @@
   },
   "chunks": {
     "byName": {
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\_app.js": 1,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\_document.js": 2,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\_error.js": 3,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\empresa\\[id].js": 4,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\home.js": 5,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\index.js": 6,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\p\\[id].js": 7,
-      "static\\kmG8Ajuq5YpxuArH2GTwt\\pages\\teste.js": 8,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\_app.js": 10,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\_document.js": 11,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\_error.js": 12,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\empresa\\[id].js": 13,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\home.js": 14,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\index.js": 15,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\p\\[id].js": 16,
-      "static\\-qhVpOqd8GpGSMzf6AT8c\\pages\\teste.js": 17
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_app.js": 1,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_document.js": 2,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_error.js": 3,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\empresa\\[id].js": 4,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\home.js": 5,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\index.js": 6,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\p\\[id].js": 7,
+      "static\\v52XByOJUhOyaw2zztq2d\\pages\\teste.js": 8
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../db/empresas.json": 0,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/teste.js ../db/empresas.json": 0,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/produtos.json": 9
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/config.dev.json": 9,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/produtos.json": 10
     },
     "usedIds": [
       0,
+      1,
       10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
       9
     ]
   }

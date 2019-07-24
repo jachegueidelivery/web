@@ -26,6 +26,11 @@ import { useRouter } from "next/router";
 import { green } from "@material-ui/core/colors";
 import Zoom from "@material-ui/core/Zoom";
 import Footers from "../../components/footer";
+import Input from "@material-ui/core/Input";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Chip from "@material-ui/core/Chip";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -189,8 +194,137 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: green[600]
     }
+  },listaProdutos: {
+    boxShadow:
+      "0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);",
+    display: "flex",
+    flexWrap: "nowrap",
+    border: "0px solid red",
+    flexDirection: "row",
+    height: 140,
+    marginTop: 10
+  },
+  itemAvatar: {
+    width: "20%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime",
+    padding: 4
+  },
+  itemAvatarImg: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime"
+  },
+  itemContent: {
+    width: "60%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignContent: "flex-start",
+    alignItems: "flex-start",
+    border: "0px solid lime",
+    padding: 10
+  },
+  itemAcoes: {
+    width: "20%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime",
+    padding: 10,
+    textAlign: "center"
+  },
+  inputQuantidade: {
+    border: 0,
+    outline: 0,
+    textAlign: "center"
   }
 }));
+
+function generate(element) {
+  return [1, 2, 3, 4, 5].map(value =>
+    React.cloneElement(element, {
+      key: value
+    })
+  );
+}
+
+function ListaProdutos() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <div className={classes.demo}>
+            {generate(
+              <div className={classes.listaProdutos}>
+                <div className={classes.itemAvatar}>
+                  <img
+                    className={classes.itemAvatarImg}
+                    alt=""
+                    src="https://material-ui.com/static/images/cards/paella.jpg"
+                  />
+                </div>
+                <div className={classes.itemContent}>
+                  <Typography>
+                    <b>Título</b>
+                  </Typography>
+                  <Typography>
+                    <span>Descrição</span>
+                  </Typography>
+                  <Typography>
+                    <strong>Kg</strong>
+                  </Typography>
+                  <FormControl>
+                    <InputLabel htmlFor="my-input">Observação:</InputLabel>
+                    <Input id="my-input" aria-describedby="my-helper-text" />
+                  </FormControl>
+                </div>
+                <div className={classes.itemAcoes}>
+                  <Typography>
+                    Preço <br /> <b>R$ 10,00</b>
+                  </Typography>
+                  <small>Quantidade:</small>
+                  <ButtonGroup
+                    variant="contained"
+                    color="primary"
+                    aria-label="Split button"
+                  >
+                    <Button>-</Button>
+                    <input size="2" className={classes.inputQuantidade} />
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      size="small"
+                      aria-haspopup="true"
+                      value="+"
+                    >
+                      +
+                    </Button>
+                  </ButtonGroup>
+                  <Chip className={classes.chip} color="primary" label="Valor a pagar R$ 10,00" />
+                 <br/>
+                </div>
+              </div>
+            )}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
 
 const Index = props => {
   const router = useRouter();
@@ -297,6 +431,7 @@ const Index = props => {
             component="main"
             className={classes.heroContent}
           >
+          {ListaProdutos()}
             {/* <Typography
           component="h4"
           variant="h4"

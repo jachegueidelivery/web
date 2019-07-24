@@ -1,10 +1,8 @@
 ﻿import React from "react";
 import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -24,26 +22,15 @@ import Tab from "@material-ui/core/Tab";
 import { Menu, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { useRouter } from "next/router";
 import { green } from "@material-ui/core/colors";
-import Zoom from "@material-ui/core/Zoom";
 import Footers from "../../components/footer";
-import TextField from "@material-ui/core/TextField";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
-
-import FolderIcon from "@material-ui/icons/Folder";
-import DeleteIcon from "@material-ui/icons/Delete";
-
-import FilledInput from "@material-ui/core/FilledInput";
 import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import Input from "@material-ui/core/Input";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Chip from "@material-ui/core/Chip";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,14 +62,13 @@ function a11yProps(index) {
   };
 }
 
-function MadeWithLove() {
+function MadeWithLove(props) {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Criado por "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Teste
+      <Link color="inherit" href="#">
+        {props.config.empresa}
       </Link>
-      {" team."}
     </Typography>
   );
 }
@@ -215,14 +201,225 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1)
+  },
+  icon: {
+    margin: theme.spacing(2)
+  },
+  details: {
+    display: "flex",
+    flexDirection: "column"
+  },
+  content: {
+    flex: "1 0 auto"
+  },
+  cover: {
+    width: 151
+  },
+  controls: {
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: theme.spacing(1),
+    paddingBottom: theme.spacing(1)
+  },
+  playIcon: {
+    height: 38,
+    width: 38
+  },
+  listaProdutos: {
+    boxShadow:
+      "0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);",
+    display: "flex",
+    flexWrap: "nowrap",
+    border: "0px solid red",
+    flexDirection: "row",
+    height: 160,
+    marginTop: 10
+  },
+  itemAvatar: {
+    width: "20%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime",
+    padding: 4
+  },
+  itemAvatarImg: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime"
+  },
+  itemContent: {
+    width: "60%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignContent: "flex-start",
+    alignItems: "flex-start",
+    border: "0px solid lime",
+    padding: 10
+  },
+  itemAcoes: {
+    width: "20%",
+    display: "flex",
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "0px solid lime",
+    padding: 10,
+    textAlign: "center"
+  },
+  inputQuantidade: {
+    border: 0,
+    outline: 0,
+    textAlign: "center"
   }
 }));
 
 function generate(element) {
-  return [0, 1, 2, 5, 7, 5, 6, 5, 5, 55].map(value =>
+  return [1, 2, 3, 4, 5].map(value =>
     React.cloneElement(element, {
       key: value
     })
+  );
+}
+
+function _toUpperCase(str) {
+  return str;
+}
+
+function ListaProdutos(props) {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={12}>
+          <div className={classes.demo}>
+            {Object.values(props.shows).map(produto => (
+              <div>
+                {produto.id != undefined && (
+                  <div
+                    className={classes.listaProdutos}
+                    key={produto.id}
+                    title={"Clique para entrar em " + produto.nome}
+                  >
+                    <div className={classes.itemAvatar}>
+                      <img
+                        className={classes.itemAvatarImg}
+                        alt=""
+                        src={produto.imagem}
+                      />
+                    </div>
+                    <div className={classes.itemContent}>
+                      <Typography>
+                        <b>{_toUpperCase(produto.nome)}</b>
+                      </Typography>
+                      <Typography>
+                        <span>{produto.descricao}</span>
+                      </Typography>
+                      <sub>
+                        <strong>Kg</strong>
+                      </sub>
+                      <FormControl>
+                        <InputLabel htmlFor="my-input">Observação:</InputLabel>
+                        <Input
+                          id="my-input"
+                          aria-describedby="my-helper-text"
+                        />
+                      </FormControl>
+                    </div>
+                    <div className={classes.itemAcoes}>
+                      <br />
+                      <Typography>
+                        Preço <br /> <b>R$ {produto.preco}</b>
+                      </Typography>
+                      <small>Quantidade:</small>
+                      <ButtonGroup
+                        variant="contained"
+                        color="primary"
+                        aria-label="Split button"
+                      >
+                        <Button>-</Button>
+                        <input
+                          value={1}
+                          size="2"
+                          className={classes.inputQuantidade}
+                        />
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          size="small"
+                          aria-haspopup="true"
+                          value="+"
+                        >
+                          +
+                        </Button>
+                      </ButtonGroup>
+                      <br />
+                      <Chip
+                        className={classes.chip}
+                        color="primary"
+                        label={`Valor a pagar${"\n\n"}R$ ${produto.preco}`}
+                      />
+                      <br />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+
+function MediaControlCard(theme, classes) {
+  return (
+    <Card className={classes.card}>
+      <div className={classes.details}>
+        <CardMedia
+          className={classes.cover}
+          image="https://material-ui.com/static/images/cards/paella.jpg"
+          title="Live from space album cover"
+        />
+        <CardContent className={classes.content}>
+          <Typography component="h5" variant="h5">
+            Live From Space
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            Mac Miller
+          </Typography>
+        </CardContent>
+        <div className={classes.controls}>
+          <IconButton aria-label="Previous">
+            {theme.direction === "rtl" ? (
+              <SkipNextIcon />
+            ) : (
+              <SkipPreviousIcon />
+            )}
+          </IconButton>
+          <IconButton aria-label="Play/pause">
+            <PlayArrowIcon className={classes.playIcon} />
+          </IconButton>
+          <IconButton aria-label="Next">
+            {theme.direction === "rtl" ? (
+              <SkipPreviousIcon />
+            ) : (
+              <SkipNextIcon />
+            )}
+          </IconButton>
+        </div>
+      </div>
+    </Card>
   );
 }
 
@@ -249,27 +446,6 @@ const Index = props => {
     enter: theme.transitions.duration.enteringScreen,
     exit: theme.transitions.duration.leavingScreen
   };
-
-  /*const fabs = [
-    {
-      color: "primary",
-      className: classes.fab,
-      icon: <AddIcon />,
-      label: "Add"
-    },
-    {
-      color: "secondary",
-      className: classes.fab,
-      icon: <EditIcon />,
-      label: "Edit"
-    },
-    {
-      color: "inherit",
-      className: clsx(classes.fab, classes.fabGreen),
-      icon: <UpIcon />,
-      label: "Expand"
-    }
-  ];*/
 
   const handleClick = () => {
     console.log("this is:", this);
@@ -351,9 +527,7 @@ const Index = props => {
               </IconButton>
               <InputBase
                 className={classes.textFieldInput}
-                placeholder={`Pesquise produtos aqui...${JSON.stringify(
-                  router.query
-                )}`}
+                placeholder={`Pesquise produtos aqui...`}
                 inputProps={{ "aria-label": "Search Google Maps" }}
               />
               <Divider className={classes.divider} />
@@ -370,83 +544,11 @@ const Index = props => {
               <br />
             </Typography>
           </Container>
-          <Grid container spacing={4}>
-            {Object.values(props.shows).map(produto => (
-              <Grid
-                item
-                key={produto.id}
-                title={"Clique para entrar em " + produto.nome}
-                xs={12}
-                sm={6}
-                md={4}
-                className={classes._grid}
-              >
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={produto.imagem}
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {produto.nome}
-                    </Typography>
-                    <div> {produto.nome}</div>
-                    <Typography>{produto.descricao}</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary" dataobj={produto}>
-                      IR PARA A LOJA
-                    </Button>
-                    {/* <Button
-                    variant="contained"
-                    color="primary"
-                  >
-                   IR PARA A LOJA
-                    <Icon className={classes.rightIcon}></Icon>
-                  </Button> */}
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+          {ListaProdutos(props)}
         </TabPanel>
         {/* TAB 2 */}
         <TabPanel value={value} index={1}>
-          <Grid item xs={12} md={12}>
-            <Typography variant="h6" className={classes.title}>
-              Avatar with text and icon
-            </Typography>
-            <div className={classes.demo}>
-              <List dense={dense}>
-                {Object.values(props.shows).map(produto => (
-                  <div>
-                    <ListItem key={produto.id}>
-                      <ListItemAvatar>
-                        <CardMedia
-                          className={classes.cardMediaList}
-                          image={produto.imagem}
-                        />
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={produto.nome}
-                        secondary={produto.descricao}
-                      />
-                      <ListItemSecondaryAction>
-                        <IconButton edge="end" aria-label="Delete">
-                          <DeleteIcon />
-                        </IconButton>
-                      </ListItemSecondaryAction>
-                    </ListItem>
-                    <FormControl className={classes.formControl}>
-                      <InputLabel htmlFor="component-simple">Observação:</InputLabel>
-                      <Input id="component-simple" value={""} />
-                    </FormControl>
-                    <hr />
-                  </div>
-                ))}
-              </List>
-            </div>
-          </Grid>
+          <Typography>Tab 2</Typography>
         </TabPanel>
         {/* TAB 3 */}
         <TabPanel value={value} index={2}>
@@ -474,7 +576,7 @@ const Index = props => {
           ))}
         </Grid>
         <Box mt={5}>
-          <MadeWithLove />
+          {MadeWithLove(props)}
         </Box>
       </Container>
       {/* End footer */}
@@ -482,14 +584,14 @@ const Index = props => {
   );
 };
 
-Index.getInitialProps = async function() {
-
+Index.getInitialProps = async function(ctx) {
   const res = await import("../../db/produtos.json");
+  const configSite = await import("../../db/config.dev.json");
 
   return {
-    shows:  res
+    shows: res,
+    config: configSite
   };
-
 };
 
 export default Index;

@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
       "-webkit-gradient(linear, left top, left bottom, color-stop(2%, rgba(236, 233, 233, 0.7)), color-stop(30%, rgba(255,255,255,0)))",
     position: "absolute",
     top: "0",
-    bottom: "40%",
+    bottom: "60%",
     left: "0",
     right: "0",
     width: "100%"
@@ -171,10 +171,113 @@ const useStyles = makeStyles(theme => ({
   },
   rightIcon: {
     marginLeft: theme.spacing(1)
+  },
+  hoverUp:{
+    border:"5px solid red !important"
+  },
+  hoverDown:{
+    border:"0px solid red !important"
   }
 }));
 
-const Index = props => {
+/**
+ * Footer (Rodapé)
+ */
+function Footer(classes) {
+  return (
+    <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Grid container spacing={4} justify="space-evenly">
+        {Footers.map((footer, id) => (
+          <Grid item xs={6} sm={3} key={id + 1}>
+            <Typography variant="h6" color="textPrimary" gutterBottom>
+              {footer.title}
+            </Typography>
+            <ul>
+              {footer.description.map(item => (
+                <li key={item}>
+                  <Link href="#" variant="subtitle1" color="textSecondary">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Grid>
+        ))}
+      </Grid>
+      <Box mt={5}>
+        <MadeWithLove />
+      </Box>
+    </Container>
+  );
+}
+
+/**
+ * Mostra os ícones das empresas
+ */
+function MostrarEmpresas(props, classes) {
+  function mouseOverStyle(ev) {
+    ev.preventDefault();
+    ev.target.classList.add("hoverUp");
+  }
+
+  function mouseOutStyle(ev, id) {
+    ev.preventDefault();
+    ev.target.classList.remove("hoverDown");
+  }
+  return (
+    <Grid container spacing={4}>
+      {Object.values(props.shows).map(empresa => (
+        <Grid
+          item
+          key={empresa.id}
+          title={"Clique para entrar em " + empresa.nome_fantasia}
+          xs={12}
+          sm={6}
+          md={4}
+          className={classes._grid}
+          onClick={() => {
+            window.location = "/p/" + empresa.id;
+          }}
+        >
+          {empresa.nome_fantasia != null && (
+            <Card className={classes.card}
+            onMouseOut={ev => mouseOutStyle(ev, empresa.id)}
+            onMouseOver={ev => mouseOverStyle(ev, empresa.id)}
+            >
+              <CardMedia
+                className={classes.cardMedia}
+                image={empresa.logomarca}
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {empresa.nome_fantasia}
+                </Typography>
+                <div> {empresa.telefone}</div>
+                <Typography>{empresa.descricao}</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary" dataobj={empresa}>
+                  IR PARA A LOJA
+                </Button>
+                {/* <Button
+                 variant="contained"
+                 color="primary"
+               >
+                IR PARA A LOJA
+                 <Icon className={classes.rightIcon}></Icon>
+               </Button> */}
+              </CardActions>
+            </Card>
+          )}
+        </Grid>
+      ))}
+    </Grid>
+  );
+}
+
+/*
+ */
+const Main = props => {
   const handleClick = () => {
     console.log("this is:", this);
   };
@@ -222,17 +325,8 @@ const Index = props => {
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
+        <br />
         <Typography
           component="h4"
           variant="h4"
@@ -241,7 +335,6 @@ const Index = props => {
           gutterBottom
         >
           Onde está a sua fome?
-          <br />
         </Typography>
         {/* INPUT */}
         <Paper className={classes.rootinput}>
@@ -299,94 +392,22 @@ const Index = props => {
             </IconButton>
           </Toolbar>
         </AppBar>
-
         <br />
         {/* End hero unit */}
-        <Grid container spacing={4}>
-          {Object.values(props.shows).map((empresa) => (
-            <Grid
-              item
-              key={empresa.id}
-              title={"Clique para entrar em " + empresa.nome_fantasia}
-              xs={12}
-              sm={6}
-              md={4}
-              className={classes._grid}
-              onClick={() => {
-                window.location = "/p/" + empresa.id;
-              }}
-            >
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image={empresa.logomarca}
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {empresa.nome_fantasia}
-                  </Typography>
-                  <div> {empresa.telefone}</div>
-                  <Typography>{empresa.descricao}</Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    dataobj={empresa}
-                  >
-                    IR PARA A LOJA
-                  </Button>
-                  {/* <Button
-                    variant="contained"
-                    color="primary"
-                  >
-                   IR PARA A LOJA
-                    <Icon className={classes.rightIcon}></Icon>
-                  </Button> */}
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        {MostrarEmpresas(props, classes)}
       </Container>
-      {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Grid container spacing={4} justify="space-evenly">
-          {Footers.map(footer => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map(item => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
-        <Box mt={5}>
-          <MadeWithLove />
-        </Box>
-      </Container>
+      {/* MenuFooter */}
+      {Footer(classes)}
       {/* End footer */}
     </React.Fragment>
   );
 };
 
-
-Index.getInitialProps = async function() {
-
+Main.getInitialProps = async function() {
   const data = await import("../db/empresas.json");
-
   return {
     shows: data
   };
-
 };
 
-export default Index;
+export default Main;
