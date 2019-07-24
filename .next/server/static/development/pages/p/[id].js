@@ -625,7 +625,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\pages\\p\\[id].js",
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\pages\\p\\[id].js",
     _this = undefined;
 
 
@@ -1640,12 +1640,12 @@ function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.t.bind(null, /*! ../../db/produtos.json */ "./db/produtos.json", 3));
+            return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.t.bind(null, /*! ../../db/produtos.json */ "./db/produtos.json", 3));
 
           case 2:
             res = _context.sent;
             _context.next = 5;
-            return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.t.bind(null, /*! ../../db/config.dev.json */ "./db/config.dev.json", 3));
+            return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.t.bind(null, /*! ../../db/config.dev.json */ "./db/config.dev.json", 3));
 
           case 5:
             configSite = _context.sent;
@@ -1678,7 +1678,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\node\delivery-rsvtelecom-com-br\pages\p\[id].js */"./pages/p/[id].js");
+module.exports = __webpack_require__(/*! E:\delivery-rsvtelecom-com-br\pages\p\[id].js */"./pages/p/[id].js");
 
 
 /***/ }),

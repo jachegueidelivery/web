@@ -226,10 +226,10 @@ function MostrarEmpresas(props, classes) {
   }
   return (
     <Grid container spacing={4}>
-      {Object.values(props.shows).map(empresa => (
+      {Object.values(props.shows).map((empresa, _key) => (
         <Grid
           item
-          key={empresa.id}
+          key={_key}
           title={"Clique para entrar em " + empresa.nome_fantasia}
           xs={12}
           sm={6}
@@ -259,13 +259,6 @@ function MostrarEmpresas(props, classes) {
                 <Button size="small" color="primary" dataobj={empresa}>
                   IR PARA A LOJA
                 </Button>
-                {/* <Button
-                 variant="contained"
-                 color="primary"
-               >
-                IR PARA A LOJA
-                 <Icon className={classes.rightIcon}></Icon>
-               </Button> */}
               </CardActions>
             </Card>
           )}

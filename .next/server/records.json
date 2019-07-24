@@ -23,14 +23,14 @@
   },
   "chunks": {
     "byName": {
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_app.js": 1,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_document.js": 2,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\_error.js": 3,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\empresa\\[id].js": 4,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\home.js": 5,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\index.js": 6,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\p\\[id].js": 7,
-      "static\\v52XByOJUhOyaw2zztq2d\\pages\\teste.js": 8
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\_app.js": 1,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\_document.js": 2,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\_error.js": 3,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\empresa\\[id].js": 4,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\home.js": 5,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\index.js": 6,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\p\\[id].js": 7,
+      "static\\m-fTEBaVK29QP0neuETn0\\pages\\teste.js": 8
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../db/empresas.json": 0,
