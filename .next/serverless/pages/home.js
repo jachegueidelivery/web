@@ -8813,7 +8813,7 @@ module.exports = __webpack_require__("UDep");
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"pages\":{\"/\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/_app\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/_error\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/empresa/[id]\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/home\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/index\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/p/[id]\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"],\"/teste\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.ef885fabe2347d796aeb.js\",\"static/runtime/main-f35900a061e80ddf8cbe.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"pages\":{\"/\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/_app\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/_error\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/home\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/index\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/p/[id]\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"],\"/teste\":[\"static/runtime/webpack-d3075f26e95cfa2e7c91.js\",\"static/chunks/commons.6999c7e55f1ac22d903a.js\",\"static/runtime/main-513dd103f91f49d45fa4.js\"]}}");
 
 /***/ }),
 
@@ -15097,7 +15097,7 @@ IndexPage.propTypes = {
         buildManifest: build_manifest,
         reactLoadableManifest: react_loadable_manifest,
         canonicalBase: "",
-        buildId: "3QI_dRRrn7oVj-ono02PT",
+        buildId: "rPz_Ismn9D1EoVJnlN4XT",
         dynamicBuildId: false,
         assetPrefix: "",
         ampBindInitData: false
