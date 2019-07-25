@@ -233,7 +233,8 @@ const useStyles = makeStyles(theme => ({
     border: "0px solid red",
     flexDirection: "row",
     height: 160,
-    marginTop: 10
+    marginTop: 10,
+	backgroundColor:'rgba(245,245,245,0.8)'
   },
   itemAvatar: {
     width: "20%",
@@ -284,14 +285,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function generate(element) {
-  return [1, 2, 3, 4, 5].map(value =>
-    React.cloneElement(element, {
-      key: value
-    })
-  );
-}
-
 function _toUpperCase(str) {
   return str;
 }
@@ -304,7 +297,7 @@ function ListaProdutos(props) {
         <Grid item xs={12} md={12}>
           <div className={classes.demo}>
             {Object.values(props.shows).map(produto => (
-              <div>
+              <>
                 {produto.id != undefined && (
                   <div
                     className={classes.listaProdutos}
@@ -373,7 +366,7 @@ function ListaProdutos(props) {
                     </div>
                   </div>
                 )}
-              </div>
+              </>
             ))}
           </div>
         </Grid>
