@@ -1,0 +1,27 @@
+{
+  "modules": {
+    "byIdentifier": {},
+    "usedIds": {}
+  },
+  "chunks": {
+    "byName": {
+      "pages\\Clock.js": 0,
+      "pages\\_error.js": 1,
+      "pages\\car.js": 2,
+      "pages\\home.js": 3,
+      "pages\\index.js": 4,
+      "pages\\p\\[id].js": 5,
+      "pages\\teste.js": 6
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

@@ -1,4 +1,5 @@
-﻿import React from "react";
+﻿//https://www.robinwieruch.de/react-function-component/
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
@@ -10,7 +11,7 @@ import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
@@ -234,7 +235,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     height: 160,
     marginTop: 10,
-	backgroundColor:'rgba(245,245,245,0.8)'
+    backgroundColor: "rgba(245,245,245,0.8)"
   },
   itemAvatar: {
     width: "20%",
@@ -281,93 +282,177 @@ const useStyles = makeStyles(theme => ({
   inputQuantidade: {
     border: 0,
     outline: 0,
-    textAlign: "center"
+    textAlign: "center",
+    width: 40
   }
 }));
 
-function _toUpperCase(str) {
-  return str;
-}
+/**
+ * Component: Produtos
+ */
+function Produto(props) {
+  const [quantidade, setQuantidade] = useState(0);
+  const [valorTotal, setValorTotal] = useState(0);
+  const [descricao, setDescricao] = useState("");
+  const [observacao, setObservacao] = useState("");
 
-function ListaProdutos(props) {
+  function removeProduct(id) {
+    let storageProducts = JSON.parse(localStorage.getItem("products"));
+    let products = storageProducts.filter(product => product.id !== id);
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  function addProduct() {
+    let products = [];
+
+    if (localStorage.getItem("products")) {
+      products = JSON.parse(localStorage.getItem("products"));
+    }
+
+    //Desestruturação Javascript
+    const { id } = props;
+
+    //Pega o index
+    let objIndex = products.findIndex(pedido => pedido.productId === id);
+
+    //Caso não exista
+    if (objIndex === -1) {
+      products.push({
+        productId: id,
+        quantidade: quantidade + 1,
+        observacao: observacao
+      });
+
+      localStorage.setItem("products", JSON.stringify(products));
+    } else {
+      products[objIndex].productId = id;
+      products[objIndex].quantidade = quantidade + 1;
+      products[objIndex].observacao = observacao;
+
+      localStorage.setItem("products", JSON.stringify(products));
+    }
+  }
+
+  function add() {
+    let quant = parseInt(quantidade) + 1;
+    
+    setQuantidade(quant);
+
+    //props.handleTotal(props.precoUnitario);
+
+    addProduct();
+
+    setValorTotal(quant);
+  }
+
+  function subtract() {
+    let quant = parseInt(quantidade) - 1;
+
+    setQuantidade(quant);
+
+    addProduct();
+
+    //props.handleTotal(-props.precoUnitario);
+
+    setValorTotal(props.precoUnitario * quant);
+  }
+
+  function onChangeQuantidade(ev) {
+    let quant = parseInt(ev.target.value);
+
+    setQuantidade(quant);
+
+    //props.handleTotal(props.precoUnitario);
+
+    addProduct();
+
+    setValorTotal(props.precoUnitario * parseInt(quant));
+  }
+
+  function alterarTextoTextArea(ev) {
+    setObservacao(ev.target.value);
+  }
+
   const classes = useStyles();
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id={props.id}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <div className={classes.demo}>
-            {Object.values(props.shows).map(produto => (
-              <>
-                {produto.id != undefined && (
-                  <div
-                    className={classes.listaProdutos}
-                    key={produto.id}
-                    title={"Clique para entrar em " + produto.nome}
+            <div
+              className={classes.listaProdutos}
+              title={"Clique para entrar em " + props.nome}
+            >
+              <div className={classes.itemAvatar}>
+                <img
+                  className={classes.itemAvatarImg}
+                  alt=""
+                  src={props.imagem}
+                />
+              </div>
+              <div className={classes.itemContent}>
+                <Typography>
+                  <b>{props.nome}</b>
+                </Typography>
+                <Typography>
+                  <span>{props.descricao}</span>
+                </Typography>
+                <sub>
+                  <strong>Kg</strong>
+                </sub>
+                <FormControl>
+                  <InputLabel htmlFor="my-input">Observação:</InputLabel>
+                  <Input
+                    id="my-input"
+                    onChange={ev => {
+                      alterarTextoTextArea(ev);
+                    }}
+                    value={observacao}
+                    aria-describedby="my-helper-text"
+                  />
+                </FormControl>
+              </div>
+              <div className={classes.itemAcoes}>
+                <br />
+                <Typography>
+                  Preço <br /> <b>R$ {props.precoUnitario}</b>
+                </Typography>
+                <small>Quantidade:</small>
+                <ButtonGroup
+                  variant="contained"
+                  color="primary"
+                  aria-label="Split button"
+                >
+                  <Button onClick={subtract} disabled={quantidade < 1}>
+                    -
+                  </Button>
+                  <input
+                    type="number"
+                    onChange={ev => onChangeQuantidade(ev)}
+                    value={quantidade}
+                    className={classes.inputQuantidade}
+                  />
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    size="small"
+                    aria-haspopup="true"
+                    value="+"
+                    onClick={add}
                   >
-                    <div className={classes.itemAvatar}>
-                      <img
-                        className={classes.itemAvatarImg}
-                        alt=""
-                        src={produto.imagem}
-                      />
-                    </div>
-                    <div className={classes.itemContent}>
-                      <Typography>
-                        <b>{_toUpperCase(produto.nome)}</b>
-                      </Typography>
-                      <Typography>
-                        <span>{produto.descricao}</span>
-                      </Typography>
-                      <sub>
-                        <strong>Kg</strong>
-                      </sub>
-                      <FormControl>
-                        <InputLabel htmlFor="my-input">Observação:</InputLabel>
-                        <Input
-                          id="my-input"
-                          aria-describedby="my-helper-text"
-                        />
-                      </FormControl>
-                    </div>
-                    <div className={classes.itemAcoes}>
-                      <br />
-                      <Typography>
-                        Preço <br /> <b>R$ {produto.preco}</b>
-                      </Typography>
-                      <small>Quantidade:</small>
-                      <ButtonGroup
-                        variant="contained"
-                        color="primary"
-                        aria-label="Split button"
-                      >
-                        <Button>-</Button>
-                        <input
-                          value={1}
-                          size="2"
-                          className={classes.inputQuantidade}
-                        />
-                        <Button
-                          color="primary"
-                          variant="contained"
-                          size="small"
-                          aria-haspopup="true"
-                          value="+"
-                        >
-                          +
-                        </Button>
-                      </ButtonGroup>
-                      <br />
-                      <Chip
-                        className={classes.chip}
-                        color="primary"
-                        label={`Valor a pagar${"\n\n"}R$ ${produto.preco}`}
-                      />
-                      <br />
-                    </div>
-                  </div>
-                )}
-              </>
-            ))}
+                    +
+                  </Button>
+                </ButtonGroup>
+                <br />
+                <Chip
+                  className={classes.chip}
+                  color="primary"
+                  label={`Valor a pagar${"\n\n"}R$ ${valorTotal}`}
+                />
+                <br />
+              </div>
+            </div>
           </div>
         </Grid>
       </Grid>
@@ -375,72 +460,16 @@ function ListaProdutos(props) {
   );
 }
 
-function MediaControlCard(theme, classes) {
-  return (
-    <Card className={classes.card}>
-      <div className={classes.details}>
-        <CardMedia
-          className={classes.cover}
-          image="https://material-ui.com/static/images/cards/paella.jpg"
-          title="Live from space album cover"
-        />
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Mac Miller
-          </Typography>
-        </CardContent>
-        <div className={classes.controls}>
-          <IconButton aria-label="Previous">
-            {theme.direction === "rtl" ? (
-              <SkipNextIcon />
-            ) : (
-              <SkipPreviousIcon />
-            )}
-          </IconButton>
-          <IconButton aria-label="Play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="Next">
-            {theme.direction === "rtl" ? (
-              <SkipPreviousIcon />
-            ) : (
-              <SkipNextIcon />
-            )}
-          </IconButton>
-        </div>
-      </div>
-    </Card>
-  );
-}
-
 const Index = props => {
   const router = useRouter();
 
-  const [value, setValue] = React.useState(0)
-
-  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
 
   const classes = useStyles();
 
   function handleChange(event, newValue) {
     setValue(newValue);
   }
-
-  function handleChangeIndex(index) {
-    setValue(index);
-  }
-
-  const transitionDuration = {
-    enter: theme.transitions.duration.enteringScreen,
-    exit: theme.transitions.duration.leavingScreen
-  };
-
-  const handleClick = () => {
-    console.log("this is:", this);
-  };
 
   return (
     <React.Fragment>
@@ -500,17 +529,6 @@ const Index = props => {
             component="main"
             className={classes.heroContent}
           >
-            {/* <Typography
-          component="h4"
-          variant="h4"
-          align="center"
-          color="primary"
-          gutterBottom
-        >
-          Pesquise produtos aqui...
-          <br />
-        </Typography> */}
-
             {/* INPUT */}
             <Paper className={classes.rootinput}>
               <IconButton className={classes.iconButton} aria-label="Menu">
@@ -535,7 +553,22 @@ const Index = props => {
               <br />
             </Typography>
           </Container>
-          {ListaProdutos(props)}
+          {Object.values(props.shows).map((product, _key) => {
+            if (product.id != undefined) {
+              return (
+                <React.Fragment key={_key}>
+                  <Produto
+                    id={product.id}
+                    nome={product.nome.toUpperCase()}
+                    imagem={product.imagem}
+                    precoUnitario={product.preco}
+                    descricao={product.descricao}
+                  />
+                </React.Fragment>
+              );
+            }
+            /**/
+          })}
         </TabPanel>
         {/* TAB 2 */}
         <TabPanel value={value} index={1}>
@@ -566,9 +599,7 @@ const Index = props => {
             </Grid>
           ))}
         </Grid>
-        <Box mt={5}>
-          {MadeWithLove(props)}
-        </Box>
+        <Box mt={5}>{MadeWithLove(props)}</Box>
       </Container>
       {/* End footer */}
     </React.Fragment>
@@ -576,7 +607,6 @@ const Index = props => {
 };
 
 Index.getInitialProps = async function(ctx) {
-
   const res = await import("../../db/produtos.json");
   const configSite = await import("../../db/config.dev.json");
 
