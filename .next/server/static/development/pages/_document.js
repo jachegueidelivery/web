@@ -1551,7 +1551,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\pages\\_document.js";
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\pages\\_document.js";
 
 
 
@@ -1605,14 +1605,6 @@ function (_Document) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {

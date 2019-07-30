@@ -310,7 +310,7 @@ function Produto(props) {
     }
 
     //Desestruturação Javascript
-    const { id } = props;
+    const { id, nome, imagem, precoUnitario} = props;
 
     //Pega o index
     let objIndex = products.findIndex(pedido => pedido.productId === id);
@@ -319,8 +319,11 @@ function Produto(props) {
     if (objIndex === -1) {
       products.push({
         productId: id,
+        nome: nome,
+        imagem: imagem,
         quantidade: quantidade + 1,
-        observacao: observacao
+        observacao: observacao,
+        preco: precoUnitario
       });
 
       localStorage.setItem("products", JSON.stringify(products));
@@ -328,6 +331,9 @@ function Produto(props) {
       products[objIndex].productId = id;
       products[objIndex].quantidade = quantidade + 1;
       products[objIndex].observacao = observacao;
+      products[objIndex].nome = nome;
+      products[objIndex].imagem = imagem;
+      products[objIndex].preco = precoUnitario;
 
       localStorage.setItem("products", JSON.stringify(products));
     }
@@ -461,6 +467,7 @@ function Produto(props) {
 }
 
 const Index = props => {
+	
   const router = useRouter();
 
   const [value, setValue] = React.useState(0);
@@ -470,6 +477,11 @@ const Index = props => {
   function handleChange(event, newValue) {
     setValue(newValue);
   }
+
+	function handleProfileMenuOpen(event) {
+	   alert('Taffarel');
+	}
+
 
   return (
     <React.Fragment>
@@ -499,6 +511,7 @@ const Index = props => {
             Sair
           </Button>
           <IconButton
+            onClick={handleProfileMenuOpen}
             aria-label="Account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
@@ -616,4 +629,6 @@ Index.getInitialProps = async function(ctx) {
   };
 };
 
+
 export default Index;
+

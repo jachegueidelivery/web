@@ -21,6 +21,10 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import fetch from "isomorphic-unfetch";
 import Footers from "../components/footer";
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuT from '@material-ui/core/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
+import Carrinho from '../components/carrinho';
 
 import {
   Menu,
@@ -271,11 +275,53 @@ function MostrarEmpresas(props, classes) {
 /*
  */
 const Main = props => {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  
   const handleClick = () => {
     console.log("this is:", this);
   };
 
   const classes = useStyles();
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  function handleProfileMenuOpen(event) {
+    setAnchorEl(event.currentTarget);
+  }
+
+  function handleMobileMenuClose() {
+    setMobileMoreAnchorEl(null);
+  }
+
+  function handleMenuClose() {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  }
+
+  function handleMobileMenuOpen(event) {
+    setMobileMoreAnchorEl(event.currentTarget);
+  }
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <MenuT
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >	
+	  <div style={{padding:10}}>
+		<Carrinho/>
+	  </div>
+    </MenuT>
+  );
+	
 
   return (
     <React.Fragment>
@@ -306,6 +352,7 @@ const Main = props => {
             Entrar
           </Button>
           <IconButton
+			onClick={handleProfileMenuOpen}
             aria-label="Account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
@@ -392,6 +439,7 @@ const Main = props => {
       {/* MenuFooter */}
       {Footer(classes)}
       {/* End footer */}
+	   {renderMenu}
     </React.Fragment>
   );
 };

@@ -1,26 +1,34 @@
 {
   "../../db/config.dev.json": [
     {
-      "id": "q93c",
+      "id": "./db/config.dev.json",
       "name": "./db/config.dev.json",
-      "file": "static/chunks/12.3da61f0c752892ccdcdf.js",
-      "publicPath": "static/chunks/12.3da61f0c752892ccdcdf.js"
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
     }
   ],
   "../../db/produtos.json": [
     {
-      "id": "ATgf",
+      "id": "./db/produtos.json",
       "name": "./db/produtos.json",
-      "file": "static/chunks/13.5b4ba792c3ed0f951b60.js",
-      "publicPath": "static/chunks/13.5b4ba792c3ed0f951b60.js"
+      "file": "static/chunks/3.js",
+      "publicPath": "static/chunks/3.js"
     }
   ],
   "../db/empresas.json": [
     {
-      "id": "NLn7",
+      "id": "./db/empresas.json",
       "name": "./db/empresas.json",
-      "file": "static/chunks/2.221da588a8e0f6a8219b.js",
-      "publicPath": "static/chunks/2.221da588a8e0f6a8219b.js"
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
+  ],
+  "./dev/noop": [
+    {
+      "id": "./node_modules/next/dist/client/dev/noop.js",
+      "name": "./node_modules/next/dist/client/dev/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
     }
   ]
 }

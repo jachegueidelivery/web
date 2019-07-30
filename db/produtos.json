@@ -14,5 +14,13 @@
     "preco": 27.65,
     "descricao": "Do magna exercitation eiusmod eu anim duis nostrud aute.",
     "imagem": "https://material-ui.com/static/images/grid-list/morning.jpg"
+  },
+   {
+    "id": 3,
+    "empresa_fk_id": 2,
+    "nome": "maçã",
+    "preco": 2.65,
+    "descricao": "Do magna exercitation eiusmod eu anim duis nostrud aute.",
+    "imagem": "https://material-ui.com/static/images/grid-list/morning.jpg"
   }
 ]

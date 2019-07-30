@@ -1,0 +1,28 @@
+webpackHotUpdate("static\\development\\pages\\index.js",{
+
+/***/ "./components/carrinho.js":
+/*!********************************!*\
+  !*** ./components/carrinho.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Carrinho = function Carrinho(props) {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log(JSON.parse(localStorage.getItem('products')));
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Testes");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Carrinho);
+
+/***/ })
+
+})
+//# sourceMappingURL=index.js.06f268b89eca8fb27e7e.hot-update.js.map
