@@ -1,4 +1,28 @@
 {
+  "../../db/config.dev.json": [
+    {
+      "id": "./db/config.dev.json",
+      "name": "./db/config.dev.json",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    }
+  ],
+  "../../db/produtos.json": [
+    {
+      "id": "./db/produtos.json",
+      "name": "./db/produtos.json",
+      "file": "static/chunks/3.js",
+      "publicPath": "static/chunks/3.js"
+    }
+  ],
+  "../db/empresas.json": [
+    {
+      "id": "./db/empresas.json",
+      "name": "./db/empresas.json",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
+  ],
   "./dev/noop": [
     {
       "id": "./node_modules/next/dist/client/dev/noop.js",

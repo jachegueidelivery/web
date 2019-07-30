@@ -419,9 +419,7 @@ function MediaControlCard(theme, classes) {
 const Index = props => {
   const router = useRouter();
 
-  const [value, setValue] = React.useState(0);
-  const [dense, setDense] = React.useState(!1);
-  const [secondary, setSecondary] = React.useState(!1);
+  const [value, setValue] = React.useState(0)
 
   const theme = useTheme();
 
@@ -578,6 +576,7 @@ const Index = props => {
 };
 
 Index.getInitialProps = async function(ctx) {
+
   const res = await import("../../db/produtos.json");
   const configSite = await import("../../db/config.dev.json");
 
