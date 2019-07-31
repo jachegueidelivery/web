@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, {useState, useEffect} from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
@@ -25,6 +25,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuT from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import Carrinho from '../components/carrinho';
+
+import LocalStorageHandler from "../components/LocalStorageHandler";
+
 
 import {
   Menu,
@@ -276,9 +279,11 @@ function MostrarEmpresas(props, classes) {
  */
 const Main = props => {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+
+  const [countPedidosLocal, setCountPedidosLocal] = useState(0);
+
   const handleClick = () => {
     console.log("this is:", this);
   };
@@ -287,6 +292,11 @@ const Main = props => {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+	
+
+  useEffect(() => {
+	setCountPedidosLocal(LocalStorageHandler.count('products'));
+  }, []);
 
   function handleProfileMenuOpen(event) {
     setAnchorEl(event.currentTarget);
@@ -358,7 +368,7 @@ const Main = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <Badge className={classes.margin} badgeContent={10} color="primary">
+            <Badge className={classes.margin} badgeContent={countPedidosLocal} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </IconButton>

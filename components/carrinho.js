@@ -78,13 +78,11 @@ const Carrinho = props => {
   }
 
   useEffect(() => {
-    //console.log(LocalStorageHandler.getDataByKey('products'));
-console.log(LocalStorageHandler.count('products'));
     setData(JSON.parse(localStorage.getItem("products")));
   }, []);
 
   if (!data) {
-    return <>Não há produtos ainda</>;
+    return <><b>Não há produtos ainda</b></>;
   }
 	
   const remover = (id) =>{
