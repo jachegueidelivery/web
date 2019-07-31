@@ -1,115 +1,166 @@
-﻿import React, { useState, useEffect, createRef }  from "react";
-import styled from 'styled-components';
+﻿import React, { useState, useEffect, createRef } from "react";
+import styled from "styled-components";
+
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import ButtonBase from '@material-ui/core/ButtonBase';
+
+
+import LocalStorageHandler from "./LocalStorageHandler";
 
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  paper: {
+    padding: theme.spacing(1),
+    margin: 'auto',
+    maxWidth: 500,
+    minWidth: 500,
+  },
+  image: {
+    width: 128,
+    height: "100%",
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+  },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1)
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   },
-}));
+  Div:{
+  display: 'flex',
+  justifyContent: 'center',
+  width: '200px',
+  margin: '0px',
+  border: '1px outset pink'
+}
 
+}
+
+));
 
 const Div = styled.div`
   display: flex;
   justify-content: center;
-  width:400px;
+  width: 300px;
   margin: 0px;
   border: 0px outset pink;
   &:hover {
-   background-color: #ccc;
- }`;
- 
-const cssMedia = styled.div`
-  margin: 0px;
-  border: 3px outset pink;`;
- 
- const Content = styled.div`
-  width:60%;
-  margin: 0px;`;
- 
-const cssActions = styled.div`
-  width:20%;
-  margin: 0px;
-  `;
+    background-color: #ccc;
+  }
+`;
 
-const Carrinho  = props =>{
+const Carrinho = props => {
+  
+  const classes = useStyles();
+
+  const [data, setData] = useState([]);
+
+  function onConfirmar() {
+    alert("Não implementado");
+  }
+
+  useEffect(() => {
+    setData(JSON.parse(localStorage.getItem("products")));
+  }, []);
+
+  if (!data) {
+    return <><b>Não há produtos ainda</b></>;
+  }
 	
-	const classes = useStyles();
+  const remover = (id) =>{
+	alert('Remover' + id);
+  }
 
-	const [data, setData] = useState([]);
-		
-	
-	function onConfirmar(){
-		alert('Não implementado');
-	}
+  let valorTotal = 0;
+  let Conteudo = data.map((produto, _k) => {
+    let quant = produto.quantidade;
+    let valTotal = produto.preco * quant;
+    valorTotal += valTotal;
+    return (
+      <React.Fragment key={_k}>
+      <Paper className={classes.paper}>
+        <Grid container spacing={1}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.img} alt="complex" src={produto.imagem} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={1}>
+              <Grid item xs>
+                <Typography gutterBottom variant="subtitle1">
+                <b>{produto.nome}</b>
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  {/*Descrição aqui*/}
+                </Typography>
+              </Grid>
 
-	 useEffect(() => {
-		 setData(JSON.parse(localStorage.getItem('products')));
-	 }, []);
-	
-	if(!data){
-		return(
-			<>
-			Não há produtos ainda
-			</>
-		)
-	}
-	let valorTotal = 0;
-	let Conteudo = data.map((produto, _k)=>{
-	let quant = produto.quantidade;
-	valorTotal += produto.preco;
-		return <React.Fragment key={_k}>
-		<Div>
-			<cssMedia style={{width:"20%"}}>
-				<img src={produto.imagem}
-				style={{width:"100%", height:"100%"}}
-				alt={produto.imagem} />
-			</cssMedia>	
-			<Content style={{width:"50%"}}>
-				<h4 style={{margin:0, padding:0, paddingLeft:5}}>{'  '}{produto.nome}</h4>
-			</Content>	
-			<cssActions style={{width:"30%"}}>
-				<h4 style={{margin:0, padding:0}}><small>qt:</small>{quant}</h4>
-<h4 style={{margin:0, padding:0}}><small>Preço Uni:</small>R$ {produto.preco.toFixed(2)}</h4>
-<h4 style={{margin:0, padding:0}}><small>Valor Total:</small>R$ {produto.preco * quant}</h4>
-			</cssActions>
-		</Div>
-		<hr style={{border:0,borderTop:"1px solid #ddd"}}/>
-		</React.Fragment>;
-	});
-	
-	return(
-		<>
-		{Conteudo}
+	<Grid item>
+                <Typography 
+	onClick={(ev)=>remover(produto.productId)} size="small"
+variant="body2" style={{ cursor: 'pointer' }} color="primary" title="Clique para remover este item do carrinho">
+                  Remover
+                </Typography>
+              </Grid>
 
+            </Grid>
+            <Grid item>
+              <Typography variant="subtitle1"><b>R$  {produto.preco.toFixed(2)}</b></Typography>
+              <Typography variant="subtitle1"><b>R$  {valTotal.toFixed(2)}</b></Typography>
+	<Typography variant="subtitle1"><b>Quant:  {quant}</b></Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
+  <hr style={{ border: 0, borderTop: "1px solid #ddd" }} />
+      </React.Fragment>
+    );
+  });
 
-<AppBar position="static" color="default">
+  return (
+    <React.Fragment>
+      <AppBar position="static">
         <Toolbar variant="dense">
-          <Typography variant="h6" className={classes.title}>
-            <b>Valor total dos pedidos: {valorTotal} </b>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit">
+            <b>MEU CARRINHO</b>
           </Typography>
-          <Button color="secondary" onClick={onConfirmar} title="Clique para confirmar"><b>Confirmar</b></Button>
         </Toolbar>
       </AppBar>
-			
-		</>
-	)
-}
-
+      {Conteudo}
+   <AppBar position="static">
+        <Toolbar variant="dense">
+           <Typography variant="h6" color="inherit">
+            <b>VALOR TOTAL R$ {valorTotal.toFixed(2)}</b>
+          </Typography>
+           <Button variant="contained" align="" size="large" color="primary" className={classes.button}>
+       	<b>CONFIRMAR?</b>
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
+  );
+};
 
 export default Carrinho;
