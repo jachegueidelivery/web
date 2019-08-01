@@ -1,5 +1,5 @@
 ﻿//https://www.robinwieruch.de/react-function-component/
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
@@ -32,8 +32,15 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Chip from "@material-ui/core/Chip";
+import Badge from "@material-ui/core/Badge";
+
+//Carrinho
+import Carrinho from '../../components/carrinho';
+import LocalStorageHandler from "../../components/LocalStorageHandler";
+
 
 function TabPanel(props) {
+
   const { children, value, index, ...other } = props;
 
   return (
@@ -291,17 +298,19 @@ const useStyles = makeStyles(theme => ({
  * Component: Produtos
  */
 function Produto(props) {
+
   const [quantidade, setQuantidade] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
   const [descricao, setDescricao] = useState("");
   const [observacao, setObservacao] = useState("");
+
 
   function removeProduct(id) {
     let storageProducts = JSON.parse(localStorage.getItem("products"));
     let products = storageProducts.filter(product => product.id !== id);
     localStorage.setItem("products", JSON.stringify(products));
   }
-
+	
   function addProduct() {
     let products = [];
 
@@ -310,7 +319,7 @@ function Produto(props) {
     }
 
     //Desestruturação Javascript
-    const { id, nome, imagem, precoUnitario} = props;
+    const { id, nome, imagem, precoUnitario, descricao} = props;
 
     //Pega o index
     let objIndex = products.findIndex(pedido => pedido.productId === id);
@@ -318,12 +327,13 @@ function Produto(props) {
     //Caso não exista
     if (objIndex === -1) {
       products.push({
-        productId: id,
-        nome: nome,
-        imagem: imagem,
-        quantidade: quantidade + 1,
-        observacao: observacao,
-        preco: precoUnitario
+        productId: 		id,
+        nome: 		nome,
+        imagem: 		imagem,
+        quantidade: 		quantidade + 1,
+        observacao: 		observacao,
+        preco: 		precoUnitario,
+        descricao:		descricao
       });
 
       localStorage.setItem("products", JSON.stringify(products));
@@ -334,12 +344,13 @@ function Produto(props) {
       products[objIndex].nome = nome;
       products[objIndex].imagem = imagem;
       products[objIndex].preco = precoUnitario;
-
+      products[objIndex].descricao = descricao;
       localStorage.setItem("products", JSON.stringify(products));
     }
   }
 
   function add() {
+
     let quant = parseInt(quantidade) + 1;
     
     setQuantidade(quant);
@@ -352,6 +363,7 @@ function Produto(props) {
   }
 
   function subtract() {
+
     let quant = parseInt(quantidade) - 1;
 
     setQuantidade(quant);
@@ -472,15 +484,30 @@ const Index = props => {
 
   const [value, setValue] = React.useState(0);
 
+  const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
+  
   const classes = useStyles();
+
+  
+useEffect(() => {
+  onAtualizarCount();
+  return () => {
+    // Limpa a assinatura antes do componente deixar a tela
+    //subscription.unsubscribe();
+  };
+});
+
+function onAtualizarCount(){
+   setCountPedidosLocal(LocalStorageHandler.count('products'));
+  }
 
   function handleChange(event, newValue) {
     setValue(newValue);
   }
 
-	function handleProfileMenuOpen(event) {
-	   alert('Taffarel');
-	}
+  function handleProfileMenuOpen(event) {
+    alert('Taffarel');
+  }
 
 
   return (
@@ -517,7 +544,9 @@ const Index = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <ShoppingCartOutlined />
+	<Badge className={classes.margin} badgeContent={countPedidosLocal} color="primary">
+              <ShoppingCartOutlined />
+            </Badge>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -571,6 +600,7 @@ const Index = props => {
               return (
                 <React.Fragment key={_key}>
                   <Produto
+	       produto={product}
                     id={product.id}
                     nome={product.nome.toUpperCase()}
                     imagem={product.imagem}

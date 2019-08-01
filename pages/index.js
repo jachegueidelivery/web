@@ -24,8 +24,9 @@ import Footers from "../components/footer";
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuT from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import Carrinho from '../components/carrinho';
 
+//Carrinho
+import Carrinho from '../components/carrinho';
 import LocalStorageHandler from "../components/LocalStorageHandler";
 
 
@@ -276,29 +277,32 @@ function MostrarEmpresas(props, classes) {
 }
 
 /*
- */
+*/
+
 const Main = props => {
 
   const [anchorEl, setAnchorEl] = useState(null);
+
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
-  const handleClick = () => {
-    console.log("this is:", this);
-  };
-
   const classes = useStyles();
 
   const isMenuOpen = Boolean(anchorEl);
+
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-	
+
+  function onAtualizarCount(){
+   setCountPedidosLocal(LocalStorageHandler.count('products'));
+  }
 
   useEffect(() => {
-	setCountPedidosLocal(LocalStorageHandler.count('products'));
+    onAtualizarCount();
   }, []);
-
+	
   function handleProfileMenuOpen(event) {
+    onAtualizarCount();
     setAnchorEl(event.currentTarget);
   }
 
@@ -307,6 +311,7 @@ const Main = props => {
   }
 
   function handleMenuClose() {
+    onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
   }
@@ -327,7 +332,7 @@ const Main = props => {
       onClose={handleMenuClose}
     >	
 	  <div style={{padding:10}}>
-		<Carrinho/>
+		<Carrinho count={countPedidosLocal}/>
 	  </div>
     </MenuT>
   );
@@ -362,7 +367,7 @@ const Main = props => {
             Entrar
           </Button>
           <IconButton
-			onClick={handleProfileMenuOpen}
+            onClick={handleProfileMenuOpen}
             aria-label="Account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
@@ -384,7 +389,7 @@ const Main = props => {
           color="primary"
           gutterBottom
         >
-          Onde está a sua fome?
+          Alguma mensagem impactante aqui KKK
         </Typography>
         {/* INPUT */}
         <Paper className={classes.rootinput}>

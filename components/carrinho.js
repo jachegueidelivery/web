@@ -1,6 +1,5 @@
 ﻿import React, { useState, useEffect, createRef } from "react";
 import styled from "styled-components";
-
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,13 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-
-
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
-
-
+//LocalStorage Classe:
 import LocalStorageHandler from "./LocalStorageHandler";
 
 
@@ -86,7 +82,8 @@ const Carrinho = props => {
   }
 	
   const remover = (id) =>{
-	alert('Remover' + id);
+    LocalStorageHandler.removeByIdInArray(id, "products");
+    setData(JSON.parse(localStorage.getItem("products")));
   }
 
   let valorTotal = 0;
@@ -151,12 +148,20 @@ variant="body2" style={{ cursor: 'pointer' }} color="primary" title="Clique para
       {Conteudo}
    <AppBar position="static">
         <Toolbar variant="dense">
-           <Typography variant="h6" color="inherit">
-            <b>VALOR TOTAL R$ {valorTotal.toFixed(2)}</b>
-          </Typography>
-           <Button variant="contained" align="" size="large" color="primary" className={classes.button}>
+ 	<Grid item xs={12} sm container>
+              <Grid item xs>
+                <Typography gutterBottom variant="subtitle1">
+                  <p><b>VALOR TOTAL: R$ {valorTotal.toFixed(2)}</b></p>
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+	<Button variant="contained" align="" size="large"
+	onClick={(ev)=>onConfirmar(ev)}
+ color="primary" className={classes.button}>
        	<b>CONFIRMAR?</b>
-          </Button>
+          	</Button>
+            </Grid>
         </Toolbar>
       </AppBar>
     </React.Fragment>
