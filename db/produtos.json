@@ -78,13 +78,5 @@
     "preco": 18.1,
     "descricao": "Fugiat elit qui consequat sit quis dolor Lorem dolore irure enim nulla aliqua nulla.",
     "imagem": "https://cdn.pixabay.com/photo/2016/07/22/09/59/fruit-1534494__340.jpg"
-  },
-{
-    "id": 10,
-    "empresa_fk_id": 2,
-    "nome": "limão",
-    "preco": 18.1,
-    "descricao": "Fugiat elit qui consequat sit quis dolor Lorem dolore irure enim nulla aliqua nulla.",
-    "imagem": "https://cdn.pixabay.com/photo/2010/12/13/10/05/citrus-2272__340.jpg"
   }
 ]

@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: 128,
-    height: "100%",
+    height: "110.129px",
   },
   img: {
     margin: 'auto',
@@ -52,17 +52,6 @@ const useStyles = makeStyles(theme => ({
 
 ));
 
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 300px;
-  margin: 0px;
-  border: 0px outset pink;
-  &:hover {
-    background-color: #ccc;
-  }
-`;
-
 const Carrinho = props => {
   
   const classes = useStyles();
@@ -86,8 +75,8 @@ const Carrinho = props => {
     setData(JSON.parse(localStorage.getItem("products")));
   }
 
-  let valorTotal = 0;
-  let Conteudo = data.map((produto, _k) => {
+	let valorTotal = 0;
+	let Conteudo = data.map((produto, _k) => {
     let quant = produto.quantidade;
     let valTotal = produto.preco * quant;
     valorTotal += valTotal;
@@ -121,9 +110,9 @@ variant="body2" style={{ cursor: 'pointer' }} color="primary" title="Clique para
 
             </Grid>
             <Grid item>
+			  <Typography variant="subtitle1"><b>Quant:  {quant}</b></Typography>
               <Typography variant="subtitle1"><b>R$  {produto.preco.toFixed(2)}</b></Typography>
-              <Typography variant="subtitle1"><b>R$  {valTotal.toFixed(2)}</b></Typography>
-	<Typography variant="subtitle1"><b>Quant:  {quant}</b></Typography>
+              <Typography variant="subtitle1" title="Valor Total"><b>V.T.: R$  {valTotal.toFixed(2)}</b></Typography>
             </Grid>
           </Grid>
         </Grid>

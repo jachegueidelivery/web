@@ -28,7 +28,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 //Carrinho
 import Carrinho from '../components/carrinho';
 import LocalStorageHandler from "../components/LocalStorageHandler";
-
+import MyMenu from "../components/Menu";
 
 import {
   Menu,
@@ -303,7 +303,9 @@ const Main = props => {
 	
   function handleProfileMenuOpen(event) {
     onAtualizarCount();
-    setAnchorEl(event.currentTarget);
+	if(LocalStorageHandler.count('products')>0){
+		setAnchorEl(event.currentTarget);
+	}
   }
 
   function handleMobileMenuClose() {
@@ -319,24 +321,6 @@ const Main = props => {
   function handleMobileMenuOpen(event) {
     setMobileMoreAnchorEl(event.currentTarget);
   }
-
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <MenuT
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >	
-	  <div style={{padding:10}}>
-		<Carrinho count={countPedidosLocal}/>
-	  </div>
-    </MenuT>
-  );
-	
 
   return (
     <React.Fragment>
@@ -454,7 +438,7 @@ const Main = props => {
       {/* MenuFooter */}
       {Footer(classes)}
       {/* End footer */}
-	   {renderMenu}
+	   <MyMenu anchorEl={anchorEl} handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
     </React.Fragment>
   );
 };
