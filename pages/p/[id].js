@@ -477,6 +477,8 @@ const Index = props => {
 	
 	const [anchorEl, setAnchorEl] = useState(null);
 	
+	const [data, setData] = useState([]);
+	
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 	
 	const [iniciar, setIniciar] = useState(true);
@@ -488,6 +490,8 @@ const Index = props => {
 	const classes = useStyles();
 
 	useEffect(() => {
+		
+		setData(JSON.parse(localStorage.getItem("products")));
 		
 		onAtualizarCount();
 		if(iniciar == true){
@@ -644,8 +648,8 @@ const Index = props => {
 			{/* Footer */}
 			<Container maxWidth="md" component="footer" className={classes.footer}>
 				<Grid container spacing={4} justify="space-evenly">
-					{Footers.map(footer => (
-						<Grid item xs={6} sm={3} key={footer.title}>
+					{Footers.map((footer,key) => (
+						<Grid item xs={6} sm={3} key={key}>
 							<Typography variant="h6" color="textPrimary" gutterBottom>
 								{footer.title}
 							</Typography>
@@ -664,7 +668,7 @@ const Index = props => {
 				<Box mt={5}>{MadeWithLove(props)}</Box>
 			</Container>
 			{/* End footer */}
-			<MyMenu anchorEl={anchorEl} handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
+			<MyMenu anchorEl={anchorEl} data={data}  handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
 		</React.Fragment>
 	);
 };

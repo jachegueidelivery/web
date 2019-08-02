@@ -10,6 +10,8 @@ const renderMenu = (props) =>{
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
+  
+  const [data, setData] = useState([]);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -21,6 +23,7 @@ const renderMenu = (props) =>{
 
   useEffect(() => {
     onAtualizarCount();
+    //setData(JSON.parse(localStorage.getItem("products")));
   }, []);
 	
   function handleProfileMenuOpen(event) {
@@ -54,7 +57,7 @@ const renderMenu = (props) =>{
       onClose={props.handleMenuClose}
     >	
 	  <div style={{padding:10}}>
-		<Carrinho count={countPedidosLocal}/>
+		<Carrinho count={countPedidosLocal} data={props.data} />
 	  </div>
     </Menu>);
       

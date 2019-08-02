@@ -61,12 +61,10 @@ const Carrinho = props => {
   function onConfirmar() {
     alert("Não implementado");
   }
-
-  useEffect(() => {
+  /*useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
-  }, []);
-
-  if (!data) {
+  }, []);*/
+  if (!props.data) {
     return <><b>Não há produtos ainda</b></>;
   }
 	
@@ -76,10 +74,16 @@ const Carrinho = props => {
   }
 
 	let valorTotal = 0;
-	let Conteudo = data.map((produto, _k) => {
+	
+	//Objeto
+	let Conteudo = props.data.map((produto, _k) => {
+		
     let quant = produto.quantidade;
+	
     let valTotal = produto.preco * quant;
+	
     valorTotal += valTotal;
+	
     return (
       <React.Fragment key={_k}>
       <Paper className={classes.paper}>

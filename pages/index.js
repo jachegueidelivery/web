@@ -286,6 +286,8 @@ const Main = props => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
+  
+  const [data, setData] = useState([]);
 
   const classes = useStyles();
 
@@ -299,6 +301,7 @@ const Main = props => {
 
   useEffect(() => {
     onAtualizarCount();
+	setData(JSON.parse(localStorage.getItem("products")));
   }, []);
 	
   function handleProfileMenuOpen(event) {
@@ -438,7 +441,7 @@ const Main = props => {
       {/* MenuFooter */}
       {Footer(classes)}
       {/* End footer */}
-	   <MyMenu anchorEl={anchorEl} handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
+	   <MyMenu anchorEl={anchorEl} data={data} handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
     </React.Fragment>
   );
 };
