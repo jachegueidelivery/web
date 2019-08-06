@@ -1,4 +1,4 @@
-﻿import React, {useState, useEffect} from "react";
+﻿import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
@@ -21,12 +21,12 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import fetch from "isomorphic-unfetch";
 import Footers from "../components/footer";
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuT from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuT from "@material-ui/core/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
 
 //Carrinho
-import Carrinho from '../components/carrinho';
+import Carrinho from "../components/carrinho";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 
@@ -180,11 +180,11 @@ const useStyles = makeStyles(theme => ({
   rightIcon: {
     marginLeft: theme.spacing(1)
   },
-  hoverUp:{
-    border:"5px solid red !important"
+  hoverUp: {
+    border: "5px solid red !important"
   },
-  hoverDown:{
-    border:"0px solid red !important"
+  hoverDown: {
+    border: "0px solid red !important"
   }
 }));
 
@@ -248,9 +248,10 @@ function MostrarEmpresas(props, classes) {
           }}
         >
           {empresa.nome_fantasia != null && (
-            <Card className={classes.card}
-            onMouseOut={ev => mouseOutStyle(ev, empresa.id)}
-            onMouseOver={ev => mouseOverStyle(ev, empresa.id)}
+            <Card
+              className={classes.card}
+              onMouseOut={ev => mouseOutStyle(ev, empresa.id)}
+              onMouseOver={ev => mouseOverStyle(ev, empresa.id)}
             >
               <CardMedia
                 className={classes.cardMedia}
@@ -277,38 +278,36 @@ function MostrarEmpresas(props, classes) {
 }
 
 /*
-*/
+ */
 
 const Main = props => {
-
+  
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
-  
+
   const [data, setData] = useState([]);
 
   const classes = useStyles();
 
   const isMenuOpen = Boolean(anchorEl);
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  function onAtualizarCount(){
-   setCountPedidosLocal(LocalStorageHandler.count('products'));
+  function onAtualizarCount() {
+    setCountPedidosLocal(LocalStorageHandler.count("products"));
   }
 
   useEffect(() => {
+    setData(JSON.parse(localStorage.getItem("products")));
     onAtualizarCount();
-	setData(JSON.parse(localStorage.getItem("products")));
-  }, []);
-	
+  });
+
   function handleProfileMenuOpen(event) {
     onAtualizarCount();
-	if(LocalStorageHandler.count('products')>0){
-		setAnchorEl(event.currentTarget);
-	}
+    if (LocalStorageHandler.count("products") > 0) {
+      setAnchorEl(event.currentTarget);
+    }
   }
 
   function handleMobileMenuClose() {
@@ -319,10 +318,6 @@ const Main = props => {
     onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
-  }
-
-  function handleMobileMenuOpen(event) {
-    setMobileMoreAnchorEl(event.currentTarget);
   }
 
   return (
@@ -360,7 +355,11 @@ const Main = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <Badge className={classes.margin} badgeContent={countPedidosLocal} color="primary">
+            <Badge
+              className={classes.margin}
+              badgeContent={countPedidosLocal}
+              color="primary"
+            >
               <ShoppingCartOutlined />
             </Badge>
           </IconButton>
@@ -441,7 +440,12 @@ const Main = props => {
       {/* MenuFooter */}
       {Footer(classes)}
       {/* End footer */}
-	   <MyMenu anchorEl={anchorEl} data={data} handleMenuClose={handleMenuClose} abrir={isMenuOpen} />
+      <MyMenu
+        anchorEl={anchorEl}
+        data={data}
+        handleMenuClose={handleMenuClose}
+        abrir={isMenuOpen}
+      />
     </React.Fragment>
   );
 };
