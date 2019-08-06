@@ -7,21 +7,19 @@
     "byName": {
       "commons": 0,
       "static/runtime/webpack.js": 1,
-      "static/runtime/main.js": 3,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\Clock.js": 4,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\_app.js": 5,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\_error.js": 6,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\car.js": 7,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\home.js": 8,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\index.js": 9,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\p\\[id].js": 10,
-      "static\\15VEbfuPugdNYxXZH_vml\\pages\\teste.js": 11
+      "static/runtime/main.js": 2,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\Clock.js": 3,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\_app.js": 4,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\_error.js": 5,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\car.js": 6,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\home.js": 7,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\index.js": 8,
+      "static\\gJ4ImHlWflyGQ13f_JBJi\\pages\\p\\[id].js": 9
     },
     "bySource": {
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../db/empresas.json": 2,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/teste.js ../db/empresas.json": 2,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/config.dev.json": 12,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/produtos.json": 13
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/config.dev.json": 10,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../db/empresas.json": 11,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/p/[id].js ../../db/produtos.json": 12
     },
     "usedIds": [
       0,
@@ -29,7 +27,6 @@
       10,
       11,
       12,
-      13,
       2,
       3,
       4,

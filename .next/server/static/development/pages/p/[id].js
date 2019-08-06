@@ -262,11 +262,15 @@ function () {
     value: function remove(keyOrIndex) {
       var result = false;
       var key = typeof keyOrIndex === 'number' ? this.key(keyOrIndex) : keyOrIndex;
+      var data = localStorage;
 
-      if (key in this._ls) {
+      if (data === null) {
+        return 'KEY_NOT_EXISTS';
+      }
+
+      if (key in localStorage) {
         result = true;
-
-        this._ls.removeItem(key);
+        localStorage.removeItem(key);
       }
 
       return result;
@@ -337,7 +341,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carrinho__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carrinho */ "./components/carrinho.js");
 /* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
 
-var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\components\\Menu.js";
+var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\components\\Menu.js";
 
 
 
@@ -359,59 +363,31 @@ var renderMenu = function renderMenu(props) {
       countPedidosLocal = _useState6[0],
       setCountPedidosLocal = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
-      _useState8 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState7, 2),
-      data = _useState8[0],
-      setData = _useState8[1];
-
-  var isMenuOpen = Boolean(anchorEl);
-  var isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
   function onAtualizarCount() {
-    setCountPedidosLocal(_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__["default"].count('products'));
+    setCountPedidosLocal(_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__["default"].count("products"));
   }
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    onAtualizarCount(); //setData(JSON.parse(localStorage.getItem("products")));
+    onAtualizarCount();
   }, []);
-
-  function handleProfileMenuOpen(event) {
-    onAtualizarCount();
-    setAnchorEl(event.currentTarget);
-  }
-
-  function handleMobileMenuClose() {
-    setMobileMoreAnchorEl(null);
-  }
-
-  function handleMenuClose() {
-    onAtualizarCount();
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  }
-
-  function handleMobileMenuOpen(event) {
-    setMobileMoreAnchorEl(event.currentTarget);
-  }
-
-  var menuId = 'primary-search-account-menu-dois';
+  var menuId = "primary-search-account-menu-dois";
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_2___default.a, {
     anchorEl: props.anchorEl,
     anchorOrigin: {
-      vertical: 'top',
-      horizontal: 'right'
+      vertical: "top",
+      horizontal: "right"
     },
     id: menuId,
     keepMounted: true,
     transformOrigin: {
-      vertical: 'top',
-      horizontal: 'right'
+      vertical: "top",
+      horizontal: "right"
     },
     open: props.abrir,
     onClose: props.handleMenuClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 24
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -420,7 +396,7 @@ var renderMenu = function renderMenu(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 33
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_carrinho__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -428,7 +404,7 @@ var renderMenu = function renderMenu(props) {
     data: props.data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 34
     },
     __self: this
   })));
@@ -474,7 +450,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_ButtonBase__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ButtonBase__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
 
-var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\components\\carrinho.js";
+var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\components\\carrinho.js";
 
 
 
@@ -535,7 +511,8 @@ var Carrinho = function Carrinho(props) {
       setData = _useState2[1];
 
   function onConfirmar() {
-    alert("Não implementado");
+    //alert(JSON.stringify(LocalStorageHandler.getDataByKey('products')));
+    _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_13__["default"].remove('products');
   }
   /*useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
@@ -546,7 +523,7 @@ var Carrinho = function Carrinho(props) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 71
       },
       __self: this
     }, "N\xE3o h\xE1 produtos ainda"));
@@ -567,14 +544,14 @@ var Carrinho = function Carrinho(props) {
       key: _k,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 91
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_11___default.a, {
       className: classes.paper,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 92
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -582,21 +559,21 @@ var Carrinho = function Carrinho(props) {
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 93
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
       item: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 94
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_ButtonBase__WEBPACK_IMPORTED_MODULE_12___default.a, {
       className: classes.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 95
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -605,7 +582,7 @@ var Carrinho = function Carrinho(props) {
       src: produto.imagem,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 96
       },
       __self: this
     }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -615,7 +592,7 @@ var Carrinho = function Carrinho(props) {
       container: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 99
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -626,7 +603,7 @@ var Carrinho = function Carrinho(props) {
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 100
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -634,7 +611,7 @@ var Carrinho = function Carrinho(props) {
       xs: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 101
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -642,13 +619,13 @@ var Carrinho = function Carrinho(props) {
       variant: "subtitle1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 102
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 103
       },
       __self: this
     }, produto.nome)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -656,14 +633,14 @@ var Carrinho = function Carrinho(props) {
       gutterBottom: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 105
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
       item: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 110
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -679,40 +656,40 @@ var Carrinho = function Carrinho(props) {
       title: "Clique para remover este item do carrinho",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 111
       },
       __self: this
     }, "Remover"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
       item: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 119
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
       variant: "subtitle1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 120
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 120
       },
       __self: this
     }, "Quant:  ", quant)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
       variant: "subtitle1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118
+        lineNumber: 121
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118
+        lineNumber: 121
       },
       __self: this
     }, "R$  ", produto.preco.toFixed(2))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -720,13 +697,13 @@ var Carrinho = function Carrinho(props) {
       title: "Valor Total",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119
+        lineNumber: 122
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119
+        lineNumber: 122
       },
       __self: this
     }, "V.T.: R$  ", valTotal.toFixed(2))))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", {
@@ -736,7 +713,7 @@ var Carrinho = function Carrinho(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 127
       },
       __self: this
     }));
@@ -744,21 +721,21 @@ var Carrinho = function Carrinho(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 133
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default.a, {
     position: "static",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 134
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
     variant: "dense",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 135
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -768,13 +745,13 @@ var Carrinho = function Carrinho(props) {
     "aria-label": "menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 136
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 137
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -782,27 +759,27 @@ var Carrinho = function Carrinho(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 139
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 140
     },
     __self: this
   }, "MEU CARRINHO")))), Conteudo, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default.a, {
     position: "static",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 145
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
     variant: "dense",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 146
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -812,7 +789,7 @@ var Carrinho = function Carrinho(props) {
     container: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 147
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -820,7 +797,7 @@ var Carrinho = function Carrinho(props) {
     xs: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 148
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -828,26 +805,26 @@ var Carrinho = function Carrinho(props) {
     variant: "subtitle1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 149
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 150
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 150
     },
     __self: this
   }, "VALOR TOTAL: R$ ", valorTotal.toFixed(2)))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 154
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -861,13 +838,13 @@ var Carrinho = function Carrinho(props) {
     className: classes.button,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 155
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 158
     },
     __self: this
   }, "CONFIRMAR?"))))));
@@ -1435,9 +1412,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_35___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_35__);
 /* harmony import */ var _material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @material-ui/core/Badge */ "@material-ui/core/Badge");
 /* harmony import */ var _material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36__);
-/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @material-ui/core/Menu */ "@material-ui/core/Menu");
-/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var _components_carrinho__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../components/carrinho */ "./components/carrinho.js");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_37__);
+/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @material-ui/core/Hidden */ "@material-ui/core/Hidden");
+/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38__);
 /* harmony import */ var _components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../components/LocalStorageHandler */ "./components/LocalStorageHandler.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu.js");
 
@@ -1449,8 +1427,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\pages\\p\\[id].js";
-//https://www.robinwieruch.de/react-function-component/
+var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\pages\\p\\[id].js";
+
 
 
 
@@ -1483,7 +1461,6 @@ var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\pages\\p\\[id].js";
 
 
 
-
 console.clear();
 
 function TabPanel(props) {
@@ -1501,14 +1478,14 @@ function TabPanel(props) {
   }, other, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_20___default.a, {
     p: 3,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 49
     },
     __self: this
   }, children));
@@ -1523,7 +1500,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: "simple-tab-".concat(index),
-    'aria-controls': "simple-tabpanel-".concat(index)
+    "aria-controls": "simple-tabpanel-".concat(index)
   };
 }
 
@@ -1534,15 +1511,15 @@ function MadeWithLove(props) {
     align: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 69
     },
     __self: this
-  }, 'Criado por ', react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
+  }, "Criado por ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
     color: "inherit",
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
     },
     __self: this
   }, props.config.empresa));
@@ -1550,27 +1527,31 @@ function MadeWithLove(props) {
 
 var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyles"])(function (theme) {
   return {
-    '@global': {
+    "@global": {
       body: {
-        background: 'url(https://res.cloudinary.com/delivery-com/image/fetch/https%3A%2F%2Fs3.amazonaws.com%2Fs3.delivery.com%2FHomepage%2Fdefault-small.jpg)',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
+        background: "url(https://res.cloudinary.com/delivery-com/image/fetch/https%3A%2F%2Fs3.amazonaws.com%2Fs3.delivery.com%2FHomepage%2Fdefault-small.jpg)",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
       },
       ul: {
         margin: 0,
         padding: 0
       },
       li: {
-        listStyle: 'none'
+        listStyle: "none"
       }
     },
     appBar: {
       borderBottom: "1px solid ".concat(theme.palette.divider)
     },
+    appBarBottom: {
+      top: "auto",
+      bottom: 0
+    },
     toolbar: {
-      flexWrap: 'wrap'
+      flexWrap: "wrap"
     },
     toolbarTitle: {
       flexGrow: 1
@@ -1585,9 +1566,9 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
       backgroundColor: theme.palette.grey[200]
     },
     cardPricing: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'baseline',
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline",
       marginBottom: theme.spacing(2)
     },
     footer: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({
@@ -1595,7 +1576,7 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
       marginTop: theme.spacing(8),
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3)
-    }, theme.breakpoints.up('sm'), {
+    }, theme.breakpoints.up("sm"), {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6)
     }),
@@ -1604,28 +1585,34 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
       paddingBottom: theme.spacing(8)
     },
     card: {
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
+      height: "100%",
+      display: "flex",
+      flexDirection: "column"
     },
     cardMedia: {
-      paddingTop: '56.25%' // 16:9
+      paddingTop: "56.25%" // 16:9
 
     },
     cardMediaList: {
-      paddingTop: '56.25%',
+      paddingTop: "56.25%",
       // 16:9
-      marginRight: '20px'
+      marginRight: "20px"
     },
     cardContent: {
       flexGrow: 1
     },
+    carregando: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center"
+    },
     rootinput: {
       borderRadius: 40,
-      display: 'flex',
-      alignItems: 'center',
-      width: '80%',
-      margin: '0px auto',
+      display: "flex",
+      alignItems: "center",
+      width: "80%",
+      margin: "0px auto",
       paddingLeft: 10,
       paddingRight: 10,
       paddingTop: 5,
@@ -1634,12 +1621,12 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
     textFieldInput: {
       backgroundColor: theme.palette.common.white,
       fontSize: 16,
-      padding: '10px 12px',
-      width: 'calc(100% - 24px)',
-      transition: theme.transitions.create(['border-color', 'box-shadow']),
-      '&:focus': {
-        borderColor: '#80bdff',
-        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)'
+      padding: "10px 12px",
+      width: "calc(100% - 24px)",
+      transition: theme.transitions.create(["border-color", "box-shadow"]),
+      "&:focus": {
+        borderColor: "#80bdff",
+        boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
       }
     },
     input: {
@@ -1658,19 +1645,19 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
     },
     tabContent: {
       backgroundColor: theme.palette.background.paper,
-      width: '100%',
-      position: 'relative',
+      width: "100%",
+      position: "relative",
       minHeight: 600
     },
     fab: {
-      position: 'absolute',
+      position: "absolute",
       bottom: theme.spacing(2),
       right: theme.spacing(2)
     },
     fabGreen: {
       color: theme.palette.common.white,
       backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_29__["green"][500],
-      '&:hover': {
+      "&:hover": {
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_29__["green"][600]
       }
     },
@@ -1682,18 +1669,18 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
       margin: theme.spacing(2)
     },
     details: {
-      display: 'flex',
-      flexDirection: 'column'
+      display: "flex",
+      flexDirection: "column"
     },
     content: {
-      flex: '1 0 auto'
+      flex: "1 0 auto"
     },
     cover: {
       width: 151
     },
     controls: {
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center",
       paddingLeft: theme.spacing(1),
       paddingBottom: theme.spacing(1)
     },
@@ -1702,66 +1689,65 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_18__["makeStyl
       width: 38
     },
     listaProdutos: {
-      boxShadow: '0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      border: '0px solid red',
-      flexDirection: 'row',
+      boxShadow: "0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);",
+      display: "flex",
+      flexWrap: "nowrap",
+      border: "0px solid red",
+      flexDirection: "row",
       height: 160,
       marginTop: 10,
-      backgroundColor: 'rgba(245,245,245,0.8)'
+      backgroundColor: "rgba(245,245,245,0.8)"
     },
     itemAvatar: {
-      width: '20%',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      border: '0px solid lime',
+      width: "20%",
+      display: "flex",
+      flexWrap: "nowrap",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      border: "0px solid lime",
       padding: 4
     },
     itemAvatarImg: {
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      border: '0px solid lime'
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      flexWrap: "nowrap",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      border: "0px solid lime"
     },
     itemContent: {
-      width: '60%',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      alignContent: 'flex-start',
-      alignItems: 'flex-start',
-      border: '0px solid lime',
+      width: "60%",
+      display: "flex",
+      flexWrap: "nowrap",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      alignContent: "flex-start",
+      alignItems: "flex-start",
+      border: "0px solid lime",
       padding: 10
     },
     itemAcoes: {
-      width: '20%',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      border: '0px solid lime',
+      width: "20%",
+      display: "flex",
+      flexWrap: "nowrap",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      border: "0px solid lime",
       padding: 10,
-      textAlign: 'center'
+      textAlign: "center"
     },
     inputQuantidade: {
       border: 0,
       outline: 0,
-      textAlign: 'center',
+      textAlign: "center",
       width: 40
     }
   };
 });
-var totaaaaa = 112;
 /**
  * Component: Produtos
  */
@@ -1777,29 +1763,26 @@ function Produto(props) {
       valorTotal = _useState4[0],
       setValorTotal = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(''),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(""),
       _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState5, 2),
       descricao = _useState6[0],
       setDescricao = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(''),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(""),
       _useState8 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState7, 2),
       observacao = _useState8[0],
       setObservacao = _useState8[1];
 
-  function removeProduct(id) {
-    var storageProducts = JSON.parse(localStorage.getItem('products'));
-    var products = storageProducts.filter(function (product) {
-      return product.id !== id;
-    });
-    localStorage.setItem('products', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(products));
-  }
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(!1),
+      _useState10 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState9, 2),
+      countPedidosLocal = _useState10[0],
+      setCountPedidosLocal = _useState10[1];
 
   function addProduct() {
     var products = [];
 
-    if (localStorage.getItem('products')) {
-      products = JSON.parse(localStorage.getItem('products'));
+    if (localStorage.getItem("products")) {
+      products = JSON.parse(localStorage.getItem("products"));
     } //Desestruturação Javascript
 
 
@@ -1823,7 +1806,7 @@ function Produto(props) {
         preco: precoUnitario,
         descricao: descricao
       });
-      localStorage.setItem('products', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(products));
+      localStorage.setItem("products", _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(products));
     } else {
       products[objIndex].productId = id;
       products[objIndex].quantidade = quantidade + 1;
@@ -1832,14 +1815,13 @@ function Produto(props) {
       products[objIndex].imagem = imagem;
       products[objIndex].preco = precoUnitario;
       products[objIndex].descricao = descricao;
-      localStorage.setItem('products', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(products));
+      localStorage.setItem("products", _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(products));
     }
   }
 
   function add() {
     var quant = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_3___default()(quantidade) + 1;
-    setQuantidade(quant); //props.handleTotal(props.precoUnitario);
-
+    setQuantidade(quant);
     addProduct();
     setValorTotal((props.precoUnitario * quant).toFixed(2));
   }
@@ -1865,13 +1847,14 @@ function Produto(props) {
     setObservacao(ev.target.value);
   }
 
+  Object(react__WEBPACK_IMPORTED_MODULE_9__["useEffect"])(function () {});
   var classes = useStyles();
   return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.root,
     id: props.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 393
+      lineNumber: 392
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -1879,7 +1862,7 @@ function Produto(props) {
     spacing: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 394
+      lineNumber: 393
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -1888,29 +1871,29 @@ function Produto(props) {
     md: 12,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 395
+      lineNumber: 394
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.demo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 396
+      lineNumber: 395
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.listaProdutos,
-    title: 'Clique para entrar em ' + props.nome,
+    title: "Clique para entrar em " + props.nome,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 397
+      lineNumber: 396
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemAvatar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 398
+      lineNumber: 400
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
@@ -1919,63 +1902,63 @@ function Produto(props) {
     src: props.imagem,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 399
+      lineNumber: 401
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 401
+      lineNumber: 407
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 402
+      lineNumber: 408
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 403
+      lineNumber: 409
     },
     __self: this
   }, props.nome)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 405
+      lineNumber: 411
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 406
+      lineNumber: 412
     },
     __self: this
   }, props.descricao)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("sub", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 408
+      lineNumber: 414
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 409
+      lineNumber: 415
     },
     __self: this
   }, "Kg")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_31___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 411
+      lineNumber: 417
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_33___default.a, {
     htmlFor: "my-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 412
+      lineNumber: 418
     },
     __self: this
   }, "Observa\xE7\xE3o:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_32___default.a, {
@@ -1987,44 +1970,44 @@ function Produto(props) {
     "aria-describedby": "my-helper-text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 413
+      lineNumber: 419
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemAcoes,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 423
+      lineNumber: 429
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 424
+      lineNumber: 430
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 425
+      lineNumber: 431
     },
     __self: this
   }, "Pre\xE7o ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 426
+      lineNumber: 432
     },
     __self: this
   }), " ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 426
+      lineNumber: 432
     },
     __self: this
   }, "R$ ", props.precoUnitario)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 428
+      lineNumber: 434
     },
     __self: this
   }, "Quantidade:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_ButtonGroup__WEBPACK_IMPORTED_MODULE_34___default.a, {
@@ -2033,7 +2016,7 @@ function Produto(props) {
     "aria-label": "Split button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 429
+      lineNumber: 435
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2041,7 +2024,7 @@ function Produto(props) {
     disabled: quantidade < 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 430
+      lineNumber: 440
     },
     __self: this
   }, "-"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -2053,7 +2036,7 @@ function Produto(props) {
     className: classes.inputQuantidade,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 433
+      lineNumber: 443
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2065,32 +2048,94 @@ function Produto(props) {
     onClick: add,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 439
+      lineNumber: 449
     },
     __self: this
   }, "+")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 450
+      lineNumber: 460
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_35___default.a, {
     className: classes.chip,
     color: "primary",
-    label: "Valor a pagar".concat('\n\n', "R$ ", valorTotal),
+    label: "Valor a pagar".concat("\n\n", "R$ ", valorTotal),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 451
+      lineNumber: 461
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 456
+      lineNumber: 466
     },
     __self: this
   })))))));
 }
+
+var TotalPedidos = function TotalPedidos(props) {
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(!1),
+      _useState12 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState11, 2),
+      countPedidosLocal = _useState12[0],
+      setCountPedidosLocal = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(!1),
+      _useState14 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState13, 2),
+      carregado = _useState14[0],
+      setCarregado = _useState14[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_9__["useEffect"])(function () {
+    setCarregado(true);
+    setCountPedidosLocal(_components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].count("products"));
+  });
+
+  if (countPedidosLocal <= 0) {
+    return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36___default.a, {
+      badgeContent: 0,
+      color: "primary",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 487
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["ShoppingCartOutlined"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 488
+      },
+      __self: this
+    }));
+  } else {
+    if (!carregado) {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_37___default.a, {
+        disableShrink: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 493
+        },
+        __self: this
+      });
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36___default.a, {
+      badgeContent: countPedidosLocal,
+      color: "primary",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 496
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["ShoppingCartOutlined"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 497
+      },
+      __self: this
+    }));
+  }
+};
 
 var Index = function Index(props) {
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_28__["useRouter"])();
@@ -2110,33 +2155,32 @@ var Index = function Index(props) {
       search = _React$useState6[0],
       setSearch = _React$useState6[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(!1),
-      _useState10 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState9, 2),
-      countPedidosLocal = _useState10[0],
-      setCountPedidosLocal = _useState10[1];
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(null),
-      _useState12 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState11, 2),
-      anchorEl = _useState12[0],
-      setAnchorEl = _useState12[1];
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])([]),
-      _useState14 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState13, 2),
-      data = _useState14[0],
-      setData = _useState14[1];
-
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(null),
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(!1),
       _useState16 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState15, 2),
-      mobileMoreAnchorEl = _useState16[0],
-      setMobileMoreAnchorEl = _useState16[1];
+      countPedidosLocal = _useState16[0],
+      setCountPedidosLocal = _useState16[1];
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(true),
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(null),
       _useState18 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState17, 2),
-      iniciar = _useState18[0],
-      setIniciar = _useState18[1];
+      anchorEl = _useState18[0],
+      setAnchorEl = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])([]),
+      _useState20 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState19, 2),
+      data = _useState20[0],
+      setData = _useState20[1];
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(null),
+      _useState22 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState21, 2),
+      mobileMoreAnchorEl = _useState22[0],
+      setMobileMoreAnchorEl = _useState22[1];
+
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_9__["useState"])(true),
+      _useState24 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState23, 2),
+      iniciar = _useState24[0],
+      setIniciar = _useState24[1];
 
   var isMenuOpen = Boolean(anchorEl);
-  var isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   var classes = useStyles();
   Object(react__WEBPACK_IMPORTED_MODULE_9__["useEffect"])(function () {
     setData(JSON.parse(localStorage.getItem("products")));
@@ -2146,10 +2190,6 @@ var Index = function Index(props) {
       setIniciar(false);
       setProdutosAsObject(props.shows);
     }
-
-    return function () {// Limpa a assinatura antes do componente deixar a tela
-      //subscription.unsubscribe();
-    };
   });
 
   function onChangeInputSearch(ev) {
@@ -2177,7 +2217,7 @@ var Index = function Index(props) {
   }
 
   function onAtualizarCount() {
-    setCountPedidosLocal(_components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].count('products'));
+    setCountPedidosLocal(_components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].count("products"));
   }
 
   function handleChange(event, newValue) {
@@ -2185,8 +2225,10 @@ var Index = function Index(props) {
   }
 
   function handleProfileMenuOpen(event) {
-    onAtualizarCount();
-    setAnchorEl(event.currentTarget);
+    //onAtualizarCount();
+    if (_components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].count("products") > 0) {
+      setAnchorEl(event.currentTarget);
+    }
   }
 
   function handleMobileMenuClose() {
@@ -2194,25 +2236,26 @@ var Index = function Index(props) {
   }
 
   function handleMenuClose() {
-    onAtualizarCount();
+    //onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
   }
 
-  function handleMobileMenuOpen(event) {
-    setMobileMoreAnchorEl(event.currentTarget);
+  function confirmarPedido() {
+    alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(_components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].getDataByKey("products")));
+    _components_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_39__["default"].remove("products");
   }
 
   return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 561
+      lineNumber: 588
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_13___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 562
+      lineNumber: 589
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2222,14 +2265,14 @@ var Index = function Index(props) {
     className: classes.appBar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 564
+      lineNumber: 591
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_15___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 565
+      lineNumber: 597
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2239,27 +2282,35 @@ var Index = function Index(props) {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 566
+      lineNumber: 598
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
     href: "../",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 567
+      lineNumber: 604
     },
     __self: this
-  }, "Delivery ", router.query.id)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
+  }, "Delivery ", router.query.id)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38___default.a, {
+    lgDown: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 606
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    onClick: confirmarPedido,
     href: "#",
     color: "primary",
     variant: "outlined",
     className: classes.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 569
+      lineNumber: 607
     },
     __self: this
-  }, "Sair"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
+  }, "CONFIRMAR PEDIDO")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
     onClick: handleProfileMenuOpen,
     "aria-label": "Account of current user",
     "aria-controls": "menu-appbar",
@@ -2267,43 +2318,34 @@ var Index = function Index(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 572
+      lineNumber: 616
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_36___default.a, {
-    className: classes.margin,
-    badgeContent: countPedidosLocal,
-    color: "primary",
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TotalPedidos, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 579
+      lineNumber: 623
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["ShoppingCartOutlined"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 580
-    },
-    __self: this
-  }))))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
+  })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
     className: classes.cardGrid,
     maxWidth: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 585
+      lineNumber: 627
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 586
+      lineNumber: 628
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
     position: "static",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 588
+      lineNumber: 630
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_25___default.a, {
@@ -2312,7 +2354,7 @@ var Index = function Index(props) {
     "aria-label": "Simple tabs example",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 589
+      lineNumber: 631
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2320,7 +2362,7 @@ var Index = function Index(props) {
   }, a11yProps(0), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 590
+      lineNumber: 636
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2328,7 +2370,7 @@ var Index = function Index(props) {
   }, a11yProps(1), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 591
+      lineNumber: 637
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2336,7 +2378,7 @@ var Index = function Index(props) {
   }, a11yProps(2), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 592
+      lineNumber: 638
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TabPanel, {
@@ -2344,7 +2386,7 @@ var Index = function Index(props) {
     index: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 596
+      lineNumber: 642
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -2353,14 +2395,14 @@ var Index = function Index(props) {
     className: classes.heroContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 597
+      lineNumber: 643
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_21___default.a, {
     className: classes.rootinput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 600
+      lineNumber: 650
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2368,13 +2410,13 @@ var Index = function Index(props) {
     "aria-label": "Menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 601
+      lineNumber: 651
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["Menu"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 602
+      lineNumber: 652
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_22___default.a, {
@@ -2388,18 +2430,18 @@ var Index = function Index(props) {
     },
     value: search,
     inputProps: {
-      'aria-label': 'Search Google Maps'
+      "aria-label": "Search Google Maps"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 604
+      lineNumber: 654
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_23___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 612
+      lineNumber: 662
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2407,13 +2449,13 @@ var Index = function Index(props) {
     "aria-label": "Search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 613
+      lineNumber: 663
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["Search"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 614
+      lineNumber: 664
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2423,22 +2465,50 @@ var Index = function Index(props) {
     component: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 617
+      lineNumber: 667
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 618
+      lineNumber: 673
     },
     __self: this
-  }))), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_2___default()(produtosAsObject).map(function (product, _key) {
+  }))), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_2___default()(produtosAsObject).length <= 0 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    className: classes.carregando,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 677
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_35___default.a, {
+    avatar: react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_37___default.a, {
+      disableShrink: true,
+      size: 20,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 679
+      },
+      __self: this
+    }),
+    label: " Carregando produtos, aguarde, por gentileza... ",
+    className: classes.chip,
+    variant: "outlined",
+    style: {
+      border: 0
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 678
+    },
+    __self: this
+  })), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_2___default()(produtosAsObject).map(function (product, _key) {
     if (product.id != undefined) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, {
         key: _key,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 624
+          lineNumber: 690
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Produto, {
@@ -2450,7 +2520,7 @@ var Index = function Index(props) {
         descricao: product.descricao,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 625
+          lineNumber: 691
         },
         __self: this
       }));
@@ -2462,7 +2532,7 @@ var Index = function Index(props) {
     index: 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 640
+      lineNumber: 706
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TabPanel, {
@@ -2470,16 +2540,78 @@ var Index = function Index(props) {
     index: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 644
+      lineNumber: 710
     },
     __self: this
-  }, "Tab 3")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
+  }, "Tab 3")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    position: "fixed",
+    color: "default",
+    elevation: 0,
+    className: classes.appBarBottom,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 714
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_15___default.a, {
+    className: classes.toolbar,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 720
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
+    variant: "h6",
+    color: "inherit",
+    noWrap: true,
+    className: classes.toolbarTitle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 721
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38___default.a, {
+    lgDown: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 727
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    onClick: confirmarPedido,
+    href: "#",
+    color: "primary",
+    variant: "outlined",
+    className: classes.link,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 728
+    },
+    __self: this
+  }, "CONFIRMAR PEDIDO")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
+    onClick: handleProfileMenuOpen,
+    "aria-label": "Account of current user",
+    "aria-controls": "menu-appbar",
+    "aria-haspopup": "true",
+    color: "inherit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 737
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TotalPedidos, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 744
+    },
+    __self: this
+  })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
     maxWidth: "md",
     component: "footer",
     className: classes.footer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 649
+      lineNumber: 749
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2488,7 +2620,7 @@ var Index = function Index(props) {
     justify: "space-evenly",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 650
+      lineNumber: 750
     },
     __self: this
   }, _components_footer__WEBPACK_IMPORTED_MODULE_30__["default"].map(function (footer, key) {
@@ -2499,7 +2631,7 @@ var Index = function Index(props) {
       key: key,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 652
+        lineNumber: 752
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2508,13 +2640,13 @@ var Index = function Index(props) {
       gutterBottom: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 653
+        lineNumber: 753
       },
       __self: this
     }, footer.title), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 656
+        lineNumber: 756
       },
       __self: this
     }, footer.description.map(function (item) {
@@ -2522,7 +2654,7 @@ var Index = function Index(props) {
         key: item,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 658
+          lineNumber: 758
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -2531,7 +2663,7 @@ var Index = function Index(props) {
         color: "textSecondary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 659
+          lineNumber: 759
         },
         __self: this
       }, item));
@@ -2540,7 +2672,7 @@ var Index = function Index(props) {
     mt: 5,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 668
+      lineNumber: 768
     },
     __self: this
   }, MadeWithLove(props))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_40__["default"], {
@@ -2550,7 +2682,7 @@ var Index = function Index(props) {
     abrir: isMenuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 671
+      lineNumber: 771
     },
     __self: this
   }));
@@ -2606,7 +2738,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\delivery-rsvtelecom-com-br\pages\p\[id].js */"./pages/p/[id].js");
+module.exports = __webpack_require__(/*! D:\node\delivery-rsvtelecom-com-br\pages\p\[id].js */"./pages/p/[id].js");
 
 
 /***/ }),
@@ -2699,6 +2831,17 @@ module.exports = require("@material-ui/core/Chip");
 
 /***/ }),
 
+/***/ "@material-ui/core/CircularProgress":
+/*!*****************************************************!*\
+  !*** external "@material-ui/core/CircularProgress" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/CircularProgress");
+
+/***/ }),
+
 /***/ "@material-ui/core/Container":
 /*!**********************************************!*\
   !*** external "@material-ui/core/Container" ***!
@@ -2751,6 +2894,17 @@ module.exports = require("@material-ui/core/FormControl");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Grid");
+
+/***/ }),
+
+/***/ "@material-ui/core/Hidden":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Hidden" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Hidden");
 
 /***/ }),
 

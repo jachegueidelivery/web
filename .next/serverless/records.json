@@ -10,8 +10,7 @@
       "pages\\car.js": 2,
       "pages\\home.js": 3,
       "pages\\index.js": 4,
-      "pages\\p\\[id].js": 5,
-      "pages\\teste.js": 6
+      "pages\\p\\[id].js": 5
     },
     "bySource": {},
     "usedIds": [
@@ -20,8 +19,7 @@
       2,
       3,
       4,
-      5,
-      6
+      5
     ]
   }
 }

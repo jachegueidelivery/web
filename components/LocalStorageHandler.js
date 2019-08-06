@@ -95,14 +95,22 @@ export default class LocalStorageHandler {
 	 */
 
 	static remove(keyOrIndex) {
+		
 		var result = false;
+		
 		var key = typeof keyOrIndex === 'number' ? this.key(keyOrIndex) : keyOrIndex;
+		
+		let data = localStorage
 
-		if (key in this._ls) {
-			result = true;
-			this._ls.removeItem(key);
+		if (data === null) {
+			return 'KEY_NOT_EXISTS';
 		}
 
+		if (key in localStorage) {
+			result = true;
+			localStorage.removeItem(key);
+		}
+		
 		return result;
 	}
 /**

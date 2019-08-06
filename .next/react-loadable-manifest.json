@@ -3,24 +3,24 @@
     {
       "id": "q93c",
       "name": "./db/config.dev.json",
-      "file": "static/chunks/12.3da61f0c752892ccdcdf.js",
-      "publicPath": "static/chunks/12.3da61f0c752892ccdcdf.js"
+      "file": "static/chunks/10.5430c0bad895b61578e9.js",
+      "publicPath": "static/chunks/10.5430c0bad895b61578e9.js"
     }
   ],
   "../../db/produtos.json": [
     {
       "id": "ATgf",
       "name": "./db/produtos.json",
-      "file": "static/chunks/13.5d411001083574e9b310.js",
-      "publicPath": "static/chunks/13.5d411001083574e9b310.js"
+      "file": "static/chunks/12.7bed831becd2e080e7f6.js",
+      "publicPath": "static/chunks/12.7bed831becd2e080e7f6.js"
     }
   ],
   "../db/empresas.json": [
     {
       "id": "NLn7",
       "name": "./db/empresas.json",
-      "file": "static/chunks/2.221da588a8e0f6a8219b.js",
-      "publicPath": "static/chunks/2.221da588a8e0f6a8219b.js"
+      "file": "static/chunks/11.f8ab1e6dc0a7413648a8.js",
+      "publicPath": "static/chunks/11.f8ab1e6dc0a7413648a8.js"
     }
   ]
 }

@@ -59,11 +59,14 @@ const Carrinho = props => {
   const [data, setData] = useState([]);
 
   function onConfirmar() {
-    alert("Não implementado");
+    //alert(JSON.stringify(LocalStorageHandler.getDataByKey('products')));
+	LocalStorageHandler.remove('products');
   }
+
   /*useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
   }, []);*/
+
   if (!props.data) {
     return <><b>Não há produtos ainda</b></>;
   }
