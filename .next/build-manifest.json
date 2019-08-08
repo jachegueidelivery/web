@@ -1,45 +1,24 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_92fa9139568d8c3d8f78.js",
+    "static/development/dll/dll_92fa9139568d8c3d8f78.js.map"
+  ],
   "pages": {
     "/": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
-    ],
-    "/Clock": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_app": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
-    ],
-    "/car": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
-    ],
-    "/home": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/index": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
-    ],
-    "/p/[id]": [
-      "static/runtime/webpack-52d9562ea21befec773f.js",
-      "static/chunks/commons.6966c6c4eaebb888095d.js",
-      "static/runtime/main-8eb3c993136584fe5427.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

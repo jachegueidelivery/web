@@ -31,6 +31,7 @@ import Hidden from '@material-ui/core/Hidden';
 //Carrinho
 import LocalStorageHandler from "../../components/LocalStorageHandler";
 import MyMenu from "../../components/Menu";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 console.clear();
 
@@ -302,11 +303,19 @@ const useStyles = makeStyles(theme => ({
  * Component: Produtos
  */
 function Produto(props) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10d0ea0f44d770cfd63892f589e2bbf1987c15b2
   const [quantidade, setQuantidade] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
   const [descricao, setDescricao] = useState("");
   const [observacao, setObservacao] = useState("");
   const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
+<<<<<<< HEAD
+=======
+  const matches = useMediaQuery('(min-width:600px)');
+>>>>>>> 10d0ea0f44d770cfd63892f589e2bbf1987c15b2
 
   function addProduct() {
     let products = [];
@@ -384,7 +393,13 @@ function Produto(props) {
     setObservacao(ev.target.value);
   }
 
+<<<<<<< HEAD
   useEffect(() => {});
+=======
+  useEffect(() => {
+console.log(matches);
+});
+>>>>>>> 10d0ea0f44d770cfd63892f589e2bbf1987c15b2
 
   const classes = useStyles();
 
@@ -408,6 +423,7 @@ function Produto(props) {
                 <Typography>
                   <b>{props.nome}</b>
                 </Typography>
+<<<<<<< HEAD
                 <Typography>
                   <span>{props.descricao}</span>
                 </Typography>
@@ -415,6 +431,20 @@ function Produto(props) {
                   <strong>Kg</strong>
                 </sub>
                 <FormControl>
+=======
+	<Grid container wrap="nowrap" title={props.descricao}>
+		<Grid item xs zeroMinWidth>
+                		<Typography noWrap>
+                  			{props.descricao}
+                		</Typography>
+		</Grid>
+	</Grid>
+                <sub>
+                  <strong>Kg</strong>
+                </sub><br/>
+<Grid  container wrap="nowrap">
+                <FormControl fullWidth>
+>>>>>>> 10d0ea0f44d770cfd63892f589e2bbf1987c15b2
                   <InputLabel htmlFor="my-input">Observação:</InputLabel>
                   <Input
                     id="my-input"
@@ -424,7 +454,13 @@ function Produto(props) {
                     value={observacao}
                     aria-describedby="my-helper-text"
                   />
+<<<<<<< HEAD
                 </FormControl>
+=======
+
+                </FormControl>
+</Grid>
+>>>>>>> 10d0ea0f44d770cfd63892f589e2bbf1987c15b2
               </div>
               <div className={classes.itemAcoes}>
                 <br />
