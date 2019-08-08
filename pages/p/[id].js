@@ -31,6 +31,7 @@ import Hidden from '@material-ui/core/Hidden';
 //Carrinho
 import LocalStorageHandler from "../../components/LocalStorageHandler";
 import MyMenu from "../../components/Menu";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 console.clear();
 
@@ -308,6 +309,7 @@ function Produto(props) {
   const [descricao, setDescricao] = useState("");
   const [observacao, setObservacao] = useState("");
   const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
+  const matches = useMediaQuery('(min-width:600px)');
 
   function addProduct() {
     let products = [];
@@ -385,7 +387,9 @@ function Produto(props) {
     setObservacao(ev.target.value);
   }
 
-  useEffect(() => {});
+  useEffect(() => {
+console.log(matches);
+});
 
   const classes = useStyles();
 
