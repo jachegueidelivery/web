@@ -302,6 +302,7 @@ const useStyles = makeStyles(theme => ({
  * Component: Produtos
  */
 function Produto(props) {
+
   const [quantidade, setQuantidade] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
   const [descricao, setDescricao] = useState("");
@@ -408,13 +409,18 @@ function Produto(props) {
                 <Typography>
                   <b>{props.nome}</b>
                 </Typography>
-                <Typography>
-                  <span>{props.descricao}</span>
-                </Typography>
+	<Grid container wrap="nowrap" title={props.descricao}>
+		<Grid item xs zeroMinWidth>
+                		<Typography noWrap>
+                  			{props.descricao}
+                		</Typography>
+		</Grid>
+	</Grid>
                 <sub>
                   <strong>Kg</strong>
-                </sub>
-                <FormControl>
+                </sub><br/>
+<Grid  container wrap="nowrap">
+                <FormControl fullWidth>
                   <InputLabel htmlFor="my-input">Observação:</InputLabel>
                   <Input
                     id="my-input"
@@ -424,7 +430,9 @@ function Produto(props) {
                     value={observacao}
                     aria-describedby="my-helper-text"
                   />
+
                 </FormControl>
+</Grid>
               </div>
               <div className={classes.itemAcoes}>
                 <br />

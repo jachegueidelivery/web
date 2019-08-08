@@ -8,7 +8,6 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-	marginTop:10
   },
   paper: {
     padding: theme.spacing(2),
@@ -22,67 +21,21 @@ const useStyles = makeStyles(theme => ({
   img: {
     margin: 'auto',
     display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    width: '100%',
+    height: '100%',
   },
 }));
 
-const data = [
-  {
-    src:
-      'https://i.ytimg.com/vi/pLqipJNItIo/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBkklsyaw9FxDmMKapyBYCn9tbPNQ',
-    title: 'Don Diablo @ Tomorrowland Main Stage 2019 | Official…',
-    channel: 'Don Diablo',
-    views: '396 k views',
-    createdAt: 'a week ago',
-  },
-  {
-    src:
-      'https://i.ytimg.com/vi/ycHr1G0Gffg/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAS6ZJ5RYa2R3Ksp9d8cLzY_8DMOA',
-    title: 'Top Latino Songs 2019 - Luis Fonsi, Ozuna, Nicky Jam…',
-    channel: 'Dj Yanky Plus',
-    views: '2.1 M views',
-    createdAt: '4 months ago',
-  },
-  {
-    src:
-      'https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw',
-    title: 'Calvin Harris, Sam Smith - Promises (Official Video)',
-    channel: 'Calvin Harris',
-    views: '130 M views',
-    createdAt: '10 months ago',
-  }, 
-  {
-  src:
-      'https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw',
-    title: 'Calvin Harris, Sam Smith - Promises (Official Video)',
-    channel: 'Calvin Harris',
-    views: '130 M views',
-    createdAt: '10 months ago',
-  },
-  {src:
-      'https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw',
-    title: 'Calvin Harris, Sam Smith - Promises (Official Video)',
-    channel: 'Calvin Harris',
-    views: '130 M views',
-    createdAt: '10 months ago',
-  },
-];
-
-function ComplexGrid (props) {
+export default function ComplexGrid() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-			{!props.imagem ? (
-			aaaa
-			) : (
-			<img className={classes.img} alt="complex" src={props.imagem} />
-			)}
+              <img className={classes.img} alt="complex" src="https://material-ui.com/static/images/grid/complex.jpg" />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -92,10 +45,9 @@ function ComplexGrid (props) {
                   Standard license
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  Full resolution 1920x1080 JPEG
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
                 </Typography>
               </Grid>
               <Grid item>
@@ -105,20 +57,11 @@ function ComplexGrid (props) {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
+              <Typography variant="subtitle1">R$ 19.00</Typography>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
     </div>
   );
-}
-
-
-export default function App(){
-	
-	return <>
-	{data.map((item, index)=>(
-				<ComplexGrid key={index} imagem={item.src} />))}
-	</>
 }
