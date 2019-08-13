@@ -8,13 +8,13 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 2,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\Clock.js": 3,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\_app.js": 4,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\_error.js": 5,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\car.js": 6,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\empresa\\[id].js": 7,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\home.js": 8,
-      "static\\ll2ibL7cQzBku0-VN_1Qj\\pages\\index.js": 9
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\Clock.js": 3,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\_app.js": 4,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\_error.js": 5,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\car.js": 6,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\empresa\\[id].js": 7,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\home.js": 8,
+      "static\\RrUIh0fiwoRe9ferD28hJ\\pages\\index.js": 9
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/empresa/[id].js ../../db/config.dev.json": 10,

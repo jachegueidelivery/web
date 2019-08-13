@@ -105,15 +105,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-var apiConfig = {
-  local: {
-    baseURL: "http://127.0.0.1:3333"
-  },
-  server: {
-    baseURL: "https://api.rsvtelecom.com.br"
-  }
-};
-var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig.local);
+
+var os = __webpack_require__(/*! os */ "os");
+
+console.log(os.hostname());
+var apiConfig = [{
+  baseURL: "http://127.0.0.1:3333"
+}, {
+  baseURL: "https://api.rsvtelecom.com.br"
+}];
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[1].baseURL);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),
@@ -2720,6 +2721,17 @@ module.exports = require("core-js/library/fn/parse-int");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "os":
+/*!*********************!*\
+  !*** external "os" ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("os");
 
 /***/ }),
 

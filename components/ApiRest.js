@@ -1,13 +1,17 @@
 import axios from "axios";
+const os = require("os");
 
-const apiConfig = {
-  local: {
+console.log(os.hostname());
+
+const apiConfig = [
+{
     baseURL: "http://127.0.0.1:3333"
   },
-  server: {
+ {
     baseURL: "https://api.rsvtelecom.com.br"
   }
-}
-const instance = axios.create(apiConfig.server);
+];
+
+const instance = axios.create(apiConfig[1].baseURL);
 
 export default instance;
