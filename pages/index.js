@@ -24,10 +24,11 @@ import Chip from "@material-ui/core/Chip";
 
 console.clear();
 
-//Carrinho
+//Meus  Componentes
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 import ApiRest from "../components/ApiRest";
+import SpinnerDelivery from "../components/SpinnerDelivery";
 
 import {
   Menu,
@@ -234,7 +235,6 @@ function MostrarEmpresas(props, classes) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await ApiRest.get("/empresas");
-
       setEmpresas(result.data);
     };
     fetchData();
@@ -255,15 +255,7 @@ function MostrarEmpresas(props, classes) {
   return (
     <Grid container spacing={4}>
       {empresas.length === undefined && (
-        <Grid className={classes.carregando} item xs={12}>
-          <Chip
-            avatar={<CircularProgress disableShrink size={20} />}
-            label=" Carregando empresas, aguarde, por gentileza... "
-            className={classes.chip}
-            variant="outlined"
-            style={{ border: 0 }}
-          />
-        </Grid>
+	<SpinnerDelivery label=" Carregando empresas, aguarde, por gentileza... " />
       )}
       {Object.values(empresas).map((empresa, _key) => (
         <Grid
@@ -312,6 +304,7 @@ function MostrarEmpresas(props, classes) {
  */
 
 const Main = props => {
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);

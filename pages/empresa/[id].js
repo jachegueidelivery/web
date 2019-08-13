@@ -28,10 +28,13 @@ import Chip from "@material-ui/core/Chip";
 import Badge from "@material-ui/core/Badge";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Hidden from "@material-ui/core/Hidden";
-//Carrinho
+
+//Meus Componentes
 import LocalStorageHandler from "../../components/LocalStorageHandler";
 import MyMenu from "../../components/Menu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import ApiRest from "../../components/ApiRest";
+import SpinnerDelivery from "../../components/SpinnerDelivery";
 
 console.clear();
 
@@ -388,7 +391,7 @@ function Produto(props) {
 
   useEffect(() => {
     //console.log(matches);
-
+    
     if(quantidade <=0 || isNaN(parseInt(quantidade))){
       setValorTotal(0);
       setQuantidade(0);
@@ -514,7 +517,9 @@ const TotalPedidos = props => {
     );
   }
 };
+
 const Index = props => {
+
   const router = useRouter();
 
   const [value, setValue] = React.useState(0);
@@ -535,6 +540,10 @@ const Index = props => {
 
   const isMenuOpen = Boolean(anchorEl);
 
+  const [empresa, setEmpresa] = useState({ config: [] });
+
+  const [nome_fantasia, setNomeFantasia] = useState("Carregando...");
+
   const classes = useStyles();
 
   useEffect(() => {
@@ -545,6 +554,23 @@ const Index = props => {
       setProdutosAsObject(props.shows);
     }
   });
+
+  useEffect(() => {
+let id = router.query.id;
+     console.log(id);
+    const fetchData = async () => {
+      const result = await ApiRest.get("/empresas/" + id);
+      setEmpresa(result.data);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+	if(!empresa.config){
+	setNomeFantasia(empresa["0"].nome_fantasia);
+	}
+	
+});
 
   function onChangeInputSearch(ev) {
     let valor = ev.target.value;
@@ -616,7 +642,7 @@ const Index = props => {
             noWrap
             className={classes.toolbarTitle}
           >
-            <Link href="../">{router.query.id}</Link>
+            <Link href="../">{nome_fantasia}</Link>
           </Typography>
           <Hidden lgDown>
             <Button
@@ -690,15 +716,7 @@ const Index = props => {
             </Typography>
           </Container>
           {Object.values(produtosAsObject).length <= 0 && (
-            <Grid className={classes.carregando}>
-              <Chip
-                avatar={<CircularProgress disableShrink size={20} />}
-                label=" Carregando produtos, aguarde, por gentileza... "
-                className={classes.chip}
-                variant="outlined"
-                style={{ border: 0 }}
-              />
-            </Grid>
+	<SpinnerDelivery label="Carregando produtos, aguarde, por gentileza..." />
           )}
           {Object.values(produtosAsObject).map((product, _key) => {
             if (product.id != undefined) {
@@ -720,7 +738,7 @@ const Index = props => {
         </TabPanel>
         {/* TAB 2 */}
         <TabPanel value={value} index={1}>
-          {/*<Carrinho />*/}
+         Tab 2
         </TabPanel>
         {/* TAB 3 */}
         <TabPanel value={value} index={2}>
