@@ -8,6 +8,6 @@ const apiConfig = {
     baseURL: "https://api.rsvtelecom.com.br"
   }
 }
-const instance = axios.create(apiConfig.local);
+const instance = axios.create(apiConfig.server);
 
 export default instance;

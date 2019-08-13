@@ -17147,7 +17147,7 @@ var private_dot_next_react_loadable_manifest_json__WEBPACK_IMPORTED_MODULE_4___n
         buildManifest: private_dot_next_build_manifest_json__WEBPACK_IMPORTED_MODULE_3__,
         reactLoadableManifest: private_dot_next_react_loadable_manifest_json__WEBPACK_IMPORTED_MODULE_4__,
         canonicalBase: "",
-        buildId: "So0judK4WNxGo9bQaiZMK",
+        buildId: "K72tes4M8qwmeXiOQ3PPt",
         dynamicBuildId: false,
         assetPrefix: "",
         ampBindInitData: false
