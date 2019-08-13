@@ -1,18 +1,18 @@
 {
-  "../db/empresas.json": [
+  "../../db/config.dev.json": [
     {
-      "id": "./db/empresas.json",
-      "name": "./db/empresas.json",
-      "file": "static/chunks/1.js",
-      "publicPath": "static/chunks/1.js"
+      "id": "q93c",
+      "name": "./db/config.dev.json",
+      "file": "static/chunks/10.5430c0bad895b61578e9.js",
+      "publicPath": "static/chunks/10.5430c0bad895b61578e9.js"
     }
   ],
-  "./dev/noop": [
+  "../../db/produtos.json": [
     {
-      "id": "./node_modules/next/dist/client/dev/noop.js",
-      "name": "./node_modules/next/dist/client/dev/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
+      "id": "ATgf",
+      "name": "./db/produtos.json",
+      "file": "static/chunks/11.f691dfbe8df901d40db5.js",
+      "publicPath": "static/chunks/11.f691dfbe8df901d40db5.js"
     }
   ]
 }

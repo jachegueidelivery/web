@@ -8,7 +8,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Icon from "@material-ui/core/Icon";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -19,16 +18,16 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import fetch from "isomorphic-unfetch";
 import Footers from "../components/footer";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuT from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Chip from "@material-ui/core/Chip";
+
+console.clear();
 
 //Carrinho
-import Carrinho from "../components/carrinho";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
+import ApiRest from "../components/ApiRest";
 
 import {
   Menu,
@@ -149,6 +148,12 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 5,
     paddingBottom: 5
   },
+  carregando: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   textFieldInput: {
     backgroundColor: theme.palette.common.white,
     fontSize: 16,
@@ -223,6 +228,20 @@ function Footer(classes) {
  * Mostra os ícones das empresas
  */
 function MostrarEmpresas(props, classes) {
+
+  const [empresas, setEmpresas] = useState({ hits: [] });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await ApiRest.get("/empresas");
+
+      setEmpresas(result.data);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {});
+
   function mouseOverStyle(ev) {
     ev.preventDefault();
     ev.target.classList.add("hoverUp");
@@ -232,9 +251,21 @@ function MostrarEmpresas(props, classes) {
     ev.preventDefault();
     ev.target.classList.remove("hoverDown");
   }
+
   return (
     <Grid container spacing={4}>
-      {Object.values(props.shows).map((empresa, _key) => (
+      {empresas.length === undefined && (
+        <Grid className={classes.carregando} item xs={12}>
+          <Chip
+            avatar={<CircularProgress disableShrink size={20} />}
+            label=" Carregando empresas, aguarde, por gentileza... "
+            className={classes.chip}
+            variant="outlined"
+            style={{ border: 0 }}
+          />
+        </Grid>
+      )}
+      {Object.values(empresas).map((empresa, _key) => (
         <Grid
           item
           key={_key}
@@ -244,7 +275,7 @@ function MostrarEmpresas(props, classes) {
           md={4}
           className={classes._grid}
           onClick={() => {
-            window.location = "/p/" + empresa.id;
+            window.location = "/empresa/" + empresa.url.toLowerCase();
           }}
         >
           {empresa.nome_fantasia != null && (
@@ -281,7 +312,6 @@ function MostrarEmpresas(props, classes) {
  */
 
 const Main = props => {
-  
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -334,7 +364,7 @@ const Main = props => {
         <Toolbar className={classes.toolbar}>
           <Typography
             variant="h6"
-            color="primary"
+            color="textPrimary"
             noWrap
             className={classes.toolbarTitle}
           >
@@ -342,7 +372,7 @@ const Main = props => {
           </Typography>
           <Button
             href="#"
-            color="primary"
+            color="textPrimary"
             variant="outlined"
             className={classes.link}
           >
@@ -372,7 +402,7 @@ const Main = props => {
           component="h4"
           variant="h4"
           align="center"
-          color="primary"
+          color="textPrimary"
           gutterBottom
         >
           Alguma mensagem impactante aqui KKK
@@ -410,7 +440,7 @@ const Main = props => {
           <Toolbar className={classes.toolbar2}>
             <Typography
               variant="h6"
-              color="primary"
+              color="textPrimary"
               noWrap
               className={classes.toolbarTitle}
             />
@@ -418,7 +448,7 @@ const Main = props => {
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="primary"
+              color="textPrimary"
             >
               <GridOn />
             </IconButton>
@@ -427,7 +457,7 @@ const Main = props => {
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="primary"
+              color="textPrimary"
             >
               <ReorderRounded />
             </IconButton>
@@ -448,13 +478,6 @@ const Main = props => {
       />
     </React.Fragment>
   );
-};
-
-Main.getInitialProps = async function() {
-  const data = await import("../db/empresas.json");
-  return {
-    shows: data
-  };
 };
 
 export default Main;
