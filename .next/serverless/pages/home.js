@@ -24853,7 +24853,7 @@ IndexPage.propTypes = {
         buildManifest: build_manifest,
         reactLoadableManifest: react_loadable_manifest,
         canonicalBase: "",
-        buildId: "RrUIh0fiwoRe9ferD28hJ",
+        buildId: "4AzHTTMa0sF4ydIl_2zO6",
         dynamicBuildId: false,
         assetPrefix: "",
         ampBindInitData: false
