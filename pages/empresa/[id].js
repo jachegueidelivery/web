@@ -387,8 +387,7 @@ function Produto(props) {
   }
 
   useEffect(() => {
-    //console.log(matches);
-    
+
     if(quantidade <=0 || isNaN(parseInt(quantidade))){
       setValorTotal(0);
       setQuantidade(0);

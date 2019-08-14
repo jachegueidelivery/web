@@ -375,7 +375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carrinho__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carrinho */ "./components/carrinho.js");
 /* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
 
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\components\\Menu.js";
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\components\\Menu.js";
 
 
 
@@ -485,7 +485,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/Avatar */ "@material-ui/core/Avatar");
 /* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_13__);
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\components\\SpinnerDelivery.js";
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\components\\SpinnerDelivery.js";
 
 
 
@@ -584,7 +584,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_ButtonBase__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ButtonBase__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
 
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\components\\carrinho.js";
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\components\\carrinho.js";
 
 
 
@@ -1565,7 +1565,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery-rsvtelecom-com-br\\pages\\empresa\\[id].js";
+var _jsxFileName = "E:\\delivery-rsvtelecom-com-br\\pages\\empresa\\[id].js";
 
 
 
@@ -1990,7 +1990,6 @@ function Produto(props) {
   }
 
   Object(react__WEBPACK_IMPORTED_MODULE_9__["useEffect"])(function () {
-    //console.log(matches);
     if (quantidade <= 0 || isNaN(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_3___default()(quantidade))) {
       setValorTotal(0);
       setQuantidade(0);
@@ -2002,7 +2001,7 @@ function Produto(props) {
     id: props.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 401
+      lineNumber: 400
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2010,7 +2009,7 @@ function Produto(props) {
     spacing: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 402
+      lineNumber: 401
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2019,14 +2018,14 @@ function Produto(props) {
     md: 12,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 403
+      lineNumber: 402
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.demo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 404
+      lineNumber: 403
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
@@ -2034,14 +2033,14 @@ function Produto(props) {
     title: "Clique para entrar em " + props.nome,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 405
+      lineNumber: 404
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemAvatar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 409
+      lineNumber: 408
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
@@ -2050,26 +2049,26 @@ function Produto(props) {
     src: props.imagem,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 410
+      lineNumber: 409
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 416
+      lineNumber: 415
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 417
+      lineNumber: 416
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 418
+      lineNumber: 417
     },
     __self: this
   }, props.nome)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2078,7 +2077,7 @@ function Produto(props) {
     title: props.descricao,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 420
+      lineNumber: 419
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2087,32 +2086,32 @@ function Produto(props) {
     zeroMinWidth: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 421
+      lineNumber: 420
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     noWrap: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 422
+      lineNumber: 421
     },
     __self: this
   }, props.descricao))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("sub", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 425
+      lineNumber: 424
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 426
+      lineNumber: 425
     },
     __self: this
   }, "Kg")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 428
+      lineNumber: 427
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2120,21 +2119,21 @@ function Produto(props) {
     wrap: "nowrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 429
+      lineNumber: 428
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_31___default.a, {
     fullWidth: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 430
+      lineNumber: 429
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_33___default.a, {
     htmlFor: "my-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 431
+      lineNumber: 430
     },
     __self: this
   }, "Observa\xE7\xE3o:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_32___default.a, {
@@ -2146,44 +2145,44 @@ function Produto(props) {
     "aria-describedby": "my-helper-text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 432
+      lineNumber: 431
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     className: classes.itemAcoes,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 443
+      lineNumber: 442
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 444
+      lineNumber: 443
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 445
+      lineNumber: 444
     },
     __self: this
   }, "Pre\xE7o ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 446
+      lineNumber: 445
     },
     __self: this
   }), " ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("b", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 446
+      lineNumber: 445
     },
     __self: this
   }, "R$ ", props.precoUnitario)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 448
+      lineNumber: 447
     },
     __self: this
   }, "Quantidade:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_ButtonGroup__WEBPACK_IMPORTED_MODULE_34___default.a, {
@@ -2194,7 +2193,7 @@ function Produto(props) {
     "aria-label": "Split button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 449
+      lineNumber: 448
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2202,7 +2201,7 @@ function Produto(props) {
     disabled: quantidade < 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 456
+      lineNumber: 455
     },
     __self: this
   }, "-"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -2214,7 +2213,7 @@ function Produto(props) {
     className: classes.inputQuantidade,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 459
+      lineNumber: 458
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2226,13 +2225,13 @@ function Produto(props) {
     onClick: add,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 465
+      lineNumber: 464
     },
     __self: this
   }, "+")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 476
+      lineNumber: 475
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Chip__WEBPACK_IMPORTED_MODULE_35___default.a, {
@@ -2241,13 +2240,13 @@ function Produto(props) {
     label: "Valor a pagar".concat("\n\n", "R$ ", valorTotal),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 477
+      lineNumber: 476
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 482
+      lineNumber: 481
     },
     __self: this
   })))))));
@@ -2275,13 +2274,13 @@ var TotalPedidos = function TotalPedidos(props) {
       color: "primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 504
+        lineNumber: 503
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["ShoppingCartOutlined"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 505
+        lineNumber: 504
       },
       __self: this
     }));
@@ -2291,7 +2290,7 @@ var TotalPedidos = function TotalPedidos(props) {
         disableShrink: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 510
+          lineNumber: 509
         },
         __self: this
       });
@@ -2302,13 +2301,13 @@ var TotalPedidos = function TotalPedidos(props) {
       color: "primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 513
+        lineNumber: 512
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["ShoppingCartOutlined"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 514
+        lineNumber: 513
       },
       __self: this
     }));
@@ -2482,13 +2481,13 @@ var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 628
+      lineNumber: 627
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_13___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 629
+      lineNumber: 628
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2498,14 +2497,14 @@ var Index = function Index(props) {
     className: classes.appBar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 631
+      lineNumber: 630
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_15___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 637
+      lineNumber: 636
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2515,21 +2514,21 @@ var Index = function Index(props) {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 638
+      lineNumber: 637
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
     href: "../",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 644
+      lineNumber: 643
     },
     __self: this
   }, nome_fantasia)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38___default.a, {
     lgDown: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 646
+      lineNumber: 645
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2540,7 +2539,7 @@ var Index = function Index(props) {
     className: classes.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 647
+      lineNumber: 646
     },
     __self: this
   }, "CONFIRMAR PEDIDO")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2551,13 +2550,13 @@ var Index = function Index(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 657
+      lineNumber: 656
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TotalPedidos, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 664
+      lineNumber: 663
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -2565,20 +2564,20 @@ var Index = function Index(props) {
     maxWidth: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 668
+      lineNumber: 667
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 669
+      lineNumber: 668
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
     position: "static",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 671
+      lineNumber: 670
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_25___default.a, {
@@ -2587,7 +2586,7 @@ var Index = function Index(props) {
     "aria-label": "Simple tabs example",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 672
+      lineNumber: 671
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2595,7 +2594,7 @@ var Index = function Index(props) {
   }, a11yProps(0), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 677
+      lineNumber: 676
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2603,7 +2602,7 @@ var Index = function Index(props) {
   }, a11yProps(1), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 678
+      lineNumber: 677
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_26___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -2611,7 +2610,7 @@ var Index = function Index(props) {
   }, a11yProps(2), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 679
+      lineNumber: 678
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TabPanel, {
@@ -2619,7 +2618,7 @@ var Index = function Index(props) {
     index: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 683
+      lineNumber: 682
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -2628,14 +2627,14 @@ var Index = function Index(props) {
     className: classes.heroContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 684
+      lineNumber: 683
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_21___default.a, {
     className: classes.rootinput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 691
+      lineNumber: 690
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2643,13 +2642,13 @@ var Index = function Index(props) {
     "aria-label": "Menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 692
+      lineNumber: 691
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["Menu"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 693
+      lineNumber: 692
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_22___default.a, {
@@ -2667,14 +2666,14 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 695
+      lineNumber: 694
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_23___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 703
+      lineNumber: 702
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2682,13 +2681,13 @@ var Index = function Index(props) {
     "aria-label": "Search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 704
+      lineNumber: 703
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_27__["Search"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 705
+      lineNumber: 704
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2698,20 +2697,20 @@ var Index = function Index(props) {
     component: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 708
+      lineNumber: 707
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 714
+      lineNumber: 713
     },
     __self: this
   }))), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(produtosAsObject).length <= 0 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_SpinnerDelivery__WEBPACK_IMPORTED_MODULE_43__["default"], {
     label: "Carregando produtos, aguarde, por gentileza...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 718
+      lineNumber: 717
     },
     __self: this
   }), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(produtosAsObject).map(function (product, _key) {
@@ -2720,7 +2719,7 @@ var Index = function Index(props) {
         key: _key,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 723
+          lineNumber: 722
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Produto, {
@@ -2732,7 +2731,7 @@ var Index = function Index(props) {
         descricao: product.descricao,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 724
+          lineNumber: 723
         },
         __self: this
       }));
@@ -2744,7 +2743,7 @@ var Index = function Index(props) {
     index: 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 739
+      lineNumber: 738
     },
     __self: this
   }, "Tab 2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TabPanel, {
@@ -2752,7 +2751,7 @@ var Index = function Index(props) {
     index: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 743
+      lineNumber: 742
     },
     __self: this
   }, "Tab 3")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2762,14 +2761,14 @@ var Index = function Index(props) {
     className: classes.appBarBottom,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 747
+      lineNumber: 746
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_15___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 753
+      lineNumber: 752
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2779,14 +2778,14 @@ var Index = function Index(props) {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 754
+      lineNumber: 753
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_38___default.a, {
     lgDown: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 760
+      lineNumber: 759
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2797,7 +2796,7 @@ var Index = function Index(props) {
     className: classes.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 761
+      lineNumber: 760
     },
     __self: this
   }, "CONFIRMAR PEDIDO")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_24___default.a, {
@@ -2808,13 +2807,13 @@ var Index = function Index(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 771
+      lineNumber: 770
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TotalPedidos, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 778
+      lineNumber: 777
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -2823,7 +2822,7 @@ var Index = function Index(props) {
     className: classes.footer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 783
+      lineNumber: 782
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -2832,7 +2831,7 @@ var Index = function Index(props) {
     justify: "space-evenly",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 784
+      lineNumber: 783
     },
     __self: this
   }, _components_footer__WEBPACK_IMPORTED_MODULE_30__["default"].map(function (footer, key) {
@@ -2843,7 +2842,7 @@ var Index = function Index(props) {
       key: key,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 786
+        lineNumber: 785
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -2852,13 +2851,13 @@ var Index = function Index(props) {
       gutterBottom: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 787
+        lineNumber: 786
       },
       __self: this
     }, footer.title), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 790
+        lineNumber: 789
       },
       __self: this
     }, footer.description.map(function (item) {
@@ -2866,7 +2865,7 @@ var Index = function Index(props) {
         key: item,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 792
+          lineNumber: 791
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -2875,7 +2874,7 @@ var Index = function Index(props) {
         color: "textSecondary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 793
+          lineNumber: 792
         },
         __self: this
       }, item));
@@ -2884,7 +2883,7 @@ var Index = function Index(props) {
     mt: 5,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 802
+      lineNumber: 801
     },
     __self: this
   }, MadeWithLove(props))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_41__["default"], {
@@ -2894,7 +2893,7 @@ var Index = function Index(props) {
     abrir: isMenuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 805
+      lineNumber: 804
     },
     __self: this
   }));
@@ -2950,7 +2949,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\node\delivery-rsvtelecom-com-br\pages\empresa\[id].js */"./pages/empresa/[id].js");
+module.exports = __webpack_require__(/*! E:\delivery-rsvtelecom-com-br\pages\empresa\[id].js */"./pages/empresa/[id].js");
 
 
 /***/ }),

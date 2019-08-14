@@ -5,11 +5,11 @@
   },
   "chunks": {
     "byName": {
-      "pages\\Car.js": 0,
-      "pages\\Clock.js": 1,
-      "pages\\Home.js": 2,
-      "pages\\_error.js": 3,
-      "pages\\empresa\\[id].js": 4,
+      "pages\\Clock.js": 0,
+      "pages\\_error.js": 1,
+      "pages\\car.js": 2,
+      "pages\\empresa\\[id].js": 3,
+      "pages\\home.js": 4,
       "pages\\index.js": 5
     },
     "bySource": {},
