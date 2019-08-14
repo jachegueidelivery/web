@@ -1,7 +1,7 @@
 import axios from "axios";
 const os = require("os");
 
-console.log(os.hostname());
+let index = 'server';
 
 const apiConfig = {
 local: {
@@ -12,6 +12,12 @@ server: {
   }
 };
 
-const instance = axios.create(apiConfig.server);
+if(os.hostname()==='cryptopc'){
+index = 'local';
+}
+
+const instance = axios.create(apiConfig[index]);
 
 export default instance;
+
+

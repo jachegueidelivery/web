@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect, Fragment } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
@@ -19,22 +19,13 @@ import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Footers from "../components/footer";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Chip from "@material-ui/core/Chip";
-
-console.clear();
-
-//Meus  Componentes
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 import ApiRest from "../components/ApiRest";
 import SpinnerDelivery from "../components/SpinnerDelivery";
-
 import {
   Menu,
   Search,
-  AccountCircle,
-  Mail,
   GridOn,
   ReorderRounded,
   ShoppingCartOutlined
@@ -240,8 +231,6 @@ function MostrarEmpresas(props, classes) {
     fetchData();
   }, []);
 
-  useEffect(() => {});
-
   function mouseOverStyle(ev) {
     ev.preventDefault();
     ev.target.classList.add("hoverUp");
@@ -253,10 +242,13 @@ function MostrarEmpresas(props, classes) {
   }
 
   return (
-    <Grid container spacing={4}>
-      {empresas.length === undefined && (
+<Fragment>
+   {empresas.length === undefined && (
 	<SpinnerDelivery label=" Carregando empresas, aguarde, por gentileza... " />
       )}
+
+    <Grid container spacing={2}>
+ 
       {Object.values(empresas).map((empresa, _key) => (
         <Grid
           item
@@ -297,6 +289,7 @@ function MostrarEmpresas(props, classes) {
         </Grid>
       ))}
     </Grid>
+</Fragment>
   );
 }
 
@@ -365,7 +358,7 @@ const Main = props => {
           </Typography>
           <Button
             href="#"
-            color="textPrimary"
+            color="primary"
             variant="outlined"
             className={classes.link}
           >
@@ -441,7 +434,7 @@ const Main = props => {
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="textPrimary"
+              color="primary"
             >
               <GridOn />
             </IconButton>
@@ -450,7 +443,7 @@ const Main = props => {
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="textPrimary"
+              color="primary"
             >
               <ReorderRounded />
             </IconButton>

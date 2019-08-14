@@ -28,15 +28,12 @@ import Chip from "@material-ui/core/Chip";
 import Badge from "@material-ui/core/Badge";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Hidden from "@material-ui/core/Hidden";
-
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 //Meus Componentes
 import LocalStorageHandler from "../../components/LocalStorageHandler";
 import MyMenu from "../../components/Menu";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ApiRest from "../../components/ApiRest";
 import SpinnerDelivery from "../../components/SpinnerDelivery";
-
-console.clear();
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -450,6 +447,8 @@ function Produto(props) {
                 </Typography>
                 <small>Quantidade:</small>
                 <ButtonGroup
+                  disableFocusRipple={true}
+                  size="small" 
                   variant="contained"
                   color="primary"
                   aria-label="Split button"
