@@ -109,6 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 var os = __webpack_require__(/*! os */ "os");
 
 var index = 'server';
+console.log(os.hostname());
 var apiConfig = {
   local: {
     baseURL: "http://127.0.0.1:3333"
@@ -118,7 +119,7 @@ var apiConfig = {
   }
 };
 
-if (os.hostname() === 'cryptopc') {
+if (os.hostname() === 'cryptopc' || os.hostname() === 'saude') {
   index = 'local';
 }
 

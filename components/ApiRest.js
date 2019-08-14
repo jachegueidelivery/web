@@ -3,6 +3,9 @@ const os = require("os");
 
 let index = 'server';
 
+console.log(os.hostname());
+
+
 const apiConfig = {
 local: {
     baseURL: "http://127.0.0.1:3333"
@@ -12,8 +15,8 @@ server: {
   }
 };
 
-if(os.hostname()==='cryptopc'){
-index = 'local';
+if(os.hostname() === 'cryptopc' || os.hostname() === 'saude'){
+	index = 'local';
 }
 
 const instance = axios.create(apiConfig[index]);
