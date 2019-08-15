@@ -1,26 +1,22 @@
 import axios from "axios";
 const os = require("os");
 
-let index = 'server';
-
-console.log(os.hostname());
-
+let index = "server";
+let host = os.hostname();
 
 const apiConfig = {
-local: {
+  local: {
     baseURL: "http://127.0.0.1:3333"
   },
-server: {
+  server: {
     baseURL: "https://api.rsvtelecom.com.br"
   }
 };
 
-if(os.hostname() === 'cryptopc' || os.hostname() === 'saude'){
-	index = 'local';
+if (host  === "cryptopc" || host  === "saude") {
+  index = "local";
 }
 
-const instance = axios.create(apiConfig[index]);
+const instance = axios.create(apiConfig['local']);
 
 export default instance;
-
-

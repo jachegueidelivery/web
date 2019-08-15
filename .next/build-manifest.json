@@ -6,7 +6,17 @@
       "static/chunks/commons.71a42f4bbefce731f6b7.js",
       "static/runtime/main-d75b86be54c30a905e52.js"
     ],
+    "/Car": [
+      "static/runtime/webpack-5e178d3cb9a6f0150474.js",
+      "static/chunks/commons.71a42f4bbefce731f6b7.js",
+      "static/runtime/main-d75b86be54c30a905e52.js"
+    ],
     "/Clock": [
+      "static/runtime/webpack-5e178d3cb9a6f0150474.js",
+      "static/chunks/commons.71a42f4bbefce731f6b7.js",
+      "static/runtime/main-d75b86be54c30a905e52.js"
+    ],
+    "/Home": [
       "static/runtime/webpack-5e178d3cb9a6f0150474.js",
       "static/chunks/commons.71a42f4bbefce731f6b7.js",
       "static/runtime/main-d75b86be54c30a905e52.js"
@@ -21,17 +31,7 @@
       "static/chunks/commons.71a42f4bbefce731f6b7.js",
       "static/runtime/main-d75b86be54c30a905e52.js"
     ],
-    "/car": [
-      "static/runtime/webpack-5e178d3cb9a6f0150474.js",
-      "static/chunks/commons.71a42f4bbefce731f6b7.js",
-      "static/runtime/main-d75b86be54c30a905e52.js"
-    ],
     "/empresa/[id]": [
-      "static/runtime/webpack-5e178d3cb9a6f0150474.js",
-      "static/chunks/commons.71a42f4bbefce731f6b7.js",
-      "static/runtime/main-d75b86be54c30a905e52.js"
-    ],
-    "/home": [
       "static/runtime/webpack-5e178d3cb9a6f0150474.js",
       "static/chunks/commons.71a42f4bbefce731f6b7.js",
       "static/runtime/main-d75b86be54c30a905e52.js"
