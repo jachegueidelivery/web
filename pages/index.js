@@ -46,8 +46,7 @@ function MadeWithLove() {
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
-      background:
-        "url(https://res.cloudinary.com/delivery-com/image/fetch/https%3A%2F%2Fs3.amazonaws.com%2Fs3.delivery.com%2FHomepage%2Fdefault-small.jpg)",
+      background: "url(../static/background.jpg)",
       backgroundAttachment: "fixed",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "empresa_fk_id": 3,
+    "empresa_fk_id": 5,
     "nome": "uva",
     "preco": 8.83,
     "descricao": "Sunt laborum ipsum ipsum dolor reprehenderit minim nisi ea id.",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "empresa_fk_id": 3,
+    "empresa_fk_id": 5,
     "nome": "pêssego",
     "preco": 7.97,
     "descricao": "Dolore commodo id consequat consequat laborum.",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "empresa_fk_id": 3,
+    "empresa_fk_id": 5,
     "nome": "maçãs",
     "preco": 9.09,
     "descricao": "Laborum tempor exercitation sunt mollit amet voluptate nostrud nulla Lorem eiusmod cillum do voluptate.",

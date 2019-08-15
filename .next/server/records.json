@@ -1,12 +1,12 @@
 {
   "modules": {
     "byIdentifier": {
-      "multi private-next-pages/Car.js": 0,
-      "multi private-next-pages/Clock.js": 1,
-      "multi private-next-pages/Home.js": 2,
-      "multi private-next-pages/_app.js": 3,
-      "multi private-next-pages/_document.js": 4,
-      "multi private-next-pages/empresa/[id].js": 5,
+      "multi private-next-pages/Clock.js": 0,
+      "multi private-next-pages/_app.js": 1,
+      "multi private-next-pages/_document.js": 2,
+      "multi private-next-pages/car.js": 3,
+      "multi private-next-pages/empresa/[id].js": 4,
+      "multi private-next-pages/home.js": 5,
       "multi private-next-pages/index.js": 6,
       "multi next/dist/pages/_error": 7
     },
@@ -23,14 +23,14 @@
   },
   "chunks": {
     "byName": {
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\Car.js": 0,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\Clock.js": 1,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\Home.js": 2,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\_app.js": 3,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\_document.js": 4,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\_error.js": 5,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\empresa\\[id].js": 6,
-      "static\\4qRWO0hYCA7SS6lSkkGrj\\pages\\index.js": 7
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\Clock.js": 0,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\_app.js": 1,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\_document.js": 2,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\_error.js": 3,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\car.js": 4,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\empresa\\[id].js": 5,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\home.js": 6,
+      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\index.js": 7
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/empresa/[id].js ../../db/config.dev.json": 8,
