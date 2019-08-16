@@ -18,11 +18,12 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Footers from "../components/footer";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 import ApiRest from "../components/ApiRest";
 import SpinnerDelivery from "../components/SpinnerDelivery";
+import Footer from "../components/Footer";
+
 import {
   Menu,
   Search,
@@ -30,18 +31,6 @@ import {
   ReorderRounded,
   ShoppingCartOutlined
 } from "@material-ui/icons";
-
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Criado por "}
-      <Link color="inherit" href="#">
-        Teste
-      </Link>
-      {" team."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -183,37 +172,6 @@ const useStyles = makeStyles(theme => ({
     border: "0px solid red !important"
   }
 }));
-
-/**
- * Footer (Rodapé)
- */
-function Footer(classes) {
-  return (
-    <Container maxWidth="md" component="footer" className={classes.footer}>
-      <Grid container spacing={4} justify="space-evenly">
-        {Footers.map((footer, id) => (
-          <Grid item xs={6} sm={3} key={id + 1}>
-            <Typography variant="h6" color="textPrimary" gutterBottom>
-              {footer.title}
-            </Typography>
-            <ul>
-              {footer.description.map(item => (
-                <li key={item}>
-                  <Link href="#" variant="subtitle1" color="textSecondary">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Grid>
-        ))}
-      </Grid>
-      <Box mt={5}>
-        <MadeWithLove />
-      </Box>
-    </Container>
-  );
-}
 
 /**
  * Mostra os ícones das empresas
@@ -449,7 +407,7 @@ const Main = props => {
         {MostrarEmpresas(props, classes)}
       </Container>
       {/* MenuFooter */}
-      {Footer(classes)}
+      <Footer />
       {/* End footer */}
       <MyMenu
         anchorEl={anchorEl}

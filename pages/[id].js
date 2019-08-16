@@ -19,7 +19,7 @@ import Tab from "@material-ui/core/Tab";
 import { Menu, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { useRouter } from "next/router";
 import { green } from "@material-ui/core/colors";
-import Footers from "../components/footer";
+import Footer from "../components/Footer";
 import Hidden from "@material-ui/core/Hidden";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
@@ -57,17 +57,6 @@ function a11yProps(index) {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`
   };
-}
-
-function MadeWithLove(props) {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Criado por "}
-      <Link color="inherit" href="#">
-        {props.config.empresa}
-      </Link>
-    </Typography>
-  );
 }
 
 const useStyles = makeStyles(theme => ({
@@ -526,27 +515,7 @@ BUSCA OS DADOS DA EMPRESA
         </Toolbar>
       </AppBar>
       {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Grid container spacing={4} justify="space-evenly">
-          {Footers.map((footer, key) => (
-            <Grid item xs={6} sm={3} key={key}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map(item => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
-        <Box mt={5}>{MadeWithLove(props)}</Box>
-      </Container>
+	<Footer />
       {/* End footer */}
       <MyMenu
         anchorEl={anchorEl}

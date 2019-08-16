@@ -8,14 +8,14 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 3,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Car.js": 4,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Clock.js": 5,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Home.js": 6,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\[id].js": 7,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\_app.js": 8,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\_error.js": 9,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\empresa\\[id].js": 10,
-      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\index.js": 11
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\Clock.js": 4,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\[id].js": 5,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\_app.js": 6,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\_error.js": 7,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\car.js": 8,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\empresa\\[id].js": 9,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\home.js": 10,
+      "static\\lVzCqrPy_rflyOJhAT09C\\pages\\index.js": 11
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 2,

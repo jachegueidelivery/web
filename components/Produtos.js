@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core';
@@ -9,6 +9,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
+import LazyLoad from './LazyLoad';
 
 const useStyles = makeStyles(theme => ({
 	input: {
@@ -177,14 +178,19 @@ export default function Produtos(props) {
 
 	const classes = useStyles();
 
+	let imagem = "null" /*props.imagem*/;
+
 	return (
 		<div className={classes.root} id={props.id}>
+		<LazyLoad />
 			<Grid container spacing={2}>
 				<Grid item xs={12} md={12}>
 					<div className={classes.demo}>
 						<div className={classes.listaProdutos} title={'Clique para entrar em ' + props.nome}>
 							<div className={classes.itemAvatar}>
-								<img className={classes.itemAvatarImg} alt="" src={props.imagem} />
+								{props.imagem ? (
+									<img className={classes.itemAvatarImg} alt="" src={props.imagem} />
+								):(<div>b</div>)}
 							</div>
 							<div className={classes.itemContent}>
 								<Typography>
@@ -199,11 +205,12 @@ export default function Produtos(props) {
 									<strong>Kg</strong>
 								</sub>
 								<br />
+								{observacao.length === 0 && (
+									<br/>
+								)}
 								<Grid container wrap="nowrap">
 									<FormControl fullWidth>
-										<InputLabel htmlFor="my-
-
-input">Observação:</InputLabel>
+										<InputLabel htmlFor="my-input">Observação:</InputLabel>
 										<Input
 											id="my-input"
 											onChange={ev => {
@@ -218,7 +225,7 @@ input">Observação:</InputLabel>
 							<div className={classes.itemAcoes}>
 								<br />
 								<Typography>
-									Preço <br /> <b>R$ {props.precoUnitario}</b>
+									A partir de  <br /> <b>R$ {props.precoUnitario.toFixed(2)}</b>
 								</Typography>
 								<small>Quantidade:</small>
 								<ButtonGroup
@@ -252,7 +259,7 @@ input">Observação:</InputLabel>
 								<Chip
 									className={classes.chip}
 									color="primary"
-									label={`Valor a pagar${'\n\n'}R$ ${valorTotal}`}
+									label={`SubTotal ${'\n\n'}R$ ${valorTotal}`}
 								/>
 								<br />
 							</div>
