@@ -20,21 +20,14 @@ import { Menu, Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { useRouter } from 'next/router';
 import { green } from '@material-ui/core/colors';
 import Footers from '../../components/footer';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Chip from '@material-ui/core/Chip';
-import Badge from '@material-ui/core/Badge';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import Hidden from '@material-ui/core/Hidden';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-//Meus Componentes
 import LocalStorageHandler from '../../components/LocalStorageHandler';
 import MyMenu from '../../components/Menu';
 import ApiRest from '../../components/ApiRest';
 import SpinnerDelivery from '../../components/SpinnerDelivery';
 import AlertNotHasProducts from '../../components/AlertNotHasProducts';
+import TotalPedidos from '../../components/TotalPedidos';
+import Produtos from '../../components/Produtos';
 
 
 function TabPanel(props) {
@@ -240,278 +233,10 @@ const useStyles = makeStyles(theme => ({
 		height: 38,
 		width: 38,
 	},
-	listaProdutos: {
-		boxShadow:
-			'0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);',
-		display: 'flex',
-		flexWrap: 'nowrap',
-		border: '0px solid red',
-		flexDirection: 'row',
-		height: 160,
-		marginTop: 10,
-		backgroundColor: 'rgba(245,245,245,0.8)',
-	},
-	itemAvatar: {
-		width: '20%',
-		display: 'flex',
-		flexWrap: 'nowrap',
-		flexDirection: 'row',
-		justifyContent: 'center',
-		alignItems: 'center',
-		border: '0px solid lime',
-		padding: 4,
-	},
-	itemAvatarImg: {
-		width: '100%',
-		height: '100%',
-		display: 'flex',
-		flexWrap: 'nowrap',
-		flexDirection: 'row',
-		justifyContent: 'center',
-		alignItems: 'center',
-		border: '0px solid lime',
-	},
-	itemContent: {
-		width: '60%',
-		display: 'flex',
-		flexWrap: 'nowrap',
-		flexDirection: 'column',
-		justifyContent: 'flex-start',
-		alignContent: 'flex-start',
-		alignItems: 'flex-start',
-		border: '0px solid lime',
-		padding: 10,
-	},
-	itemAcoes: {
-		width: '20%',
-		display: 'flex',
-		flexWrap: 'nowrap',
-		flexDirection: 'column',
-		justifyContent: 'center',
-		alignItems: 'center',
-		border: '0px solid lime',
-		padding: 10,
-		textAlign: 'center',
-	},
-	inputQuantidade: {
-		border: 0,
-		outline: 0,
-		textAlign: 'center',
-		width: 40,
-	},
 }));
 
-/**
- * Component: Produtos
- */
-function Produto(props) {
-	const [quantidade, setQuantidade] = useState(0);
-	const [valorTotal, setValorTotal] = useState(0);
-	const [descricao, setDescricao] = useState('');
-	const [observacao, setObservacao] = useState('');
-	const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
-	const matches = useMediaQuery('(min-width:600px)');
-
-	function addProduct() {
-		let products = [];
-
-		if (localStorage.getItem('products')) {
-			products = JSON.parse(localStorage.getItem('products'));
-		}
-
-		//Desestruturação Javascript
-		const { id, nome, imagem, precoUnitario, descricao } = props;
-
-		//Pega o index
-		let objIndex = products.findIndex(pedido => pedido.productId === id);
-
-		//Caso não exista
-		if (objIndex === -1) {
-			products.push({
-				productId: id,
-				nome: nome,
-				imagem: imagem,
-				quantidade: quantidade + 1,
-				observacao: observacao,
-				preco: precoUnitario,
-				descricao: descricao,
-			});
-
-			localStorage.setItem('products', JSON.stringify(products));
-		} else {
-			products[objIndex].productId = id;
-			products[objIndex].quantidade = quantidade + 1;
-			products[objIndex].observacao = observacao;
-			products[objIndex].nome = nome;
-			products[objIndex].imagem = imagem;
-			products[objIndex].preco = precoUnitario;
-			products[objIndex].descricao = descricao;
-			localStorage.setItem('products', JSON.stringify(products));
-		}
-	}
-
-	function add() {
-		let quant = parseInt(quantidade) + 1;
-
-		setQuantidade(quant);
-
-		addProduct();
-
-		setValorTotal((props.precoUnitario * quant).toFixed(2));
-	}
-
-	function subtract() {
-		let quant = parseInt(quantidade) - 1;
-
-		setQuantidade(quant);
-
-		addProduct();
-
-		//props.handleTotal(-props.precoUnitario);
-
-		setValorTotal(props.precoUnitario * quant);
-	}
-
-	function onChangeQuantidade(ev) {
-		let quant = parseInt(ev.target.value);
-
-		setQuantidade(quant);
-
-		//props.handleTotal(props.precoUnitario);
-
-		addProduct();
-
-		setValorTotal((props.precoUnitario * parseInt(quant)).toFixed(2));
-	}
-
-	function alterarTextoTextArea(ev) {
-		setObservacao(ev.target.value);
-	}
-
-	useEffect(() => {
-		if (quantidade <= 0 || isNaN(parseInt(quantidade))) {
-			setValorTotal(0);
-			setQuantidade(0);
-		}
-	}, [quantidade]);
-
-	const classes = useStyles();
-
-	return (
-		<div className={classes.root} id={props.id}>
-			<Grid container spacing={2}>
-				<Grid item xs={12} md={12}>
-					<div className={classes.demo}>
-						<div className={classes.listaProdutos} title={'Clique para entrar em ' + props.nome}>
-							<div className={classes.itemAvatar}>
-								<img className={classes.itemAvatarImg} alt="" src={props.imagem} />
-							</div>
-							<div className={classes.itemContent}>
-								<Typography>
-									<b>{props.nome}</b>
-								</Typography>
-								<Grid container wrap="nowrap" title={props.descricao}>
-									<Grid item xs zeroMinWidth>
-										<Typography noWrap>{props.descricao}</Typography>
-									</Grid>
-								</Grid>
-								<sub>
-									<strong>Kg</strong>
-								</sub>
-								<br />
-								<Grid container wrap="nowrap">
-									<FormControl fullWidth>
-										<InputLabel htmlFor="my-
-
-input">Observação:</InputLabel>
-										<Input
-											id="my-input"
-											onChange={ev => {
-												alterarTextoTextArea(ev);
-											}}
-											value={observacao}
-											aria-describedby="my-helper-text"
-										/>
-									</FormControl>
-								</Grid>
-							</div>
-							<div className={classes.itemAcoes}>
-								<br />
-								<Typography>
-									Preço <br /> <b>R$ {props.precoUnitario}</b>
-								</Typography>
-								<small>Quantidade:</small>
-								<ButtonGroup
-									disableFocusRipple={true}
-									size="small"
-									variant="contained"
-									color="primary"
-									aria-label="Split button"
-								>
-									<Button onClick={subtract} disabled={quantidade < 1}>
-										-
-									</Button>
-									<input
-										type="number"
-										onChange={ev => onChangeQuantidade(ev)}
-										value={quantidade}
-										className={classes.inputQuantidade}
-									/>
-									<Button
-										color="primary"
-										variant="contained"
-										size="small"
-										aria-haspopup="true"
-										value="+"
-										onClick={add}
-									>
-										+
-									</Button>
-								</ButtonGroup>
-								<br />
-								<Chip
-									className={classes.chip}
-									color="primary"
-									label={`Valor a pagar${'\n\n'}R$ ${valorTotal}`}
-								/>
-								<br />
-							</div>
-						</div>
-					</div>
-				</Grid>
-			</Grid>
-		</div>
-	);
-}
-
-const TotalPedidos = props => {
-	const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
-	const [carregado, setCarregado] = useState(!1);
-
-	useEffect(() => {
-		setCarregado(true);
-		setCountPedidosLocal(LocalStorageHandler.count('products'));
-	});
-
-	if (countPedidosLocal <= 0) {
-		return (
-			<Badge badgeContent={0} color="primary">
-				<ShoppingCartOutlined />
-			</Badge>
-		);
-	} else {
-		if (!carregado) {
-			return <CircularProgress disableShrink />;
-		}
-		return (
-			<Badge badgeContent={countPedidosLocal} color="primary">
-				<ShoppingCartOutlined />
-			</Badge>
-		);
-	}
-};
-
 const Index = props => {
+
 	const router = useRouter();
 
 	const [value, setValue] = React.useState(0);
@@ -547,7 +272,7 @@ const Index = props => {
 		onAtualizarCount();
 		if (iniciar == true) {
 			setIniciar(false);
-			setProdutosAsObject(props.shows);
+			//setProdutosAsObject(props.shows);
 		}
 	});
 
@@ -583,24 +308,25 @@ BUSCA OS DADOS DA EMPRESA
 	});
 
 	function onChangeInputSearch(ev) {
+
 		let valor = ev.target.value;
 
 		setSearch(valor.toUpperCase());
 
 		if (valor.trim() !== '') {
-			let adults = Object.values(props.shows).filter(produto => {
+			/*let adults = Object.values(props.shows).filter(produto => {
 				if (produto.id !== undefined) {
 					if (produto.nome.toUpperCase().includes(valor.toUpperCase())) {
 						return produto;
 					}
 				}
 			});
-			setProdutosAsObject(adults);
+			setProdutosAsObject(adults);*/
 		} else {
-			setProdutosAsObject(props.shows);
+			//setProdutosAsObject(props.shows);
 		}
 		if (ev.keyCode == 27) {
-			setProdutosAsObject(props.shows);
+			//setProdutosAsObject(props.shows);
 			setSearch('');
 		}
 	}
@@ -713,7 +439,7 @@ BUSCA OS DADOS DA EMPRESA
 {Object.values(produtos.data).map((product, _key) => {
 							return (
 								<React.Fragment key={_key}>
-									<Produto
+									<Produtos
 										produto={product}
 										id={product.id}
 										nome={product.nome.toUpperCase()}
@@ -793,10 +519,8 @@ BUSCA OS DADOS DA EMPRESA
 };
 
 Index.getInitialProps = async function(ctx) {
-	const res = await import('../../db/produtos.json');
 	const configSite = await import('../../db/config.dev.json');
 	return {
-		shows: res,
 		config: configSite,
 	};
 };

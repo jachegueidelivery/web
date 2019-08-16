@@ -88,7 +88,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1, 1.5)
   },
   heroContent: {
-    padding: theme.spacing(8, 0, 6)
+    padding: theme.spacing(8, 0, 0)
   },
   cardHeader: {
     backgroundColor: theme.palette.grey[200]
@@ -245,11 +245,9 @@ function MostrarEmpresas(props, classes) {
    {empresas.length === undefined && (
 	<SpinnerDelivery label=" Carregando empresas, aguarde, por gentileza... " />
       )}
-
-    <Grid container spacing={2}>
- 
+    <Grid container spacing={2} >
       {Object.values(empresas).map((empresa, _key) => (
-        <Grid
+       <Grid
           item
           key={_key}
           title={"Clique para entrar em " + empresa.nome_fantasia}
@@ -257,9 +255,7 @@ function MostrarEmpresas(props, classes) {
           sm={6}
           md={4}
           className={classes._grid}
-          onClick={() => {
-            window.location = "/empresa/" + empresa.url.toLowerCase();
-          }}
+	onClick={()=>{window.location.href = empresa.url.toLowerCase()}}
         >
           {empresa.nome_fantasia != null && (
             <Card
@@ -390,8 +386,8 @@ const Main = props => {
           color="textPrimary"
           gutterBottom
         >
-          Alguma mensagem impactante aqui KKK
-        </Typography>
+          Alguma mensagem impactante aqui
+        </Typography><br/>
         {/* INPUT */}
         <Paper className={classes.rootinput}>
           <IconButton className={classes.iconButton} aria-label="Menu">
@@ -412,10 +408,10 @@ const Main = props => {
           align="center"
           color="textSecondary"
           component="p"
-        />
+        /><br/>
       </Container>
       {/* End hero unit */}
-      <Container className={classes.cardGrid} maxWidth="md">
+      <Container className={classes.cardGrid}  maxWidth="md">
         <AppBar
           position="static"
           color="default"

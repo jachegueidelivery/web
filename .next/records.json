@@ -7,18 +7,19 @@
     "byName": {
       "commons": 0,
       "static/runtime/webpack.js": 1,
-      "static/runtime/main.js": 2,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\Clock.js": 3,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\_app.js": 4,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\_error.js": 5,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\car.js": 6,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\empresa\\[id].js": 7,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\home.js": 8,
-      "static\\Zd_3tpxtGCGxIiHxj4tO8\\pages\\index.js": 9
+      "static/runtime/main.js": 3,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Car.js": 4,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Clock.js": 5,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\Home.js": 6,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\[id].js": 7,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\_app.js": 8,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\_error.js": 9,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\empresa\\[id].js": 10,
+      "static\\baXMGfLH1SYUPFr8X-a7T\\pages\\index.js": 11
     },
     "bySource": {
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/empresa/[id].js ../../db/config.dev.json": 10,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/empresa/[id].js ../../db/produtos.json": 11
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 2,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/empresa/[id].js ../../db/config.dev.json": 2
     },
     "usedIds": [
       0,
