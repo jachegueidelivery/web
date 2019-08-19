@@ -2,42 +2,42 @@
   "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/Car": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/Clock": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/Home": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/[id]": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/_app": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/_error": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ],
     "/index": [
-      "static/runtime/webpack-c9eabd8c555d0bf8ebd4.js",
+      "static/runtime/webpack-e22ce770b7b51b212386.js",
       "static/chunks/commons.34ce4e6da30dd1364e8e.js",
       "static/runtime/main-9553dc0cd0e584ed6dfe.js"
     ]

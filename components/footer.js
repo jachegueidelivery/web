@@ -96,9 +96,6 @@ function Footer(props) {
               xs={6}
               lg={2}
               sm={4}
-              direction="row"
-              justify="flex-start"
-              alignItems="center"
               key={key}
             >
               <Typography variant="h6" color="textPrimary" gutterBottom>

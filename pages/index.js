@@ -27,7 +27,7 @@ import {
 const Footer = Loadable({
   loader: () => import("../components/Footer"),
   loading() {
-    return <LazyLoad height="0px" margintop="5px" />;
+    return (<><LazyLoad height="0px" margintop="5px" /></>);
   }
 });
 
@@ -191,8 +191,8 @@ const useStyles = makeStyles(theme => ({
   hoverDown: {
     border: "0px solid red !important"
   },
-  footerNavigationBottom:{
-    background:'white'
+  footerNavigationBottom: {
+    background: "white"
   }
 }));
 
@@ -341,17 +341,20 @@ const Main = props => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               color="primary"
+              onClick={onChangeToGrid}
             >
-              <GridOn onClick={onChangeToGrid} />
+              <GridOn />
             </IconButton>
+            
             <Divider className={classes.divider} />
             <IconButton
               aria-label="Account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               color="primary"
+              onClick={onChangeToList}
             >
-              <ReorderRounded onClick={onChangeToList} />
+              <ReorderRounded />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -372,6 +375,6 @@ const Main = props => {
       <NavigationBottom />
     </React.Fragment>
   );
-};
+}
 
 export default Main;

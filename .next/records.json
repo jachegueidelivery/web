@@ -8,20 +8,13 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 4,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\Car.js": 5,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\Clock.js": 6,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\Home.js": 7,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\[id].js": 8,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\_app.js": 9,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\_error.js": 10,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\index.js": 11,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Car.js": 15,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Clock.js": 16,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Home.js": 17,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\[id].js": 18,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\_app.js": 19,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\_error.js": 20,
-      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\index.js": 21
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Car.js": 5,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Clock.js": 6,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Home.js": 7,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\[id].js": 8,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\_app.js": 9,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\_error.js": 10,
+      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\index.js": 11
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 0,
@@ -36,19 +29,19 @@
     "usedIds": [
       0,
       1,
+      10,
+      11,
       12,
       13,
       14,
-      15,
-      16,
-      17,
-      18,
-      19,
       2,
-      20,
-      21,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
     ]
   }
 }

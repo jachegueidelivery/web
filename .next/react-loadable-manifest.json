@@ -3,20 +3,20 @@
     {
       "id": "8lYe",
       "name": "./components/Footer.js",
-      "file": "static/chunks/13.8b1014693329cb4d8936.js",
-      "publicPath": "static/chunks/13.8b1014693329cb4d8936.js"
+      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
+      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
     },
     {
       "id": "hlFM",
       "name": "./node_modules/@material-ui/core/esm/Box/Box.js",
-      "file": "static/chunks/13.8b1014693329cb4d8936.js",
-      "publicPath": "static/chunks/13.8b1014693329cb4d8936.js"
+      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
+      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
     },
     {
       "id": "hlie",
       "name": "./node_modules/@material-ui/core/esm/Link/Link.js",
-      "file": "static/chunks/13.8b1014693329cb4d8936.js",
-      "publicPath": "static/chunks/13.8b1014693329cb4d8936.js"
+      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
+      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
     }
   ],
   "../components/MostrarEmpresas": [

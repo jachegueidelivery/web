@@ -121,7 +121,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -180,7 +180,7 @@ var _jsxFileName = "D:\\node\\delivery\\components\\Carrinho.js";
 
 var DialogFormConfirm = react_loadable__WEBPACK_IMPORTED_MODULE_14___default()({
   loader: function loader() {
-    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./DialogFormConfirm */ "./components/DialogFormConfirm.js"));
+    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./DialogFormConfirm */ "./components/DialogFormConfirm.js"));
   },
   loading: function loading() {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LazyLoad__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -1393,10 +1393,10 @@ var _jsxFileName = "D:\\node\\delivery\\pages\\index.js";
 
 var Footer = react_loadable__WEBPACK_IMPORTED_MODULE_9___default()({
   loader: function loader() {
-    return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/Footer */ "./components/Footer.js"));
+    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/Footer */ "./components/Footer.js"));
   },
   loading: function loading() {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_LazyLoad__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_LazyLoad__WEBPACK_IMPORTED_MODULE_16__["default"], {
       height: "0px",
       margintop: "5px",
       __source: {
@@ -1404,12 +1404,12 @@ var Footer = react_loadable__WEBPACK_IMPORTED_MODULE_9___default()({
         lineNumber: 30
       },
       __self: this
-    });
+    }));
   }
 });
 var NavigationBottom = react_loadable__WEBPACK_IMPORTED_MODULE_9___default()({
   loader: function loader() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../components/NavigationBottom */ "./components/NavigationBottom.js"));
+    return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/NavigationBottom */ "./components/NavigationBottom.js"));
   },
   loading: function loading() {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_LazyLoad__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -1433,7 +1433,7 @@ var NavigationBottom = react_loadable__WEBPACK_IMPORTED_MODULE_9___default()({
 });
 var MostrarEmpresas = react_loadable__WEBPACK_IMPORTED_MODULE_9___default()({
   loader: function loader() {
-    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/MostrarEmpresas */ "./components/MostrarEmpresas.js"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/MostrarEmpresas */ "./components/MostrarEmpresas.js"));
   },
   loading: function loading() {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_LazyLoad__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -1591,7 +1591,7 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__["ma
       border: "0px solid red !important"
     },
     footerNavigationBottom: {
-      background: 'white'
+      background: "white"
     }
   };
 });
@@ -1875,23 +1875,23 @@ var Main = function Main(props) {
     "aria-controls": "menu-appbar",
     "aria-haspopup": "true",
     color: "primary",
+    onClick: onChangeToGrid,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 339
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["GridOn"], {
-    onClick: onChangeToGrid,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 345
+      lineNumber: 346
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_12___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 347
+      lineNumber: 349
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1899,28 +1899,28 @@ var Main = function Main(props) {
     "aria-controls": "menu-appbar",
     "aria-haspopup": "true",
     color: "primary",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 348
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["ReorderRounded"], {
     onClick: onChangeToList,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 354
+      lineNumber: 350
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__["ReorderRounded"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 357
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 358
+      lineNumber: 361
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(MostrarEmpresas, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 360
+      lineNumber: 363
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1928,13 +1928,13 @@ var Main = function Main(props) {
     maxWidth: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 363
+      lineNumber: 366
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Footer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 364
+      lineNumber: 367
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -1943,13 +1943,13 @@ var Main = function Main(props) {
     abrir: isMenuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 367
+      lineNumber: 370
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(NavigationBottom, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 372
+      lineNumber: 375
     },
     __self: this
   }));
@@ -1959,7 +1959,7 @@ var Main = function Main(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
