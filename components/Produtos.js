@@ -9,7 +9,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
-import LazyLoad from './LazyLoad';
 
 const useStyles = makeStyles(theme => ({
 	input: {
@@ -177,12 +176,8 @@ export default function Produtos(props) {
 	}, [quantidade]);
 
 	const classes = useStyles();
-
-	let imagem = "null" /*props.imagem*/;
-
 	return (
 		<div className={classes.root} id={props.id}>
-		<LazyLoad />
 			<Grid container spacing={2}>
 				<Grid item xs={12} md={12}>
 					<div className={classes.demo}>

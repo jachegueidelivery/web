@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Menu from "@material-ui/core/Menu";
-import Carrinho from "./carrinho";
+import Carrinho from "./Carrinho";
 import LocalStorageHandler from "./LocalStorageHandler";
 
 const renderMenu = props => {
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
@@ -31,7 +28,7 @@ const renderMenu = props => {
       onClose={props.handleMenuClose}
     >
       <div style={{ padding: 10 }}>
-       <Carrinho count={countPedidosLocal} data={props.data} />
+       <Carrinho count={countPedidosLocal} />
       </div>
     </Menu>
   );

@@ -2,28 +2,20 @@
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
+import Loadable from "react-loadable";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
-import ApiRest from "../components/ApiRest";
-import SpinnerDelivery from "../components/SpinnerDelivery";
-import Footer from "../components/Footer";
-
+import LazyLoad from "../components/LazyLoad";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import TotalPedidos from "../components/TotalPedidos";
 import {
   Menu,
   Search,
@@ -31,6 +23,37 @@ import {
   ReorderRounded,
   ShoppingCartOutlined
 } from "@material-ui/icons";
+
+const Footer = Loadable({
+  loader: () => import("../components/Footer"),
+  loading() {
+    return <LazyLoad height="0px" margintop="5px" />;
+  }
+});
+
+const NavigationBottom = Loadable({
+  loader: () => import("../components/NavigationBottom"),
+  loading() {
+    return (
+      <>
+        <LazyLoad height="30px" margintop="5px" />
+        <LazyLoad height="30px" margintop="5px" />
+      </>
+    );
+  }
+});
+
+const MostrarEmpresas = Loadable({
+  loader: () => import("../components/MostrarEmpresas"),
+  loading() {
+    return (
+      <>
+        <LazyLoad height="30px" margintop="5px" />
+        <LazyLoad height="30px" margintop="5px" />
+      </>
+    );
+  }
+});
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -111,9 +134,6 @@ const useStyles = makeStyles(theme => ({
   _grid: {
     cursor: "pointer !important"
   },
-  cardMedia: {
-    paddingTop: "56.25%" // 16:9
-  },
   cardContent: {
     flexGrow: 1
   },
@@ -132,7 +152,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   textFieldInput: {
     backgroundColor: theme.palette.common.white,
@@ -170,87 +190,16 @@ const useStyles = makeStyles(theme => ({
   },
   hoverDown: {
     border: "0px solid red !important"
+  },
+  footerNavigationBottom:{
+    background:'white'
   }
 }));
-
-/**
- * Mostra os ícones das empresas
- */
-function MostrarEmpresas(props, classes) {
-
-  const [empresas, setEmpresas] = useState({ hits: [] });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await ApiRest.get("/empresas");
-      setEmpresas(result.data);
-    };
-    fetchData();
-  }, []);
-
-  function mouseOverStyle(ev) {
-    ev.preventDefault();
-    ev.target.classList.add("hoverUp");
-  }
-
-  function mouseOutStyle(ev, id) {
-    ev.preventDefault();
-    ev.target.classList.remove("hoverDown");
-  }
-
-  return (
-<Fragment>
-   {empresas.length === undefined && (
-	<SpinnerDelivery label=" Carregando empresas, aguarde, por gentileza... " />
-      )}
-    <Grid container spacing={2} >
-      {Object.values(empresas).map((empresa, _key) => (
-       <Grid
-          item
-          key={_key}
-          title={"Clique para entrar em " + empresa.nome_fantasia}
-          xs={12}
-          sm={6}
-          md={4}
-          className={classes._grid}
-	onClick={()=>{window.location.href = empresa.url.toLowerCase()}}
-        >
-          {empresa.nome_fantasia != null && (
-            <Card
-              className={classes.card}
-              onMouseOut={ev => mouseOutStyle(ev, empresa.id)}
-              onMouseOver={ev => mouseOverStyle(ev, empresa.id)}
-            >
-              <CardMedia
-                className={classes.cardMedia}
-                image={empresa.logomarca}
-              />
-              <CardContent className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {empresa.nome_fantasia}
-                </Typography>
-                <div> {empresa.telefone}</div>
-                <Typography>{empresa.descricao}</Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small" color="primary" dataobj={empresa}>
-                  IR PARA A LOJA
-                </Button>
-              </CardActions>
-            </Card>
-          )}
-        </Grid>
-      ))}
-    </Grid>
-</Fragment>
-  );
-}
 
 /*
  */
 
 const Main = props => {
-
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -258,6 +207,8 @@ const Main = props => {
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
   const [data, setData] = useState([]);
+
+  const [openDialog, setOpenDialog] = useState(false);
 
   const classes = useStyles();
 
@@ -267,10 +218,10 @@ const Main = props => {
     setCountPedidosLocal(LocalStorageHandler.count("products"));
   }
 
-  useEffect(() => {
-    setData(JSON.parse(localStorage.getItem("products")));
-    onAtualizarCount();
-  });
+  // useEffect(() => {
+  //   setData(JSON.parse(localStorage.getItem("products")));
+  //   onAtualizarCount();
+  // });
 
   function handleProfileMenuOpen(event) {
     onAtualizarCount();
@@ -287,6 +238,13 @@ const Main = props => {
     onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
+  }
+
+  function onChangeToGrid() {
+    alert("Implementatio by Grid");
+  }
+  function onChangeToList() {
+    alert("Implementatio by List");
   }
 
   return (
@@ -324,19 +282,13 @@ const Main = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <Badge
-              className={classes.margin}
-              badgeContent={countPedidosLocal}
-              color="primary"
-            >
-              <ShoppingCartOutlined />
-            </Badge>
+            <TotalPedidos />
           </IconButton>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <br />
+        <br /> <br />
         <Typography
           component="h4"
           variant="h4"
@@ -345,7 +297,8 @@ const Main = props => {
           gutterBottom
         >
           Alguma mensagem impactante aqui
-        </Typography><br/>
+        </Typography>
+        <br />
         {/* INPUT */}
         <Paper className={classes.rootinput}>
           <IconButton className={classes.iconButton} aria-label="Menu">
@@ -366,10 +319,10 @@ const Main = props => {
           align="center"
           color="textSecondary"
           component="p"
-        /><br/>
+        />
       </Container>
       {/* End hero unit */}
-      <Container className={classes.cardGrid}  maxWidth="md">
+      <Container className={classes.cardGrid} maxWidth="md">
         <AppBar
           position="static"
           color="default"
@@ -389,7 +342,7 @@ const Main = props => {
               aria-haspopup="true"
               color="primary"
             >
-              <GridOn />
+              <GridOn onClick={onChangeToGrid} />
             </IconButton>
             <Divider className={classes.divider} />
             <IconButton
@@ -398,23 +351,25 @@ const Main = props => {
               aria-haspopup="true"
               color="primary"
             >
-              <ReorderRounded />
+              <ReorderRounded onClick={onChangeToList} />
             </IconButton>
           </Toolbar>
         </AppBar>
         <br />
         {/* End hero unit */}
-        {MostrarEmpresas(props, classes)}
+        <MostrarEmpresas />
       </Container>
       {/* MenuFooter */}
-      <Footer />
+      <Container className={classes.footerNavigationBottom} maxWidth="lg">
+        <Footer />
+      </Container>
       {/* End footer */}
       <MyMenu
         anchorEl={anchorEl}
-        data={data}
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}
       />
+      <NavigationBottom />
     </React.Fragment>
   );
 };

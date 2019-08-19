@@ -1,0 +1,11 @@
+ Para verificar se o site é responsível:
+https://material.io
+
+Material Icons
+1,000+ React Material icons ready to use from the official website:
+https://material-ui.com/components/material-icons/
+
+Unsplash
+The internet’s source of freely useable images.
+Powered by creators everywhere:
+https://unsplash.com/search/photos/delivery

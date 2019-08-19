@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -16,7 +15,13 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import { Menu, Search, ShoppingCartOutlined } from "@material-ui/icons";
+import {
+  Menu,
+  Search,
+  AccessAlarm,
+  AccessibilityRounded,
+  AccountBalanceSharp
+} from "@material-ui/icons";
 import { useRouter } from "next/router";
 import { green } from "@material-ui/core/colors";
 import Footer from "../components/Footer";
@@ -28,6 +33,16 @@ import SpinnerDelivery from "../components/SpinnerDelivery";
 import AlertNotHasProducts from "../components/AlertNotHasProducts";
 import TotalPedidos from "../components/TotalPedidos";
 import Produtos from "../components/Produtos";
+import LazyLoad from "../components/LazyLoad";
+import Loadable from "react-loadable";
+
+const NavigationBottom = Loadable({
+  loader: () => import("../components/NavigationBottom"),
+  loading() {
+    return (<><LazyLoad height="30px" margintop="5px" /><LazyLoad height="30px" margintop="5px" /></>);
+  }
+});
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,6 +90,9 @@ const useStyles = makeStyles(theme => ({
     li: {
       listStyle: "none"
     }
+  },
+  root: {
+    padding: theme.spacing(0, 0, 0)
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -143,10 +161,9 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 40,
     display: "flex",
     alignItems: "center",
-    width: "80%",
     margin: "0px auto",
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 0,
+    paddingRight: 0,
     paddingTop: 5,
     paddingBottom: 5
   },
@@ -219,6 +236,9 @@ const useStyles = makeStyles(theme => ({
   playIcon: {
     height: 38,
     width: 38
+  },
+  footerNavigationBottom:{
+    background:'white'
   }
 }));
 
@@ -365,7 +385,15 @@ BUSCA OS DADOS DA EMPRESA
             noWrap
             className={classes.toolbarTitle}
           >
-            <Link href="../">{nome_fantasia}</Link>
+            <Link href="../">
+              {produtos.isLoading == false ? (
+                <>
+                  <LazyLoad />
+                </>
+              ) : (
+                <>{nome_fantasia}</>
+              )}
+            </Link>
           </Typography>
           <Hidden lgDown>
             <Button
@@ -396,63 +424,65 @@ BUSCA OS DADOS DA EMPRESA
           <Tabs
             value={value}
             onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="on"
+            indicatorColor="primary"
             aria-label="Simple tabs example"
           >
-            <Tab label="PRODUTOS" {...a11yProps(0)} />
-            <Tab label="SEUS PEDIDOS" {...a11yProps(1)} />
-            <Tab label="AVALIAÇÕES" {...a11yProps(2)} />
+            <Tab label="PRODUTOS" icon={<AccessAlarm />} {...a11yProps(0)} />
+            <Tab
+              label="SEUS PEDIDOS"
+              icon={<AccessibilityRounded />}
+              {...a11yProps(1)}
+            />
+            <Tab
+              label="AVALIAÇÕES"
+              icon={<AccountBalanceSharp />}
+              {...a11yProps(2)}
+            />
           </Tabs>
         </AppBar>
         {/* TAB 1 */}
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0} className={classes.root}>
           <Container
-            maxWidth="sm"
+            maxWidth="lg"
             component="main"
             className={classes.heroContent}
           >
-            {/* INPUT */}
-            <Paper className={classes.rootinput}>
-              <IconButton className={classes.iconButton} aria-label="Menu">
-                <Menu />
-              </IconButton>
-              <InputBase
-                className={classes.textFieldInput}
-                placeholder={`Pesquise produtos aqui...`}
-                onChange={ev => onChangeInputSearch(ev)}
-                onKeyUp={ev => onChangeInputSearch(ev)}
-                value={search}
-                inputProps={{ "aria-label": "Search Google Maps" }}
-              />
-              <Divider className={classes.divider} />
-              <IconButton className={classes.iconButton} aria-label="Search">
-                <Search />
-              </IconButton>
-            </Paper>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              component="p"
-            >
-              <br />
-            </Typography>
+            {produtos.isLoading == false && (
+              <>
+                <SpinnerDelivery label="Carregando Produtos, aguarde, por favor." />
+              </>
+            )}
           </Container>
-
-          {produtos.isLoading == false && (
-            <>
-              <SpinnerDelivery label="Carregando produtos, aguarde, por gentileza..." />
-            </>
-          )}
-
           {produtos.isLoading == true && empresaId != null && (
-            <div>
+            <>
+              <Paper className={classes.rootinput}>
+                <IconButton className={classes.iconButton} aria-label="Menu">
+                  <Menu />
+                </IconButton>
+                <InputBase
+                  className={classes.textFieldInput}
+                  placeholder={`Pesquise produtos aqui...`}
+                  onChange={ev => onChangeInputSearch(ev)}
+                  onKeyUp={ev => onChangeInputSearch(ev)}
+                  value={search}
+                  inputProps={{ "aria-label": "Search Google Maps" }}
+                />
+                <Divider className={classes.divider} />
+                <IconButton className={classes.iconButton} aria-label="Search">
+                  <Search />
+                </IconButton>
+              </Paper>
+              <br />
               {produtos.data.hasOwnProperty("erro") && produtos.data ? (
                 <>
-                  <AlertNotHasProducts label="Não há produtos para esta empresa." />
+                  <AlertNotHasProducts label="Não há Produtos para esta empresa." />
                   {console.log(produtos.data)}
                 </>
-              ):(
-				<>{Object.values(produtos.data).map((product, _key) => {
+              ) : (
+                <>
+                  {Object.values(produtos.data).map((product, _key) => {
                     return (
                       <React.Fragment key={_key}>
                         <Produtos
@@ -465,9 +495,10 @@ BUSCA OS DADOS DA EMPRESA
                         />
                       </React.Fragment>
                     );
-                  })}  </>
-			  )}
-            </div>
+                  })}{" "}
+                </>
+              )}
+            </>
           )}
         </TabPanel>
         {/* TAB 2 */}
@@ -479,50 +510,17 @@ BUSCA OS DADOS DA EMPRESA
           Tab 3
         </TabPanel>
       </Container>
-      <AppBar
-        position="fixed"
-        color="default"
-        elevation={0}
-        className={classes.appBarBottom}
-      >
-        <Toolbar className={classes.toolbar}>
-          <Typography
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.toolbarTitle}
-          />
-          <Hidden lgDown>
-            <Button
-              onClick={confirmarPedido}
-              href="#"
-              color="primary"
-              variant="outlined"
-              className={classes.link}
-            >
-              CONFIRMAR PEDIDO
-            </Button>
-          </Hidden>
-          <IconButton
-            onClick={handleProfileMenuOpen}
-            aria-label="Account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <TotalPedidos />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
       {/* Footer */}
-	<Footer />
+      <Container className={classes.footerNavigationBottom} maxWidth="lg">
+        <Footer />
+      </Container>
       {/* End footer */}
       <MyMenu
         anchorEl={anchorEl}
-        data={data}
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}
       />
+      <NavigationBottom/>
     </React.Fragment>
   );
 };
