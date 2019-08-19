@@ -30,7 +30,15 @@
       "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\_app.js": 6,
       "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\_document.js": 7,
       "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\_error.js": 8,
-      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\index.js": 9
+      "static\\KUb0gAnqITe5cuHqFRfAA\\pages\\index.js": 9,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Car.js": 13,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Clock.js": 14,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\Home.js": 15,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\[id].js": 16,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\_app.js": 17,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\_document.js": 18,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\_error.js": 19,
+      "static\\YH5yLOphuVAr-ifsCxbxh\\pages\\index.js": 20
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho.js ./DialogFormConfirm": 0,
@@ -47,14 +55,14 @@
       10,
       11,
       12,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
     ]
   }
 }
