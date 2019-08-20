@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -19,6 +19,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
+import LocalStorageHandler from "./LocalStorageHandler";
 
 function Copyright() {
   return (
@@ -96,31 +97,6 @@ function SignIn() {
             id="endereco"
             autoComplete="current-endereco"
           />
-          {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid> */}
         </form>
       </div>
     </Container>
@@ -136,6 +112,10 @@ export default function SimpleDialog(props) {
   function handleClose() {
     onClose(true);
   }
+
+function onCloncluirPedido(){
+   alert(LocalStorageHandler.remove('products'));
+}
 
   return (
     <Dialog
@@ -160,7 +140,7 @@ export default function SimpleDialog(props) {
           Fechar
         </Button>
         <Button
-          onClick={handleClose}
+          onClick={onCloncluirPedido}
           color="primary"
           variant="contained"
           autoFocus

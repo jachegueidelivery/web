@@ -12,8 +12,9 @@ const TotalPedidos = props => {
   useEffect(() => {
     setCarregado(true);
     setCountPedidosLocal(LocalStorageHandler.count("products"));
-  },[]);
+  });
 
+/*
   if (countPedidosLocal <= 0) {
     return (
       <Badge badgeContent={0} color="primary">
@@ -29,7 +30,23 @@ const TotalPedidos = props => {
         <ShoppingCartOutlined />
       </Badge>
     );
-  }
+  }*/
+
+if(props.countProdutos){
+ return (
+    <Badge badgeContent={props.countProdutos} color="primary">
+      <ShoppingCartOutlined />
+    </Badge>
+  );
+}
+else{ //Tela Inicial
+return (
+    <Badge badgeContent={countPedidosLocal} color="primary">
+      <ShoppingCartOutlined />
+    </Badge>
+  );
+}
+ 
 };
 
 export default TotalPedidos;

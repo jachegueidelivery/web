@@ -243,6 +243,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Index = props => {
+
   const router = useRouter();
 
   const [value, setValue] = React.useState(0);
@@ -270,6 +271,8 @@ const Index = props => {
   const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
 
   const [empresaId, setEmpresaId] = useState(null);
+
+  const [daaaaaaata, setDaaaaaaata] = useState(null);
 
   const classes = useStyles();
 
@@ -347,7 +350,7 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleProfileMenuOpen(event) {
-    //onAtualizarCount();
+    onAtualizarCount();
     if (LocalStorageHandler.count("products") > 0) {
       setAnchorEl(event.currentTarget);
     }
@@ -358,7 +361,7 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleMenuClose() {
-    //onAtualizarCount();
+    onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
   }
@@ -413,7 +416,7 @@ BUSCA OS DADOS DA EMPRESA
             aria-haspopup="true"
             color="inherit"
           >
-            <TotalPedidos />
+             <TotalPedidos countProdutos={countPedidosLocal}/>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -486,6 +489,7 @@ BUSCA OS DADOS DA EMPRESA
                     return (
                       <React.Fragment key={_key}>
                         <Produtos
+	            callbackParent={(valor)=>setCountPedidosLocal(valor)}
                           produto={product}
                           id={product.id}
                           nome={product.nome.toUpperCase()}
@@ -520,7 +524,7 @@ BUSCA OS DADOS DA EMPRESA
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}
       />
-      <NavigationBottom/>
+      <NavigationBottom totalPro={countPedidosLocal} />
     </React.Fragment>
   );
 };

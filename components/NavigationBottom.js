@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+﻿import React, { Fragment, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function LabelBottomNavigation() {
+export default function LabelBottomNavigation(props) {
 
   const classes = useStyles();
 
@@ -37,12 +37,15 @@ export default function LabelBottomNavigation() {
   function handleMenu(event) {
     setAnchorEl(event.currentTarget);
   }
+
   function handleChange(event, newValue) {
     setValue(newValue);
   }
+
   function handleMenuClose() {
     setAnchorEl(null);
   }
+
   return (
     <Fragment>
      <MyMenu
@@ -60,15 +63,16 @@ export default function LabelBottomNavigation() {
           label="INÍCIO"
           value="recents"
           icon={<Home color="primary" fontSize="small" />}
+          onClick={()=>window.location.href="../"}
         />
         <BottomNavigationAction
           label="CARRINHO"
           value="favorites"
           onClick={handleMenu}
-          icon={<TotalPedidos />}
+          icon={<TotalPedidos countProdutos={props.totalPro}/>}
         />
         <BottomNavigationAction
-          label="FAZER PEDIDO"
+          label="CONCLUIR PEDIDO"
           value="nearby"
           onClick={()=>setOpenDialog(true)}
           icon={<Check color="primary" fontSize="small" />}

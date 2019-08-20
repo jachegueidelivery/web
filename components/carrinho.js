@@ -64,7 +64,7 @@ const Carrinho = props => {
 
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
-  }, []);
+  });
 
   const remover = id => {
     LocalStorageHandler.removeByIdInArray(id, "products");
@@ -76,8 +76,11 @@ const Carrinho = props => {
   let conteudo = null;
 
   if (data !== null) {
+
     if (data.length > 0) {
+
       conteudo = data.map((produto, _k) => {
+
         let quant = produto.quantidade;
 
         let valTotal = produto.preco * quant;
@@ -180,7 +183,7 @@ const Carrinho = props => {
               color="primary"
               className={classes.button}
             >
-              <b>FAZER PEDIDO</b>
+              <b>CONCLUIR PEDIDO</b>
             </Button>
           </Grid>
         </Toolbar>

@@ -32,7 +32,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/index.js");
 /* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "./node_modules/@material-ui/core/esm/useMediaQuery/index.js");
-var _jsxFileName = "D:\\node\\delivery\\components\\DialogFormConfirm.js";
+/* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
+var _jsxFileName = "E:\\delivery\\components\\DialogFormConfirm.js";
+
 
 
 
@@ -62,7 +64,7 @@ function Copyright() {
     align: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: this
   }, "Copyright © ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -70,7 +72,7 @@ function Copyright() {
     href: "https://material-ui.com/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: this
   }, "Your Website"), " ", new Date().getFullYear(), ". Built with ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -78,7 +80,7 @@ function Copyright() {
     href: "https://material-ui.com/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: this
   }, "Material-UI."));
@@ -121,33 +123,33 @@ function SignIn() {
     maxWidth: "xs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 71
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 72
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.paper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 73
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: classes.avatar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 74
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_15___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -155,7 +157,7 @@ function SignIn() {
     noValidate: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 77
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -170,7 +172,7 @@ function SignIn() {
     autoFocus: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 78
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -185,7 +187,7 @@ function SignIn() {
     autoComplete: "current-endereco",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: this
   }))));
@@ -202,6 +204,10 @@ function SimpleDialog(props) {
     onClose(true);
   }
 
+  function onCloncluirPedido() {
+    alert(_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__["default"].remove('products'));
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__["default"], {
     fullScreen: fullScreen,
     open: open,
@@ -209,7 +215,7 @@ function SimpleDialog(props) {
     "aria-labelledby": "responsive-dialog-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 121
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -217,38 +223,38 @@ function SimpleDialog(props) {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 127
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_14__["default"], {
     justifyContent: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 128
     },
     __self: this
   }, "Concluir Pedido")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 131
     },
     __self: this
   }, "Verificaremos que voc\xEA n\xE3o est\xE1 logado ou que n\xE3o possui uma conta, ent\xE3o, para proseguir, digite seu n\xFAmero de telefone e endere\xE7o, e o seu pedido ser\xE1 feito."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SignIn, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 136
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 138
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -257,17 +263,17 @@ function SimpleDialog(props) {
     variant: "contained",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 139
     },
     __self: this
   }, "Fechar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    onClick: handleClose,
+    onClick: onCloncluirPedido,
     color: "primary",
     variant: "contained",
     autoFocus: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 142
     },
     __self: this
   }, "Confirmar")));
@@ -6676,7 +6682,7 @@ var flexbox = Object(_compose__WEBPACK_IMPORTED_MODULE_1__["default"])(flexBasis
 /*!*******************************************************!*\
   !*** ./node_modules/@material-ui/system/esm/index.js ***!
   \*******************************************************/
-/*! exports provided: borders, breakpoints, compose, css, display, flexbox, palette, positions, shadows, sizing, spacing, style, typography, border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderRadius, flexBasis, flexDirection, flexWrap, justifyContent, alignItems, alignContent, order, flex, flexGrow, flexShrink, alignSelf, justifyItems, justifySelf, color, bgcolor, position, zIndex, top, right, bottom, left, width, maxWidth, minWidth, height, maxHeight, minHeight, sizeWidth, sizeHeight, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, textAlign */
+/*! exports provided: borders, border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderRadius, breakpoints, compose, css, display, flexbox, flexBasis, flexDirection, flexWrap, justifyContent, alignItems, alignContent, order, flex, flexGrow, flexShrink, alignSelf, justifyItems, justifySelf, palette, color, bgcolor, positions, position, zIndex, top, right, bottom, left, shadows, sizing, width, maxWidth, minWidth, height, maxHeight, minHeight, sizeWidth, sizeHeight, spacing, style, typography, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, textAlign */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

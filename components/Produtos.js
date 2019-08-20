@@ -85,11 +85,11 @@ const useStyles = makeStyles(theme => ({
  * Component: Produtos
  */
 export default function Produtos(props) {
-
+	
 	const [quantidade, setQuantidade] = useState(0);
 	const [valorTotal, setValorTotal] = useState(0);
 	const [observacao, setObservacao] = useState('');
-	
+
 	const matches = useMediaQuery('(min-width:600px)');
 
 	function addProduct() {
@@ -99,13 +99,13 @@ export default function Produtos(props) {
 			products = JSON.parse(localStorage.getItem('products'));
 		}
 
-		//Desestrutura��o Javascript
+		//Desestruturação Javascript
 		const { id, nome, imagem, precoUnitario, descricao } = props;
 
 		//Pega o index
 		let objIndex = products.findIndex(pedido => pedido.productId === id);
 
-		//Caso n�o exista
+		//Caso não exista
 		if (objIndex === -1) {
 			products.push({
 				productId: id,
@@ -147,8 +147,6 @@ export default function Produtos(props) {
 
 		addProduct();
 
-		//props.handleTotal(-props.precoUnitario);
-
 		setValorTotal(props.precoUnitario * quant);
 	}
 
@@ -156,8 +154,6 @@ export default function Produtos(props) {
 		let quant = parseInt(ev.target.value);
 
 		setQuantidade(quant);
-
-		//props.handleTotal(props.precoUnitario);
 
 		addProduct();
 
@@ -174,6 +170,10 @@ export default function Produtos(props) {
 			setQuantidade(0);
 		}
 	}, [quantidade]);
+	
+	useEffect(() => {
+    		props.callbackParent(quantidade);
+  	},[quantidade])
 
 	const classes = useStyles();
 	return (
@@ -185,7 +185,9 @@ export default function Produtos(props) {
 							<div className={classes.itemAvatar}>
 								{props.imagem ? (
 									<img className={classes.itemAvatarImg} alt="" src={props.imagem} />
-								):(<div>b</div>)}
+								) : (
+									<div>b</div>
+								)}
 							</div>
 							<div className={classes.itemContent}>
 								<Typography>
@@ -200,9 +202,7 @@ export default function Produtos(props) {
 									<strong>Kg</strong>
 								</sub>
 								<br />
-								{observacao.length === 0 && (
-									<br/>
-								)}
+								{observacao.length === 0 && <br />}
 								<Grid container wrap="nowrap">
 									<FormControl fullWidth>
 										<InputLabel htmlFor="my-input">Observação:</InputLabel>
@@ -220,7 +220,7 @@ export default function Produtos(props) {
 							<div className={classes.itemAcoes}>
 								<br />
 								<Typography>
-									A partir de  <br /> <b>R$ {props.precoUnitario.toFixed(2)}</b>
+									A partir de <br /> <b>R$ {props.precoUnitario.toFixed(2)}</b>
 								</Typography>
 								<small>Quantidade:</small>
 								<ButtonGroup

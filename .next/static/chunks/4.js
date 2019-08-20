@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Menu */ "./components/Menu.js");
 /* harmony import */ var _LazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LazyLoad */ "./components/LazyLoad/index.js");
 
-var _jsxFileName = "D:\\node\\delivery\\components\\NavigationBottom.js";
+var _jsxFileName = "E:\\delivery\\components\\NavigationBottom.js";
 
 
 
@@ -56,7 +56,7 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
     bottom: 0
   }
 });
-function LabelBottomNavigation() {
+function LabelBottomNavigation(props) {
   var classes = useStyles();
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("recents"),
@@ -91,7 +91,7 @@ function LabelBottomNavigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 50
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -100,7 +100,7 @@ function LabelBottomNavigation() {
     abrir: open,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 51
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigation__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -110,7 +110,7 @@ function LabelBottomNavigation() {
     showLabels: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -121,13 +121,16 @@ function LabelBottomNavigation() {
       fontSize: "small",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 65
       },
       __self: this
     }),
+    onClick: function onClick() {
+      return window.location.href = "../";
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 62
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -135,19 +138,20 @@ function LabelBottomNavigation() {
     value: "favorites",
     onClick: handleMenu,
     icon: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TotalPedidos__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      countProdutos: props.totalPro,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 72
       },
       __self: this
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 68
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    label: "FAZER PEDIDO",
+    label: "CONCLUIR PEDIDO",
     value: "nearby",
     onClick: function onClick() {
       return setOpenDialog(true);
@@ -157,13 +161,13 @@ function LabelBottomNavigation() {
       fontSize: "small",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 78
       },
       __self: this
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 74
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(DialogFormConfirm, {
@@ -173,7 +177,7 @@ function LabelBottomNavigation() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: this
   }));

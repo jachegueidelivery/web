@@ -3,20 +3,20 @@
     {
       "id": "8lYe",
       "name": "./components/Footer.js",
-      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
-      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
+      "file": "static/chunks/13.f87023087013139bcef0.js",
+      "publicPath": "static/chunks/13.f87023087013139bcef0.js"
     },
     {
       "id": "hlFM",
       "name": "./node_modules/@material-ui/core/esm/Box/Box.js",
-      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
-      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
+      "file": "static/chunks/13.f87023087013139bcef0.js",
+      "publicPath": "static/chunks/13.f87023087013139bcef0.js"
     },
     {
       "id": "hlie",
       "name": "./node_modules/@material-ui/core/esm/Link/Link.js",
-      "file": "static/chunks/13.6ab35b188b6338e228a1.js",
-      "publicPath": "static/chunks/13.6ab35b188b6338e228a1.js"
+      "file": "static/chunks/13.f87023087013139bcef0.js",
+      "publicPath": "static/chunks/13.f87023087013139bcef0.js"
     }
   ],
   "../components/MostrarEmpresas": [
@@ -1307,250 +1307,250 @@
     {
       "id": "2SVd",
       "name": "./node_modules/axios/lib/helpers/isAbsoluteURL.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "2wwy",
       "name": "./node_modules/@babel/runtime-corejs2/core-js/object/values.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "30+C",
       "name": "./node_modules/@material-ui/core/esm/Card/Card.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "4mXO",
       "name": "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "5oMp",
       "name": "./node_modules/axios/lib/helpers/combineURLs.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "7TPF",
       "name": "./node_modules/core-js/library/fn/object/get-own-property-symbols.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "9rSQ",
       "name": "./node_modules/axios/lib/core/InterceptorManager.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "ACTa",
       "name": "./components/MostrarEmpresas.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "CgaS",
       "name": "./node_modules/axios/lib/core/Axios.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "DfZB",
       "name": "./node_modules/axios/lib/helpers/spread.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "E8gZ",
       "name": "./node_modules/core-js/library/modules/_object-to-array.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "HSsa",
       "name": "./node_modules/axios/lib/helpers/bind.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "Ie8z",
       "name": "./node_modules/@material-ui/core/esm/CardMedia/CardMedia.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "JEQr",
       "name": "./node_modules/axios/lib/defaults.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "LYNF",
       "name": "./node_modules/axios/lib/core/createError.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "Lmem",
       "name": "./node_modules/axios/lib/cancel/isCancel.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "MLWZ",
       "name": "./node_modules/axios/lib/helpers/buildURL.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "NLn7",
       "name": "./db/empresas.json",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "OH9c",
       "name": "./node_modules/axios/lib/core/enhanceError.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "OTTw",
       "name": "./node_modules/axios/lib/helpers/isURLSameOrigin.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "PENG",
       "name": "./node_modules/os-browserify/browser.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "Rn+g",
       "name": "./node_modules/axios/lib/core/settle.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "SntB",
       "name": "./node_modules/axios/lib/core/mergeConfig.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "UnBK",
       "name": "./node_modules/axios/lib/core/dispatchRequest.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "endd",
       "name": "./node_modules/axios/lib/cancel/Cancel.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "eqyj",
       "name": "./node_modules/axios/lib/helpers/cookies.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "fW1p",
       "name": "./node_modules/core-js/library/modules/es7.object.values.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "jfS+",
       "name": "./node_modules/axios/lib/cancel/CancelToken.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "lYgS",
       "name": "./components/ApiRest.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "nhzr",
       "name": "./node_modules/core-js/library/fn/object/values.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "oa/T",
       "name": "./node_modules/@material-ui/core/esm/CardContent/CardContent.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "tQ2B",
       "name": "./node_modules/axios/lib/adapters/xhr.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "vDqi",
       "name": "./node_modules/axios/index.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "w0Vi",
       "name": "./node_modules/axios/lib/helpers/parseHeaders.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "x86X",
       "name": "./node_modules/axios/node_modules/is-buffer/index.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "xAGQ",
       "name": "./node_modules/axios/lib/core/transformData.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "xTJ+",
       "name": "./node_modules/axios/lib/utils.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "yK9s",
       "name": "./node_modules/axios/lib/helpers/normalizeHeaderName.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "zrwo",
       "name": "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     },
     {
       "id": "zuR4",
       "name": "./node_modules/axios/lib/axios.js",
-      "file": "static/chunks/12.0ad6afe5756a96d892e0.js",
-      "publicPath": "static/chunks/12.0ad6afe5756a96d892e0.js"
+      "file": "static/chunks/12.1e0b614fe8e3ec4c59c7.js",
+      "publicPath": "static/chunks/12.1e0b614fe8e3ec4c59c7.js"
     }
   ],
   "../components/NavigationBottom": [
     {
       "id": "0MBr",
       "name": "./components/NavigationBottom.js",
-      "file": "static/chunks/3.030c1f02735fe320e36f.js",
-      "publicPath": "static/chunks/3.030c1f02735fe320e36f.js"
+      "file": "static/chunks/3.e8a50cd885c1c2cce0d0.js",
+      "publicPath": "static/chunks/3.e8a50cd885c1c2cce0d0.js"
     }
   ],
   "../db/config.dev.json": [
@@ -1565,68 +1565,68 @@
     {
       "id": "1AYd",
       "name": "./node_modules/@material-ui/core/esm/InputLabel/InputLabel.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "469l",
       "name": "./node_modules/@material-ui/core/esm/Avatar/Avatar.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "ADg1",
       "name": "./node_modules/@material-ui/core/esm/FormControl/FormControl.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "As0B",
       "name": "./node_modules/@material-ui/core/esm/internal/svg-icons/createSvgIcon.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "EHdT",
       "name": "./node_modules/@material-ui/core/esm/FormControl/useFormControl.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "UrxM",
       "name": "./components/DialogFormConfirm.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "hlFM",
       "name": "./node_modules/@material-ui/core/esm/Box/Box.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "hlie",
       "name": "./node_modules/@material-ui/core/esm/Link/Link.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "lopY",
       "name": "./node_modules/@material-ui/core/esm/useMediaQuery/useMediaQuery.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "pdwK",
       "name": "./node_modules/@material-ui/core/esm/Input/Input.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     },
     {
       "id": "w4+p",
       "name": "./node_modules/@material-ui/icons/LockOutlined.js",
-      "file": "static/chunks/2.973021c5aafc1060824e.js",
-      "publicPath": "static/chunks/2.973021c5aafc1060824e.js"
+      "file": "static/chunks/2.353c7c2ed44ec1977775.js",
+      "publicPath": "static/chunks/2.353c7c2ed44ec1977775.js"
     }
   ]
 }

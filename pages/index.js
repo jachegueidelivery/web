@@ -200,6 +200,7 @@ const useStyles = makeStyles(theme => ({
  */
 
 const Main = props => {
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -282,7 +283,7 @@ const Main = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <TotalPedidos />
+            <TotalPedidos/>
           </IconButton>
         </Toolbar>
       </AppBar>

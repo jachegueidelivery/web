@@ -1,12 +1,12 @@
 {
   "modules": {
     "byIdentifier": {
-      "multi private-next-pages/Car.js": 0,
-      "multi private-next-pages/Clock.js": 1,
-      "multi private-next-pages/Home.js": 2,
-      "multi private-next-pages/[id].js": 3,
-      "multi private-next-pages/_app.js": 4,
-      "multi private-next-pages/_document.js": 5,
+      "multi private-next-pages/Clock.js": 0,
+      "multi private-next-pages/[id].js": 1,
+      "multi private-next-pages/_app.js": 2,
+      "multi private-next-pages/_document.js": 3,
+      "multi private-next-pages/car.js": 4,
+      "multi private-next-pages/home.js": 5,
       "multi private-next-pages/index.js": 6,
       "multi next/dist/pages/_error": 7
     },
@@ -23,14 +23,14 @@
   },
   "chunks": {
     "byName": {
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Car.js": 2,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Clock.js": 3,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\Home.js": 4,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\[id].js": 5,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\_app.js": 6,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\_document.js": 7,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\_error.js": 8,
-      "static\\j9zaJ611W3HYCryfoU3VW\\pages\\index.js": 9
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\Clock.js": 2,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\[id].js": 3,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_app.js": 4,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_document.js": 5,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_error.js": 6,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\car.js": 7,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\home.js": 8,
+      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\index.js": 9
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho.js ./DialogFormConfirm": 0,

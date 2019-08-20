@@ -51,7 +51,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "@material-ui/core/useMediaQuery");
 /* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19__);
-var _jsxFileName = "D:\\node\\delivery\\components\\DialogFormConfirm.js";
+/* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
+var _jsxFileName = "E:\\delivery\\components\\DialogFormConfirm.js";
+
 
 
 
@@ -81,7 +83,7 @@ function Copyright() {
     align: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: this
   }, "Copyright © ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -89,7 +91,7 @@ function Copyright() {
     href: "https://material-ui.com/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: this
   }, "Your Website"), " ", new Date().getFullYear(), ". Built with ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -97,7 +99,7 @@ function Copyright() {
     href: "https://material-ui.com/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: this
   }, "Material-UI."));
@@ -140,33 +142,33 @@ function SignIn() {
     maxWidth: "xs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 71
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 72
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.paper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 73
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7___default.a, {
     className: classes.avatar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 74
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_15___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -174,7 +176,7 @@ function SignIn() {
     noValidate: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 77
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -189,7 +191,7 @@ function SignIn() {
     autoFocus: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 78
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -204,7 +206,7 @@ function SignIn() {
     autoComplete: "current-endereco",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: this
   }))));
@@ -221,6 +223,10 @@ function SimpleDialog(props) {
     onClose(true);
   }
 
+  function onCloncluirPedido() {
+    alert(_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__["default"].remove('products'));
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2___default.a, {
     fullScreen: fullScreen,
     open: open,
@@ -228,7 +234,7 @@ function SimpleDialog(props) {
     "aria-labelledby": "responsive-dialog-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 121
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -236,38 +242,38 @@ function SimpleDialog(props) {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 127
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_14___default.a, {
     justifyContent: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 128
     },
     __self: this
   }, "Concluir Pedido")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 131
     },
     __self: this
   }, "Verificaremos que voc\xEA n\xE3o est\xE1 logado ou que n\xE3o possui uma conta, ent\xE3o, para proseguir, digite seu n\xFAmero de telefone e endere\xE7o, e o seu pedido ser\xE1 feito."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SignIn, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 136
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 138
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -276,17 +282,17 @@ function SimpleDialog(props) {
     variant: "contained",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 139
     },
     __self: this
   }, "Fechar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    onClick: handleClose,
+    onClick: onCloncluirPedido,
     color: "primary",
     variant: "contained",
     autoFocus: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 142
     },
     __self: this
   }, "Confirmar")));
