@@ -8,13 +8,13 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 4,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\Clock.js": 5,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\[id].js": 6,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_app.js": 7,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_error.js": 8,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\car.js": 9,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\home.js": 10,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\index.js": 11
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\Clock.js": 5,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\[id].js": 6,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\_app.js": 7,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\_error.js": 8,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\car.js": 9,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\home.js": 10,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\index.js": 11
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 0,

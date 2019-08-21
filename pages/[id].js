@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -39,10 +40,14 @@ import Loadable from "react-loadable";
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
-    return (<><LazyLoad height="30px" margintop="5px" /><LazyLoad height="30px" margintop="5px" /></>);
+    return (
+      <>
+        <LazyLoad height="30px" margintop="5px" />
+        <LazyLoad height="30px" margintop="5px" />
+      </>
+    );
   }
 });
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -237,13 +242,12 @@ const useStyles = makeStyles(theme => ({
     height: 38,
     width: 38
   },
-  footerNavigationBottom:{
-    background:'white'
+  footerNavigationBottom: {
+    background: "white"
   }
 }));
 
 const Index = props => {
-
   const router = useRouter();
 
   const [value, setValue] = React.useState(0);
@@ -416,7 +420,7 @@ BUSCA OS DADOS DA EMPRESA
             aria-haspopup="true"
             color="inherit"
           >
-             <TotalPedidos countProdutos={countPedidosLocal}/>
+            <TotalPedidos countProdutos={countPedidosLocal} />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -460,23 +464,38 @@ BUSCA OS DADOS DA EMPRESA
           </Container>
           {produtos.isLoading == true && empresaId != null && (
             <>
-              <Paper className={classes.rootinput}>
-                <IconButton className={classes.iconButton} aria-label="Menu">
-                  <Menu />
-                </IconButton>
-                <InputBase
-                  className={classes.textFieldInput}
-                  placeholder={`Pesquise produtos aqui...`}
-                  onChange={ev => onChangeInputSearch(ev)}
-                  onKeyUp={ev => onChangeInputSearch(ev)}
-                  value={search}
-                  inputProps={{ "aria-label": "Search Google Maps" }}
-                />
-                <Divider className={classes.divider} />
-                <IconButton className={classes.iconButton} aria-label="Search">
-                  <Search />
-                </IconButton>
-              </Paper>
+              <Grid
+                  container
+                  justify="center"
+                >
+                <Grid
+                  md="6"
+                >
+                  <Paper className={classes.rootinput}>
+                    <IconButton
+                      className={classes.iconButton}
+                      aria-label="Menu"
+                    >
+                      <Menu />
+                    </IconButton>
+                    <InputBase
+                      className={classes.textFieldInput}
+                      placeholder={`Pesquise produtos aqui...`}
+                      onChange={ev => onChangeInputSearch(ev)}
+                      onKeyUp={ev => onChangeInputSearch(ev)}
+                      value={search}
+                      inputProps={{ "aria-label": "Search Google Maps" }}
+                    />
+                    <Divider className={classes.divider} />
+                    <IconButton
+                      className={classes.iconButton}
+                      aria-label="Search"
+                    >
+                      <Search />
+                    </IconButton>
+                  </Paper>
+                </Grid>
+              </Grid>
               <br />
               {produtos.data.hasOwnProperty("erro") && produtos.data ? (
                 <>
@@ -489,7 +508,7 @@ BUSCA OS DADOS DA EMPRESA
                     return (
                       <React.Fragment key={_key}>
                         <Produtos
-	            callbackParent={(valor)=>setCountPedidosLocal(valor)}
+                          callbackParent={valor => setCountPedidosLocal(valor)}
                           produto={product}
                           id={product.id}
                           nome={product.nome.toUpperCase()}
@@ -499,7 +518,7 @@ BUSCA OS DADOS DA EMPRESA
                         />
                       </React.Fragment>
                     );
-                  })}{" "}
+                  })}
                 </>
               )}
             </>
@@ -515,7 +534,7 @@ BUSCA OS DADOS DA EMPRESA
         </TabPanel>
       </Container>
       {/* Footer */}
-      <Container className={classes.footerNavigationBottom} maxWidth="lg">
+      <Container className={classes.footerNavigationBottom} maxWidth="xl">
         <Footer />
       </Container>
       {/* End footer */}

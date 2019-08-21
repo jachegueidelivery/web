@@ -169,11 +169,12 @@ export default function Produtos(props) {
 			setValorTotal(0);
 			setQuantidade(0);
 		}
+		props.callbackParent(quantidade);
 	}, [quantidade]);
 	
-	useEffect(() => {
-    		props.callbackParent(quantidade);
-  	},[quantidade])
+	/*useEffect(() => {
+    		
+  	},[quantidade])*/
 
 	const classes = useStyles();
 	return (

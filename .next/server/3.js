@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Menu */ "./components/Menu.js");
 /* harmony import */ var _LazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LazyLoad */ "./components/LazyLoad/index.js");
 
-var _jsxFileName = "E:\\delivery\\components\\NavigationBottom.js";
+var _jsxFileName = "D:\\node\\delivery\\components\\NavigationBottom.js";
 
 
 
@@ -58,7 +58,9 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
   stickToBottom: {
     width: "100%",
     position: "fixed",
-    bottom: 0
+    bottom: 0,
+    backgroundColor: "#f5f5f5",
+    boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.2)"
   }
 });
 function LabelBottomNavigation(props) {
@@ -96,7 +98,7 @@ function LabelBottomNavigation(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 52
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -105,7 +107,7 @@ function LabelBottomNavigation(props) {
     abrir: open,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 53
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigation__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -115,7 +117,7 @@ function LabelBottomNavigation(props) {
     showLabels: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -126,7 +128,7 @@ function LabelBottomNavigation(props) {
       fontSize: "small",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 67
       },
       __self: this
     }),
@@ -135,7 +137,7 @@ function LabelBottomNavigation(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 64
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -146,13 +148,13 @@ function LabelBottomNavigation(props) {
       countProdutos: props.totalPro,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 74
       },
       __self: this
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 70
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -166,13 +168,13 @@ function LabelBottomNavigation(props) {
       fontSize: "small",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 80
       },
       __self: this
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 76
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(DialogFormConfirm, {
@@ -182,7 +184,7 @@ function LabelBottomNavigation(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 83
     },
     __self: this
   }));

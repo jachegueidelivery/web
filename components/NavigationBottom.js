@@ -18,7 +18,9 @@ const useStyles = makeStyles({
   stickToBottom: {
     width: "100%",
     position: "fixed",
-    bottom: 0
+    bottom: 0,
+    backgroundColor:"#f5f5f5",
+    boxShadow:"0px 0px 30px 0px rgba(0,0,0,0.2)"
   }
 });
 

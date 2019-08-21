@@ -16,6 +16,7 @@ import LazyLoad from "../components/LazyLoad";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import TotalPedidos from "../components/TotalPedidos";
+import Grid from '@material-ui/core/Grid';
 import {
   Menu,
   Search,
@@ -27,7 +28,11 @@ import {
 const Footer = Loadable({
   loader: () => import("../components/Footer"),
   loading() {
-    return (<><LazyLoad height="0px" margintop="5px" /></>);
+    return (
+      <>
+        <LazyLoad height="0px" margintop="5px" />
+      </>
+    );
   }
 });
 
@@ -200,7 +205,6 @@ const useStyles = makeStyles(theme => ({
  */
 
 const Main = props => {
-
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -283,7 +287,7 @@ const Main = props => {
             aria-haspopup="true"
             color="inherit"
           >
-            <TotalPedidos/>
+            <TotalPedidos />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -301,20 +305,22 @@ const Main = props => {
         </Typography>
         <br />
         {/* INPUT */}
-        <Paper className={classes.rootinput}>
-          <IconButton className={classes.iconButton} aria-label="Menu">
-            <Menu />
-          </IconButton>
-          <InputBase
-            className={classes.textFieldInput}
-            placeholder="Pesquisar"
-            inputProps={{ "aria-label": "Search Google Maps" }}
-          />
-          <Divider className={classes.divider} />
-          <IconButton className={classes.iconButton} aria-label="Search">
-            <Search />
-          </IconButton>
-        </Paper>
+        <Grid>
+          <Paper className={classes.rootinput}>
+            <IconButton className={classes.iconButton} aria-label="Menu">
+              <Menu />
+            </IconButton>
+            <InputBase
+              className={classes.textFieldInput}
+              placeholder="Pesquisar"
+              inputProps={{ "aria-label": "Search Google Maps" }}
+            />
+            <Divider className={classes.divider} />
+            <IconButton className={classes.iconButton} aria-label="Search">
+              <Search />
+            </IconButton>
+          </Paper>
+        </Grid>
         <Typography
           variant="h5"
           align="center"
@@ -346,7 +352,7 @@ const Main = props => {
             >
               <GridOn />
             </IconButton>
-            
+
             <Divider className={classes.divider} />
             <IconButton
               aria-label="Account of current user"
@@ -364,7 +370,11 @@ const Main = props => {
         <MostrarEmpresas />
       </Container>
       {/* MenuFooter */}
-      <Container className={classes.footerNavigationBottom} maxWidth="lg">
+      <Container
+        fixed={true}
+        className={classes.footerNavigationBottom}
+        maxWidth="xl"
+      >
         <Footer />
       </Container>
       {/* End footer */}
@@ -376,6 +386,6 @@ const Main = props => {
       <NavigationBottom />
     </React.Fragment>
   );
-}
+};
 
 export default Main;

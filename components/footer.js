@@ -56,12 +56,12 @@ let Footers = [
 
 function MadeWithLove() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      Criado por{" "}
-      <Link color="inherit" href="#">
+    <Typography variant="body2" color="textSecondary">
+      &#169;Copyright 2019 - Empresa -<br />
+      Todos os direitos reservados
+      {/* <Link color="inherit" href="#">
         LINK AQUI
-      </Link>{" "}
-      equipe
+      </Link> */}
     </Typography>
   );
 }
@@ -91,13 +91,7 @@ function Footer(props) {
           p={0}
         >
           {_footer.map((footer, key) => (
-            <Grid
-              item
-              xs={6}
-              lg={2}
-              sm={4}
-              key={key}
-            >
+            <Grid item xs={6} lg={2} sm={4} key={key}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}
               </Typography>
@@ -122,9 +116,19 @@ function Footer(props) {
       </Container>
       <Divider />
       <Container maxWidth="lg" component="footer" p={0}>
-        <Box mt={0}>
-          <MadeWithLove />
-        </Box>
+        <Grid
+          container
+          spacing={2}
+          alignContent="center"
+          justify="space-evenly"
+          p={0}
+        >
+          <Grid item xs={6} lg={2} sm={4}>
+            <MadeWithLove />
+          </Grid>
+          <Grid item xs={6} lg={2} sm={4}/>
+          <Grid item xs={6} lg={2} sm={4} />
+        </Grid>
       </Container>
       <br />
       <br />

@@ -17,6 +17,6 @@ if (host  === "cryptopc" || host  === "saude") {
   index = "local";
 }
 
-const instance = axios.create(apiConfig[1]);
+const instance = axios.create(apiConfig[0]);
 
 export default instance;

@@ -27,7 +27,7 @@ if (host === "cryptopc" || host === "saude") {
   index = "local";
 }
 
-var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[1]);
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[0]);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),
@@ -67,7 +67,7 @@ var _db_empresas_json__WEBPACK_IMPORTED_MODULE_15___namespace = /*#__PURE__*/__w
 
 
 
-var _jsxFileName = "E:\\delivery\\components\\MostrarEmpresas.js";
+var _jsxFileName = "D:\\node\\delivery\\components\\MostrarEmpresas.js";
 
 
 

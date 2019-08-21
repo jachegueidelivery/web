@@ -23,14 +23,14 @@
   },
   "chunks": {
     "byName": {
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\Clock.js": 2,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\[id].js": 3,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_app.js": 4,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_document.js": 5,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\_error.js": 6,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\car.js": 7,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\home.js": 8,
-      "static\\pn-hF7-yUuLTU7aM25Pb1\\pages\\index.js": 9
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\Clock.js": 2,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\[id].js": 3,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\_app.js": 4,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\_document.js": 5,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\_error.js": 6,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\car.js": 7,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\home.js": 8,
+      "static\\Tmx9Og7GIr4fh55Kp8nUl\\pages\\index.js": 9
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho.js ./DialogFormConfirm": 0,
