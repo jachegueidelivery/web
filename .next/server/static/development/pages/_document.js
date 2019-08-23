@@ -1604,7 +1604,23 @@ function (_Document) {
         content: _src_theme__WEBPACK_IMPORTED_MODULE_12__["default"].palette.primary.main,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 19
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("meta", {
+        name: "description",
+        content: "O jeito mais f\xE1cil de pedir delivery na comodidade da sua casa. Leia avalia\xE7\xF5es e fa\xE7a seu pedido online na maior lista de empresas da sua cidade. Fa\xE7a seu pedido pela internet e receba em casa.",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {
@@ -1612,25 +1628,25 @@ function (_Document) {
         href: "/static/favicon.ico",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 25
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("body", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_10__["Main"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_10__["NextScript"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
       })));
@@ -1662,7 +1678,7 @@ function () {
                     return sheets.collect(react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(App, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 42
+                        lineNumber: 44
                       },
                       __self: this
                     })));
@@ -1682,7 +1698,7 @@ function () {
                 key: "styles",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 51
+                  lineNumber: 53
                 },
                 __self: this
               }, initialProps.styles, sheets.getStyleElement())]

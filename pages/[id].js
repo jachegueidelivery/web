@@ -16,6 +16,7 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import { createMuiTheme } from "@material-ui/core/styles";
 import {
   Menu,
   Search,
@@ -116,7 +117,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1, 1.5)
   },
   heroContent: {
-    padding: theme.spacing(0, 0, 0)
+    padding: theme.spacing(0, 0, 0),
+    border: "1px solid lime"
   },
   cardHeader: {
     backgroundColor: theme.palette.grey[200]
@@ -139,15 +141,15 @@ const useStyles = makeStyles(theme => ({
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
+    paddingBottom: theme.spacing(8),
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(2),
+    border: "1px solid blue"
   },
   card: {
     height: "100%",
     display: "flex",
     flexDirection: "column"
-  },
-  cardMedia: {
-    paddingTop: "56.25%" // 16:9
   },
   cardMediaList: {
     paddingTop: "56.25%", // 16:9
@@ -166,17 +168,18 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 40,
     display: "flex",
     alignItems: "center",
+    width: "100%",
     margin: "0px auto",
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
     paddingTop: 5,
     paddingBottom: 5
   },
   textFieldInput: {
     backgroundColor: theme.palette.common.white,
     fontSize: 16,
+    width:"100%",
     padding: "10px 12px",
-    width: "calc(100% - 24px)",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     "&:focus": {
       borderColor: "#80bdff",
@@ -244,6 +247,12 @@ const useStyles = makeStyles(theme => ({
   },
   footerNavigationBottom: {
     background: "white"
+  },
+  tabPainel: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    paddingBottom: 0
   }
 }));
 
@@ -424,114 +433,93 @@ BUSCA OS DADOS DA EMPRESA
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Container className={classes.cardGrid} maxWidth="md">
-        <br />
-        {/* INÍCIO DO TAB CONTENT */}
-        <AppBar position="static">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="on"
-            indicatorColor="primary"
-            aria-label="Simple tabs example"
-          >
-            <Tab label="PRODUTOS" icon={<AccessAlarm />} {...a11yProps(0)} />
-            <Tab
-              label="SEUS PEDIDOS"
-              icon={<AccessibilityRounded />}
-              {...a11yProps(1)}
-            />
-            <Tab
-              label="AVALIAÇÕES"
-              icon={<AccountBalanceSharp />}
-              {...a11yProps(2)}
-            />
-          </Tabs>
-        </AppBar>
-        {/* TAB 1 */}
-        <TabPanel value={value} index={0} className={classes.root}>
-          <Container
-            maxWidth="lg"
-            component="main"
-            className={classes.heroContent}
-          >
-            {produtos.isLoading == false && (
+
+      <Container maxWidth="md" component="main" className={classes.cardGrid}>
+        {produtos.isLoading == false && (
+          <>
+            <SpinnerDelivery label="Carregando Produtos, aguarde, por favor." />
+          </>
+        )}
+        {produtos.isLoading == true && empresaId != null && (
+          <>
+            <br />
+            {produtos.data.hasOwnProperty("erro") && produtos.data ? (
               <>
-                <SpinnerDelivery label="Carregando Produtos, aguarde, por favor." />
+                <AlertNotHasProducts label="Não há Produtos para esta empresa." />
+                {console.log(produtos.data)}
+              </>
+            ) : (
+              <>
+                <Grid container justify="center">
+                  <Grid md="3">
+                    <Grid item>
+                      <Grid container justify="center">
+                        <br />
+                        <br />
+                        <br />
+                        Categoria 1<br />
+                        Categoria 2<br />
+                        Categoria 3<br />
+                        Categoria 4<br />
+                        Categoria 5<br />
+                        Categoria 6<br />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid md="9">
+                    <Grid item>
+                      <Grid container justify="center">
+                        <Grid container>
+                            <Paper className={classes.rootinput}>
+                              <IconButton
+                                className={classes.iconButton}
+                                aria-label="Menu"
+                              >
+                                <Menu />
+                              </IconButton>
+                              <InputBase
+                                className={classes.textFieldInput}
+                                placeholder="Pesquisar"
+                                inputProps={{
+                                  "aria-label": "Search Google Maps"
+                                }}
+                              />
+                              <Divider className={classes.divider} />
+                              <IconButton
+                                className={classes.iconButton}
+                                aria-label="Search"
+                              >
+                                <Search />
+                              </IconButton>
+                            </Paper>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    <Grid item>
+                      {Object.values(produtos.data).map((product, _key) => {
+                        return (
+                          <React.Fragment key={_key}>
+                            <Produtos
+                              callbackParent={valor =>
+                                setCountPedidosLocal(valor)
+                              }
+                              produto={product}
+                              id={product.id}
+                              nome={product.nome.toUpperCase()}
+                              imagem={product.imagem}
+                              precoUnitario={product.preco}
+                              descricao={product.descricao}
+                            />
+                          </React.Fragment>
+                        );
+                      })}
+                    </Grid>
+                  </Grid>
+                </Grid>
               </>
             )}
-          </Container>
-          {produtos.isLoading == true && empresaId != null && (
-            <>
-              <Grid
-                  container
-                  justify="center"
-                >
-                <Grid
-                  md="6"
-                >
-                  <Paper className={classes.rootinput}>
-                    <IconButton
-                      className={classes.iconButton}
-                      aria-label="Menu"
-                    >
-                      <Menu />
-                    </IconButton>
-                    <InputBase
-                      className={classes.textFieldInput}
-                      placeholder={`Pesquise produtos aqui...`}
-                      onChange={ev => onChangeInputSearch(ev)}
-                      onKeyUp={ev => onChangeInputSearch(ev)}
-                      value={search}
-                      inputProps={{ "aria-label": "Search Google Maps" }}
-                    />
-                    <Divider className={classes.divider} />
-                    <IconButton
-                      className={classes.iconButton}
-                      aria-label="Search"
-                    >
-                      <Search />
-                    </IconButton>
-                  </Paper>
-                </Grid>
-              </Grid>
-              <br />
-              {produtos.data.hasOwnProperty("erro") && produtos.data ? (
-                <>
-                  <AlertNotHasProducts label="Não há Produtos para esta empresa." />
-                  {console.log(produtos.data)}
-                </>
-              ) : (
-                <>
-                  {Object.values(produtos.data).map((product, _key) => {
-                    return (
-                      <React.Fragment key={_key}>
-                        <Produtos
-                          callbackParent={valor => setCountPedidosLocal(valor)}
-                          produto={product}
-                          id={product.id}
-                          nome={product.nome.toUpperCase()}
-                          imagem={product.imagem}
-                          precoUnitario={product.preco}
-                          descricao={product.descricao}
-                        />
-                      </React.Fragment>
-                    );
-                  })}
-                </>
-              )}
-            </>
-          )}
-        </TabPanel>
-        {/* TAB 2 */}
-        <TabPanel value={value} index={1}>
-          Tab 2
-        </TabPanel>
-        {/* TAB 3 */}
-        <TabPanel value={value} index={2}>
-          Tab 3
-        </TabPanel>
+          </>
+        )}
       </Container>
       {/* Footer */}
       <Container className={classes.footerNavigationBottom} maxWidth="xl">

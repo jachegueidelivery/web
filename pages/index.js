@@ -1,7 +1,6 @@
-﻿import React, { useState, useEffect, Fragment } from "react";
+﻿import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import Badge from "@material-ui/core/Badge";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -13,38 +12,24 @@ import IconButton from "@material-ui/core/IconButton";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 import LazyLoad from "../components/LazyLoad";
+import SpinnerTeste from "../components/SpinnerTeste";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import TotalPedidos from "../components/TotalPedidos";
-import Grid from '@material-ui/core/Grid';
-import {
-  Menu,
-  Search,
-  GridOn,
-  ReorderRounded,
-  ShoppingCartOutlined
-} from "@material-ui/icons";
+import Grid from "@material-ui/core/Grid";
+import { Menu, Search } from "@material-ui/icons";
 
 const Footer = Loadable({
   loader: () => import("../components/Footer"),
   loading() {
-    return (
-      <>
-        <LazyLoad height="0px" margintop="5px" />
-      </>
-    );
+    return <></>;
   }
 });
 
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
-    return (
-      <>
-        <LazyLoad height="30px" margintop="5px" />
-        <LazyLoad height="30px" margintop="5px" />
-      </>
-    );
+    return <></>;
   }
 });
 
@@ -211,9 +196,7 @@ const Main = props => {
 
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
-  const [data, setData] = useState([]);
-
-  const [openDialog, setOpenDialog] = useState(false);
+  const [isEmpresasLoaded, setIsEmpresasLoaded] = useState(!1);
 
   const classes = useStyles();
 
@@ -222,11 +205,6 @@ const Main = props => {
   function onAtualizarCount() {
     setCountPedidosLocal(LocalStorageHandler.count("products"));
   }
-
-  // useEffect(() => {
-  //   setData(JSON.parse(localStorage.getItem("products")));
-  //   onAtualizarCount();
-  // });
 
   function handleProfileMenuOpen(event) {
     onAtualizarCount();
@@ -330,51 +308,11 @@ const Main = props => {
       </Container>
       {/* End hero unit */}
       <Container className={classes.cardGrid} maxWidth="md">
-        <AppBar
-          position="static"
-          color="default"
-          elevation={0}
-          className={classes.appBar}
-        >
-          <Toolbar className={classes.toolbar2}>
-            <Typography
-              variant="h6"
-              color="textPrimary"
-              noWrap
-              className={classes.toolbarTitle}
-            />
-            <IconButton
-              aria-label="Account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="primary"
-              onClick={onChangeToGrid}
-            >
-              <GridOn />
-            </IconButton>
-
-            <Divider className={classes.divider} />
-            <IconButton
-              aria-label="Account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="primary"
-              onClick={onChangeToList}
-            >
-              <ReorderRounded />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <br />
-        {/* End hero unit */}
-        <MostrarEmpresas />
+        {!isEmpresasLoaded && <SpinnerTeste data={[1, 2, 3, 4, 5, 6]} />}
+        <MostrarEmpresas onLoadedComplete={data => setIsEmpresasLoaded(data)} />
       </Container>
       {/* MenuFooter */}
-      <Container
-        fixed={true}
-        className={classes.footerNavigationBottom}
-        maxWidth="xl"
-      >
+      <Container className={classes.footerNavigationBottom} maxWidth="xl">
         <Footer />
       </Container>
       {/* End footer */}

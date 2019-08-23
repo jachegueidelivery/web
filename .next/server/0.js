@@ -1,10 +1,10 @@
 exports.ids = [0];
 exports.modules = {
 
-/***/ "./components/DialogFormConfirm.js":
-/*!*****************************************!*\
-  !*** ./components/DialogFormConfirm.js ***!
-  \*****************************************/
+/***/ "./components/DialogFormConfirm/index.js":
+/*!***********************************************!*\
+  !*** ./components/DialogFormConfirm/index.js ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -51,8 +51,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "@material-ui/core/useMediaQuery");
 /* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./LocalStorageHandler */ "./components/LocalStorageHandler.js");
-var _jsxFileName = "D:\\node\\delivery\\components\\DialogFormConfirm.js";
+/* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../LocalStorageHandler */ "./components/LocalStorageHandler/index.js");
+var _jsxFileName = "D:\\node\\delivery\\components\\DialogFormConfirm\\index.js";
 
 
 
