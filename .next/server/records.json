@@ -21,7 +21,12 @@
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 3,
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_document.js": 4,
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 5,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 6
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 6,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\[id].js": 10,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_app.js": 11,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_document.js": 12,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_error.js": 13,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\index.js": 14
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho/index.js ../DialogFormConfirm": 0,
@@ -35,11 +40,11 @@
     "usedIds": [
       0,
       1,
-      2,
-      3,
-      4,
-      5,
-      6,
+      10,
+      11,
+      12,
+      13,
+      14,
       7,
       8,
       9

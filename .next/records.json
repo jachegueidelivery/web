@@ -11,7 +11,11 @@
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\[id].js": 5,
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 6,
       "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 7,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 8
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 8,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\[id].js": 11,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_app.js": 12,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_error.js": 13,
+      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\index.js": 14
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 0,
@@ -29,13 +33,13 @@
       0,
       1,
       10,
+      11,
+      12,
+      13,
+      14,
       2,
       3,
       4,
-      5,
-      6,
-      7,
-      8,
       9
     ]
   }

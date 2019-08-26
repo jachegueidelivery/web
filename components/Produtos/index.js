@@ -243,8 +243,8 @@ export default function Produtos(props) {
       setValorTotal(0);
       setQuantidade(0);
     }
-    //props.callbackParent(quantidade);
-  }, [quantidade]);
+    props.callbackParent(quantidade);
+  });
 
   return (
     <>
