@@ -8,22 +8,22 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 4,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\[id].js": 5,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\_app.js": 6,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\_error.js": 7,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\index.js": 8
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\[id].js": 5,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 6,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 7,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 8
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 0,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/Footer": 0,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho/index.js ../DialogFormConfirm": 0,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/NavigationBottom/index.js ../DialogFormConfirm": 0,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/Footer": 0,
       "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho/index.js ../DialogFormConfirm": 2,
       "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/NavigationBottom/index.js ../DialogFormConfirm": 2,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../components/NavigationBottom": 3,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/NavigationBottom": 3,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 9,
-      "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 10
+      "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 9,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 10
     },
     "usedIds": [
       0,

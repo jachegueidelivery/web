@@ -945,10 +945,10 @@ var renderMenu = function renderMenu(props) {
 
 /***/ }),
 
-/***/ "./components/SpinnerTeste/index.js":
-/*!******************************************!*\
-  !*** ./components/SpinnerTeste/index.js ***!
-  \******************************************/
+/***/ "./components/SpinnerTeste/Produtos/index.js":
+/*!***************************************************!*\
+  !*** ./components/SpinnerTeste/Produtos/index.js ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -959,27 +959,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardActions */ "@material-ui/core/CardActions");
-/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "@material-ui/core/CardMedia");
-/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/lab/Skeleton */ "@material-ui/lab/Skeleton");
-/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CardActions */ "@material-ui/core/CardActions");
+/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "@material-ui/core/CardMedia");
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/lab/Skeleton */ "@material-ui/lab/Skeleton");
+/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__);
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\index.js";
+var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\Produtos\\index.js";
 
 
 
@@ -988,9 +984,7 @@ var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\index.js";
 
 
 
-
-
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__["makeStyles"])(function (theme) {
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["makeStyles"])(function (theme) {
   return {
     root: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, theme.typography.button, {
       backgroundColor: theme.palette.background.paper,
@@ -1029,19 +1023,19 @@ function MostrarEmpresas(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 42
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default.a, {
     container: true,
     spacing: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 43
     },
     __self: this
   }, props.data.map(function (empresa, _key) {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default.a, {
       item: true,
       key: _key,
       xs: 12,
@@ -1050,83 +1044,282 @@ function MostrarEmpresas(props) {
       className: classes._grid,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 45
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default.a, {
       className: classes.card,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 46
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default.a, {
       className: classes.cardMedia,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 47
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
       height: "100%",
       width: "100%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      className: classes.cardContent,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 52
       },
       __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default.a, {
-      className: classes.cardContent,
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "80%",
+      width: "100%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "70%",
+      width: "90%",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 54
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11___default.a, {
-      height: "80%",
-      width: "100%",
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "60%",
+      width: "60%",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 55
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11___default.a, {
-      height: "70%",
-      width: "90%",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_11___default.a, {
-      height: "60%",
-      width: "60%",
+    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 57
       },
       __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 58
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 59
       },
       __self: this
     }))));
   })));
 }
+
+/***/ }),
+
+/***/ "./components/SpinnerTeste/TelaInicial/index.js":
+/*!******************************************************!*\
+  !*** ./components/SpinnerTeste/TelaInicial/index.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MostrarEmpresas; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CardActions */ "@material-ui/core/CardActions");
+/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "@material-ui/core/CardMedia");
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/lab/Skeleton */ "@material-ui/lab/Skeleton");
+/* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__);
+
+
+var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\TelaInicial\\index.js";
+
+
+
+
+
+
+
+
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["makeStyles"])(function (theme) {
+  return {
+    root: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, theme.typography.button, {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(1),
+      textAlign: "center"
+    }),
+    cardMedia: {
+      backgroundColor: "transparent",
+      margin: 15,
+      height: 200
+    },
+    cardGrid: {
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(8)
+    },
+    card: {
+      height: "100%",
+      display: "flex",
+      flexDirection: "column"
+    }
+  };
+});
+/**
+ * Mostra os ícones das empresas
+ */
+
+function MostrarEmpresas(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
+    hits: []
+  }),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      empresas = _useState2[0],
+      setEmpresas = _useState2[1];
+
+  var classes = useStyles();
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2__["Fragment"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    container: true,
+    spacing: 2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }, props.data.map(function (empresa, _key) {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      item: true,
+      key: _key,
+      xs: 12,
+      sm: 6,
+      md: 4,
+      className: classes._grid,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      className: classes.card,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6___default.a, {
+      className: classes.cardMedia,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "100%",
+      width: "100%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      className: classes.cardContent,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "80%",
+      width: "100%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "70%",
+      width: "90%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      height: "60%",
+      width: "60%",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }))));
+  })));
+}
+
+/***/ }),
+
+/***/ "./components/SpinnerTeste/index.js":
+/*!******************************************!*\
+  !*** ./components/SpinnerTeste/index.js ***!
+  \******************************************/
+/*! exports provided: Produtos, TelaInicial */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Produtos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Produtos */ "./components/SpinnerTeste/Produtos/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Produtos", function() { return _Produtos__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _TelaInicial__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TelaInicial */ "./components/SpinnerTeste/TelaInicial/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TelaInicial", function() { return _TelaInicial__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
 
 /***/ }),
 
@@ -1690,14 +1883,6 @@ var MostrarEmpresas = react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
         lineNumber: 41
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_LazyLoad__WEBPACK_IMPORTED_MODULE_15__["default"], {
-      height: "30px",
-      margintop: "5px",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
     }));
   }
 });
@@ -1734,11 +1919,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
     toolbar: {
       flexWrap: "wrap"
     },
-    toolbar2: {
-      flexWrap: "wrap",
-      padding: 0,
-      margin: 0
-    },
     toolbarTitle: {
       flexGrow: 1
     },
@@ -1747,15 +1927,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
     },
     heroContent: {
       padding: theme.spacing(8, 0, 0)
-    },
-    cardHeader: {
-      backgroundColor: theme.palette.grey[200]
-    },
-    cardPricing: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "baseline",
-      marginBottom: theme.spacing(2)
     },
     footer: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       borderTop: "1px solid ".concat(theme.palette.divider),
@@ -1770,18 +1941,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
       paddingTop: theme.spacing(8),
       paddingBottom: theme.spacing(8)
     },
-    card: {
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      cursor: "pointer !important"
-    },
-    _grid: {
-      cursor: "pointer !important"
-    },
-    cardContent: {
-      flexGrow: 1
-    },
     rootinput: {
       borderRadius: 40,
       display: "flex",
@@ -1792,12 +1951,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
       paddingRight: 10,
       paddingTop: 5,
       paddingBottom: 5
-    },
-    carregando: {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center"
     },
     textFieldInput: {
       backgroundColor: theme.palette.common.white,
@@ -1810,12 +1963,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
         boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
       }
     },
-    input: {
-      marginLeft: 8,
-      flex: 1,
-      borderRadius: 15,
-      padding: 15
-    },
     iconButton: {
       padding: 10
     },
@@ -1823,18 +1970,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ma
       width: 1,
       height: 28,
       margin: 4
-    },
-    button: {
-      margin: theme.spacing(1)
-    },
-    rightIcon: {
-      marginLeft: theme.spacing(1)
-    },
-    hoverUp: {
-      border: "5px solid red !important"
-    },
-    hoverDown: {
-      border: "0px solid red !important"
     },
     footerNavigationBottom: {
       background: "white"
@@ -1901,20 +2036,20 @@ var Main = function Main(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
+      lineNumber: 183
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235
+      lineNumber: 184
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: classes.SiteSearchPanel__Background,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 237
+      lineNumber: 186
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1924,14 +2059,14 @@ var Main = function Main(props) {
     className: classes.appBar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238
+      lineNumber: 187
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_17___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 244
+      lineNumber: 193
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18___default.a, {
@@ -1941,7 +2076,7 @@ var Main = function Main(props) {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 245
+      lineNumber: 194
     },
     __self: this
   }, "Delivery"), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1951,7 +2086,7 @@ var Main = function Main(props) {
     className: classes.link,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253
+      lineNumber: 202
     },
     __self: this
   }, "Entrar"), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -1962,13 +2097,13 @@ var Main = function Main(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 261
+      lineNumber: 210
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_TotalPedidos__WEBPACK_IMPORTED_MODULE_19__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268
+      lineNumber: 217
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1977,19 +2112,19 @@ var Main = function Main(props) {
     className: classes.heroContent,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 273
+      lineNumber: 222
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 274
+      lineNumber: 223
     },
     __self: this
   }), " ", react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 274
+      lineNumber: 223
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18___default.a, {
@@ -2000,26 +2135,26 @@ var Main = function Main(props) {
     gutterBottom: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 275
+      lineNumber: 224
     },
     __self: this
   }, "Alguma mensagem impactante aqui"), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 284
+      lineNumber: 233
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_20___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 286
+      lineNumber: 235
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_9___default.a, {
     className: classes.rootinput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 287
+      lineNumber: 236
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2027,13 +2162,13 @@ var Main = function Main(props) {
     "aria-label": "Menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 288
+      lineNumber: 237
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_21__["Menu"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 289
+      lineNumber: 238
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -2044,14 +2179,14 @@ var Main = function Main(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 291
+      lineNumber: 240
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_11___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 296
+      lineNumber: 245
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -2059,13 +2194,13 @@ var Main = function Main(props) {
     "aria-label": "Search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 297
+      lineNumber: 246
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_21__["Search"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 298
+      lineNumber: 247
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18___default.a, {
@@ -2075,7 +2210,7 @@ var Main = function Main(props) {
     component: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 302
+      lineNumber: 251
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -2083,14 +2218,14 @@ var Main = function Main(props) {
     maxWidth: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 310
+      lineNumber: 259
     },
     __self: this
-  }, !isEmpresasLoaded && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SpinnerTeste__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, !isEmpresasLoaded && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SpinnerTeste__WEBPACK_IMPORTED_MODULE_16__["TelaInicial"], {
     data: [1, 2, 3, 4, 5, 6],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 311
+      lineNumber: 260
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(MostrarEmpresas, {
@@ -2099,7 +2234,7 @@ var Main = function Main(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 312
+      lineNumber: 261
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -2107,13 +2242,13 @@ var Main = function Main(props) {
     maxWidth: "xl",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 315
+      lineNumber: 264
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Footer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 316
+      lineNumber: 265
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -2122,13 +2257,13 @@ var Main = function Main(props) {
     abrir: isMenuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 319
+      lineNumber: 268
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(NavigationBottom, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 324
+      lineNumber: 273
     },
     __self: this
   }));

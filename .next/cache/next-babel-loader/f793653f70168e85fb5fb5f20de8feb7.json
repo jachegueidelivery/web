@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default as Produtos } from './Produtos';\nexport { default as TelaInicial } from './TelaInicial';","map":null,"metadata":{},"sourceType":"module"}

@@ -28,7 +28,7 @@ if (host === "cryptopc" || host === "saude") {
   index = "local";
 }
 
-var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[0]);
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[1]);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),

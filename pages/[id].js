@@ -1,84 +1,87 @@
-﻿import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+﻿import { makeStyles } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import InputBase from "@material-ui/core/InputBase";
+import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { makeStyles } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import { createMuiTheme } from "@material-ui/core/styles";
-import {
-  Menu,
-  Search,
-  AccessAlarm,
-  AccessibilityRounded,
-  AccountBalanceSharp
-} from "@material-ui/icons";
+import { Menu, Search } from "@material-ui/icons";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import Skeleton from "@material-ui/lab/Skeleton";
 import { useRouter } from "next/router";
-import { green } from "@material-ui/core/colors";
+import React, { useEffect, useState } from "react";
+import Loadable from "react-loadable";
+import AlertNotHasProducts from "../components/AlertNotHasProducts";
+import ApiRest from "../components/ApiRest";
+import Categorias from "../components/Categorias";
 import Footer from "../components/Footer";
-import Hidden from "@material-ui/core/Hidden";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
-import ApiRest from "../components/ApiRest";
-import SpinnerDelivery from "../components/SpinnerDelivery";
-import AlertNotHasProducts from "../components/AlertNotHasProducts";
-import TotalPedidos from "../components/TotalPedidos";
 import Produtos from "../components/Produtos";
-import LazyLoad from "../components/LazyLoad";
-import Loadable from "react-loadable";
-
+import SpinnerTeste from "../components/SpinnerTeste/Produtos";
+import TotalPedidos from "../components/TotalPedidos";
+import useReplaceString from "../components/useReplaceString";
+import useWidth from "../components/useWidth";
+import Fab from "@material-ui/core/Fab";
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
     return (
       <>
-        <LazyLoad height="30px" margintop="5px" />
-        <LazyLoad height="30px" margintop="5px" />
+        <Skeleton height="80%" width="100%" />
       </>
     );
   }
 });
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <Typography
-      component="div"
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      <Box p={3}>{children}</Box>
-    </Typography>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
-  };
-}
+const dataCategorias = [
+  {
+    nome: "ALIMENTOS",
+    quantidade: parseInt(2),
+    mostrar: !0
+  },
+  {
+    nome: "BEBIDAS",
+    quantidade: parseInt(3),
+    mostrar: !0
+  },
+  {
+    nome: "BAZAR",
+    quantidade: parseInt(5),
+    mostrar: !0
+  },
+  {
+    nome: "DESCARTÁVEIS",
+    quantidade: parseInt(8),
+    mostrar: !0
+  },
+  {
+    nome: "MATINAIS",
+    quantidade: parseInt(4),
+    mostrar: !0
+  },
+  {
+    nome: "PERECÍVEIS",
+    quantidade: parseInt(45),
+    mostrar: !0
+  },
+  {
+    nome: "HIGIENE",
+    quantidade: parseInt(4),
+    mostrar: !0
+  },
+  {
+    nome: "LIMPEZA",
+    quantidade: parseInt(8),
+    mostrar: !0
+  }
+];
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -97,15 +100,8 @@ const useStyles = makeStyles(theme => ({
       listStyle: "none"
     }
   },
-  root: {
-    padding: theme.spacing(0, 0, 0)
-  },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`
-  },
-  appBarBottom: {
-    top: "auto",
-    bottom: 0
   },
   toolbar: {
     flexWrap: "wrap"
@@ -116,56 +112,15 @@ const useStyles = makeStyles(theme => ({
   link: {
     margin: theme.spacing(1, 1.5)
   },
-  heroContent: {
-    padding: theme.spacing(0, 0, 0),
-    border: "1px solid lime"
-  },
-  cardHeader: {
-    backgroundColor: theme.palette.grey[200]
-  },
-  cardPricing: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "baseline",
-    marginBottom: theme.spacing(2)
-  },
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6)
-    }
-  },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-    paddingLeft: theme.spacing(4),
+    paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
-    border: "1px solid blue"
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column"
-  },
-  cardMediaList: {
-    paddingTop: "56.25%", // 16:9
-    marginRight: "20px"
-  },
-  cardContent: {
-    flexGrow: 1
-  },
-  carregando: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center"
+    border: "0px solid blue"
   },
   rootinput: {
-    borderRadius: 40,
+    borderRadius: 0,
     display: "flex",
     alignItems: "center",
     width: "100%",
@@ -178,19 +133,13 @@ const useStyles = makeStyles(theme => ({
   textFieldInput: {
     backgroundColor: theme.palette.common.white,
     fontSize: 16,
-    width:"100%",
+    width: "100%",
     padding: "10px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     "&:focus": {
       borderColor: "#80bdff",
       boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
     }
-  },
-  input: {
-    marginLeft: 8,
-    flex: 1,
-    borderRadius: 15,
-    padding: 15
   },
   iconButton: {
     padding: 10
@@ -200,94 +149,49 @@ const useStyles = makeStyles(theme => ({
     height: 28,
     margin: 4
   },
-  tabContent: {
-    backgroundColor: theme.palette.background.paper,
-    width: "100%",
-    position: "relative",
-    minHeight: 600
-  },
-  fab: {
-    position: "absolute",
-    bottom: theme.spacing(2),
-    right: theme.spacing(2)
-  },
-  fabGreen: {
-    color: theme.palette.common.white,
-    backgroundColor: green[500],
-    "&:hover": {
-      backgroundColor: green[600]
+  footerNavigationBottom: {
+    paddingLeft: theme.spacing(0),
+    paddingRight: theme.spacing(0),
+    background: "white",
+    border: "0px solid gold",
+    "& p": {
+      border: "0px solid red",
+      "& span": {}
+    },
+    "& div": {
+      border: "0px solid lime"
     }
   },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1)
-  },
-  icon: {
-    margin: theme.spacing(2)
-  },
-  details: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  content: {
-    flex: "1 0 auto"
-  },
-  cover: {
-    width: 151
-  },
-  controls: {
-    display: "flex",
-    alignItems: "center",
-    paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
-  },
-  playIcon: {
-    height: 38,
-    width: 38
-  },
-  footerNavigationBottom: {
-    background: "white"
-  },
-  tabPainel: {
-    paddingLeft: 0,
-    paddingRight: 0,
-    paddingTop: 0,
-    paddingBottom: 0
+  categorias: {
+    backgroundColor: "white"
   }
 }));
 
 const Index = props => {
   const router = useRouter();
+  const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
-
   const [produtosAsObject, setProdutosAsObject] = React.useState([]);
-
   const [search, setSearch] = React.useState("");
-
   const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
-
   const [anchorEl, setAnchorEl] = useState(null);
-
   const [data, setData] = useState([]);
-
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-
   const [iniciar, setIniciar] = useState(true);
+  const [empresa, setEmpresa] = useState({ config: [] });
+  const [nome_fantasia, setNomeFantasia] = useState("Carregando...");
+  const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
+  const [empresaId, setEmpresaId] = useState(null);
+  const [daaaaaaata, setDaaaaaaata] = useState(null);
+
+  let screenSize = useWidth();
 
   const isMenuOpen = Boolean(anchorEl);
 
-  const [empresa, setEmpresa] = useState({ config: [] });
-
-  const [nome_fantasia, setNomeFantasia] = useState("Carregando...");
-
-  const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
-
-  const [empresaId, setEmpresaId] = useState(null);
-
-  const [daaaaaaata, setDaaaaaaata] = useState(null);
-
-  const classes = useStyles();
+  function goBack() {
+    window.history.back();
+  }
 
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
@@ -296,7 +200,7 @@ const Index = props => {
       setIniciar(false);
       //setProdutosAsObject(props.shows);
     }
-  });
+  }, []);
 
   /*
 BUSCA OS DADOS DA EMPRESA
@@ -326,10 +230,14 @@ BUSCA OS DADOS DA EMPRESA
 
   useEffect(() => {
     if (!empresa.config) {
-      setNomeFantasia(empresa["0"].nome_fantasia);
+      if (screenSize === "xs") {
+        setNomeFantasia(useReplaceString(empresa["0"].nome_fantasia, 2));
+      } else {
+        setNomeFantasia(empresa["0"].nome_fantasia);
+      }
       setEmpresaId(empresa["0"].id);
     }
-  });
+  }, [empresa]);
 
   function onChangeInputSearch(ev) {
     let valor = ev.target.value;
@@ -363,7 +271,6 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleProfileMenuOpen(event) {
-    onAtualizarCount();
     if (LocalStorageHandler.count("products") > 0) {
       setAnchorEl(event.currentTarget);
     }
@@ -374,7 +281,6 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleMenuClose() {
-    onAtualizarCount();
     setAnchorEl(null);
     handleMobileMenuClose();
   }
@@ -387,7 +293,6 @@ BUSCA OS DADOS DA EMPRESA
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* MENU DE BARRA SUPERIOR */}
       <AppBar
         position="fixed"
         color="default"
@@ -395,6 +300,17 @@ BUSCA OS DADOS DA EMPRESA
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
+          {/* <Fab
+            size="small"
+            color="default"
+            aria-label="add"
+            className={classes.margin}
+          >
+            <ArrowBackIcon />
+          </Fab> */}
+          <IconButton onClick={goBack} className={classes.margin}>
+            <ArrowBackIcon color="default" fontSize="large"/>
+          </IconButton>
           <Typography
             variant="h6"
             color="inherit"
@@ -404,24 +320,28 @@ BUSCA OS DADOS DA EMPRESA
             <Link href="../">
               {produtos.isLoading == false ? (
                 <>
-                  <LazyLoad />
+                  <Skeleton variante="text" height={20} width={200} />
                 </>
               ) : (
-                <>{nome_fantasia}</>
+                <>
+                  <Grid>{nome_fantasia}</Grid>
+                </>
               )}
             </Link>
           </Typography>
-          <Hidden lgDown>
-            <Button
-              onClick={confirmarPedido}
-              href="#"
-              color="primary"
-              variant="outlined"
-              className={classes.link}
-            >
-              CONFIRMAR PEDIDO
-            </Button>
-          </Hidden>
+          {!1 && (
+            <>
+              <Button
+                onClick={confirmarPedido}
+                href="#"
+                color="primary"
+                variant="outlined"
+                className={classes.link}
+              >
+                CONFIRMAR PEDIDO
+              </Button>
+            </>
+          )}
           <IconButton
             onClick={handleProfileMenuOpen}
             aria-label="Account of current user"
@@ -434,10 +354,11 @@ BUSCA OS DADOS DA EMPRESA
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="md" component="main" className={classes.cardGrid}>
+      <Container maxWidth="md" className={classes.cardGrid}>
         {produtos.isLoading == false && (
           <>
-            <SpinnerDelivery label="Carregando Produtos, aguarde, por favor." />
+            <br />
+            <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7]} />
           </>
         )}
         {produtos.isLoading == true && empresaId != null && (
@@ -446,52 +367,41 @@ BUSCA OS DADOS DA EMPRESA
             {produtos.data.hasOwnProperty("erro") && produtos.data ? (
               <>
                 <AlertNotHasProducts label="Não há Produtos para esta empresa." />
-                {console.log(produtos.data)}
               </>
             ) : (
               <>
                 <Grid container justify="center">
-                  <Grid md="3">
+                  <Grid md="3" xs="12" className={classes.categorias}>
                     <Grid item>
-                      <Grid container justify="center">
-                        <br />
-                        <br />
-                        <br />
-                        Categoria 1<br />
-                        Categoria 2<br />
-                        Categoria 3<br />
-                        Categoria 4<br />
-                        Categoria 5<br />
-                        Categoria 6<br />
-                      </Grid>
+                      <Categorias datacat={dataCategorias} />
                     </Grid>
                   </Grid>
-                  <Grid md="9">
+                  <Grid md="9" xs="12">
                     <Grid item>
                       <Grid container justify="center">
                         <Grid container>
-                            <Paper className={classes.rootinput}>
-                              <IconButton
-                                className={classes.iconButton}
-                                aria-label="Menu"
-                              >
-                                <Menu />
-                              </IconButton>
-                              <InputBase
-                                className={classes.textFieldInput}
-                                placeholder="Pesquisar"
-                                inputProps={{
-                                  "aria-label": "Search Google Maps"
-                                }}
-                              />
-                              <Divider className={classes.divider} />
-                              <IconButton
-                                className={classes.iconButton}
-                                aria-label="Search"
-                              >
-                                <Search />
-                              </IconButton>
-                            </Paper>
+                          <Paper className={classes.rootinput}>
+                            <IconButton
+                              className={classes.iconButton}
+                              aria-label="Menu"
+                            >
+                              <Menu />
+                            </IconButton>
+                            <InputBase
+                              className={classes.textFieldInput}
+                              placeholder="Pesquisar"
+                              inputProps={{
+                                "aria-label": "Search Google Maps"
+                              }}
+                            />
+                            <Divider className={classes.divider} />
+                            <IconButton
+                              className={classes.iconButton}
+                              aria-label="Search"
+                            >
+                              <Search />
+                            </IconButton>
+                          </Paper>
                         </Grid>
                       </Grid>
                     </Grid>
@@ -521,23 +431,22 @@ BUSCA OS DADOS DA EMPRESA
           </>
         )}
       </Container>
-      {/* Footer */}
       <Container className={classes.footerNavigationBottom} maxWidth="xl">
         <Footer />
       </Container>
-      {/* End footer */}
       <MyMenu
         anchorEl={anchorEl}
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}
       />
-      <NavigationBottom totalPro={countPedidosLocal} />
+      {/* <NavigationBottom totalPro={countPedidosLocal} /> */}
     </React.Fragment>
   );
 };
 
 Index.getInitialProps = async function(ctx) {
   const configSite = await import("../db/config.dev.json");
+
   return {
     config: configSite
   };

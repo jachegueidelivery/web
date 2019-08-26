@@ -17,11 +17,11 @@
   },
   "chunks": {
     "byName": {
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\[id].js": 2,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\_app.js": 3,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\_document.js": 4,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\_error.js": 5,
-      "static\\Nk3FdQlBNUyMiWIcy-CeD\\pages\\index.js": 6
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\[id].js": 2,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 3,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_document.js": 4,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 5,
+      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 6
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho/index.js ../DialogFormConfirm": 0,

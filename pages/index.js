@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import LocalStorageHandler from "../components/LocalStorageHandler";
 import MyMenu from "../components/Menu";
 import LazyLoad from "../components/LazyLoad";
-import SpinnerTeste from "../components/SpinnerTeste";
+import {TelaInicial} from "../components/SpinnerTeste";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import TotalPedidos from "../components/TotalPedidos";
@@ -38,7 +38,6 @@ const MostrarEmpresas = Loadable({
   loading() {
     return (
       <>
-        <LazyLoad height="30px" margintop="5px" />
         <LazyLoad height="30px" margintop="5px" />
       </>
     );
@@ -78,11 +77,6 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     flexWrap: "wrap"
   },
-  toolbar2: {
-    flexWrap: "wrap",
-    padding: 0,
-    margin: 0
-  },
   toolbarTitle: {
     flexGrow: 1
   },
@@ -91,15 +85,6 @@ const useStyles = makeStyles(theme => ({
   },
   heroContent: {
     padding: theme.spacing(8, 0, 0)
-  },
-  cardHeader: {
-    backgroundColor: theme.palette.grey[200]
-  },
-  cardPricing: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "baseline",
-    marginBottom: theme.spacing(2)
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -115,18 +100,6 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8)
   },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    cursor: "pointer !important"
-  },
-  _grid: {
-    cursor: "pointer !important"
-  },
-  cardContent: {
-    flexGrow: 1
-  },
   rootinput: {
     borderRadius: 40,
     display: "flex",
@@ -137,12 +110,6 @@ const useStyles = makeStyles(theme => ({
     paddingRight: 10,
     paddingTop: 5,
     paddingBottom: 5
-  },
-  carregando: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center"
   },
   textFieldInput: {
     backgroundColor: theme.palette.common.white,
@@ -155,12 +122,6 @@ const useStyles = makeStyles(theme => ({
       boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
     }
   },
-  input: {
-    marginLeft: 8,
-    flex: 1,
-    borderRadius: 15,
-    padding: 15
-  },
   iconButton: {
     padding: 10
   },
@@ -168,18 +129,6 @@ const useStyles = makeStyles(theme => ({
     width: 1,
     height: 28,
     margin: 4
-  },
-  button: {
-    margin: theme.spacing(1)
-  },
-  rightIcon: {
-    marginLeft: theme.spacing(1)
-  },
-  hoverUp: {
-    border: "5px solid red !important"
-  },
-  hoverDown: {
-    border: "0px solid red !important"
   },
   footerNavigationBottom: {
     background: "white"
@@ -308,7 +257,7 @@ const Main = props => {
       </Container>
       {/* End hero unit */}
       <Container className={classes.cardGrid} maxWidth="md">
-        {!isEmpresasLoaded && <SpinnerTeste data={[1, 2, 3, 4, 5, 6]} />}
+        {!isEmpresasLoaded && <TelaInicial data={[1, 2, 3, 4, 5, 6]} />}
         <MostrarEmpresas onLoadedComplete={data => setIsEmpresasLoaded(data)} />
       </Container>
       {/* MenuFooter */}
