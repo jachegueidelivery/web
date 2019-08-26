@@ -163,7 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_loadable__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-loadable */ "react-loadable");
 /* harmony import */ var react_loadable__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_loadable__WEBPACK_IMPORTED_MODULE_14__);
 
-var _jsxFileName = "D:\\node\\delivery\\components\\Carrinho\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\Carrinho\\index.js";
 
 
 
@@ -604,7 +604,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 
-var _jsxFileName = "D:\\node\\delivery\\components\\LazyLoad\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\LazyLoad\\index.js";
 
 function _templateObject3() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background: rgba(0, 0, 0, 0.1);\n"]);
@@ -883,7 +883,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Carrinho__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Carrinho */ "./components/Carrinho/index.js");
 /* harmony import */ var _LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../LocalStorageHandler */ "./components/LocalStorageHandler/index.js");
 
-var _jsxFileName = "D:\\node\\delivery\\components\\Menu\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\Menu\\index.js";
 
 
 
@@ -975,7 +975,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__);
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\Produtos\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\SpinnerTeste\\Produtos\\index.js";
 
 
 
@@ -1154,7 +1154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_9__);
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\SpinnerTeste\\TelaInicial\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\SpinnerTeste\\TelaInicial\\index.js";
 
 
 
@@ -1343,7 +1343,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "D:\\node\\delivery\\components\\TotalPedidos\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\TotalPedidos\\index.js";
 
 
 
@@ -1365,37 +1365,21 @@ var TotalPedidos = function TotalPedidos(props) {
     setCarregado(true);
     setCountPedidosLocal(_LocalStorageHandler__WEBPACK_IMPORTED_MODULE_4__["default"].count("products"));
   });
-  /*
-  if (countPedidosLocal <= 0) {
-    return (
-      <Badge badgeContent={0} color="primary">
-        <ShoppingCartOutlined />
-      </Badge>
-    );
-  } else {
-    if (!carregado) {
-      return <CircularProgress disableShrink />;
-    }
-    return (
-      <Badge badgeContent={countPedidosLocal} color="primary">
-        <ShoppingCartOutlined />
-      </Badge>
-    );
-  }*/
 
   if (props.countProdutos) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_2___default.a, {
       badgeContent: props.countProdutos,
+      showZero: true,
       color: "primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 18
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_3__["ShoppingCartOutlined"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 19
       },
       __self: this
     }));
@@ -1403,16 +1387,17 @@ var TotalPedidos = function TotalPedidos(props) {
     //Tela Inicial
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Badge__WEBPACK_IMPORTED_MODULE_2___default.a, {
       badgeContent: countPedidosLocal,
+      showZero: true,
       color: "primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 25
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_3__["ShoppingCartOutlined"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 26
       },
       __self: this
     }));
@@ -1833,7 +1818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons__WEBPACK_IMPORTED_MODULE_21__);
 
 
-var _jsxFileName = "D:\\node\\delivery\\pages\\index.js";
+var _jsxFileName = "E:\\delivery\\pages\\index.js";
 
 
 
@@ -2280,7 +2265,7 @@ var Main = function Main(props) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\node\delivery\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! E:\delivery\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

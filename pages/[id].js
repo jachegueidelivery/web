@@ -1,4 +1,4 @@
-﻿import { makeStyles } from "@material-ui/core";
+﻿import { makeStyles, useTheme } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
@@ -29,6 +29,20 @@ import TotalPedidos from "../components/TotalPedidos";
 import useReplaceString from "../components/useReplaceString";
 import useWidth from "../components/useWidth";
 import Fab from "@material-ui/core/Fab";
+import MenuIcon from '@material-ui/icons/Menu';
+import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
+
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+
+
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
@@ -83,6 +97,119 @@ const dataCategorias = [
   }
 ];
 
+const drawerWidth = 240;
+
+const useStylesDrawer  = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+  },
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
+}));
+
+function DataASt(props){
+
+  const classes = useStylesDrawer();
+
+const theme = useTheme();
+
+  const [open, setOpen] = React.useState(false);
+
+  function handleDrawerOpen() {
+    setOpen(true);
+  }
+
+function handleDrawerClose() {
+	props.handleDrawerClose(false);
+  }
+
+return(
+<>
+ <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={props.open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+</>
+);
+}
+
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
@@ -123,7 +250,17 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 0,
     display: "flex",
     alignItems: "center",
-    width: "100%",
+    [theme.breakpoints.up("xs")]: {
+     width: "100%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "96%"
+    },
+    [theme.breakpoints.up("md")]: {
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "96%",
+    },
     margin: "0px auto",
     paddingLeft: 10,
     paddingRight: 10,
@@ -184,6 +321,7 @@ const Index = props => {
   const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
   const [empresaId, setEmpresaId] = useState(null);
   const [daaaaaaata, setDaaaaaaata] = useState(null);
+  const [abrirDrawer, setAbrirDrawer] = useState(!1);
 
   let screenSize = useWidth();
 
@@ -293,6 +431,7 @@ BUSCA OS DADOS DA EMPRESA
   return (
     <React.Fragment>
       <CssBaseline />
+<DataASt  open={abrirDrawer} handleDrawerClose={(valor)=>setAbrirDrawer(valor)}/>
       <AppBar
         position="fixed"
         color="default"
@@ -300,17 +439,12 @@ BUSCA OS DADOS DA EMPRESA
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          {/* <Fab
-            size="small"
-            color="default"
-            aria-label="add"
-            className={classes.margin}
-          >
-            <ArrowBackIcon />
-          </Fab> */}
-          <IconButton onClick={goBack} className={classes.margin}>
+{ /*         <IconButton onClick={goBack} className={classes.margin}>
             <ArrowBackIcon color="default" fontSize="large"/>
-          </IconButton>
+          </IconButton>*/}
+<IconButton onClick={()=>{setAbrirDrawer(!0)}}>
+	<MenuIcon color="primary" fontSize="default"/>
+ </IconButton>
           <Typography
             variant="h6"
             color="inherit"
@@ -371,12 +505,14 @@ BUSCA OS DADOS DA EMPRESA
             ) : (
               <>
                 <Grid container justify="center">
-                  <Grid md="3" xs="12" className={classes.categorias}>
+  <Hidden only={['xs']}>                
+<Grid  xs="12" sm="4" md="3" className={classes.categorias}>
                     <Grid item>
                       <Categorias datacat={dataCategorias} />
                     </Grid>
                   </Grid>
-                  <Grid md="9" xs="12">
+  </Hidden>  
+                  <Grid xs="12" sm="8"  md="9">
                     <Grid item>
                       <Grid container justify="center">
                         <Grid container>

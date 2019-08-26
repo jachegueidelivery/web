@@ -8,14 +8,11 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 4,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\[id].js": 5,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 6,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 7,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 8,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\[id].js": 11,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_app.js": 12,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_error.js": 13,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\index.js": 14
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\[id].js": 5,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\_app.js": 6,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\_error.js": 7,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\drawers-demo.js": 8,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\index.js": 9
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 0,
@@ -26,8 +23,9 @@
       "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/NavigationBottom/index.js ../DialogFormConfirm": 2,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../components/NavigationBottom": 3,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/NavigationBottom": 3,
-      "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 9,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 10
+      "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 10,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 11,
+      "1 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/Footer": 12
     },
     "usedIds": [
       0,
@@ -35,11 +33,13 @@
       10,
       11,
       12,
-      13,
-      14,
       2,
       3,
       4,
+      5,
+      6,
+      7,
+      8,
       9
     ]
   }

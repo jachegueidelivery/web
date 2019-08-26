@@ -4,47 +4,46 @@
       "multi private-next-pages/[id].js": 0,
       "multi private-next-pages/_app.js": 1,
       "multi private-next-pages/_document.js": 2,
-      "multi private-next-pages/index.js": 3,
-      "multi next/dist/pages/_error": 4
+      "multi private-next-pages/drawers-demo.js": 3,
+      "multi private-next-pages/index.js": 4,
+      "multi next/dist/pages/_error": 5
     },
     "usedIds": {
       "0": 0,
       "1": 1,
       "2": 2,
       "3": 3,
-      "4": 4
+      "4": 4,
+      "5": 5
     }
   },
   "chunks": {
     "byName": {
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\[id].js": 2,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_app.js": 3,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_document.js": 4,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\_error.js": 5,
-      "static\\2ZToPztFPVhHXk0yUmVwI\\pages\\index.js": 6,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\[id].js": 10,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_app.js": 11,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_document.js": 12,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\_error.js": 13,
-      "static\\V0vilcEFNfwSP7jrCxT7E\\pages\\index.js": 14
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\[id].js": 2,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\_app.js": 3,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\_document.js": 4,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\_error.js": 5,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\drawers-demo.js": 6,
+      "static\\L7wr8RuRjp8dDEXef4yxS\\pages\\index.js": 7
     },
     "bySource": {
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Carrinho/index.js ../DialogFormConfirm": 0,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/NavigationBottom/index.js ../DialogFormConfirm": 0,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../components/NavigationBottom": 1,
       "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/NavigationBottom": 1,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 7,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 8,
-      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/Footer": 9
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/MostrarEmpresas": 8,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/[id].js ../db/config.dev.json": 9,
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js ../components/Footer": 10
     },
     "usedIds": [
       0,
       1,
       10,
-      11,
-      12,
-      13,
-      14,
+      2,
+      3,
+      4,
+      5,
+      6,
       7,
       8,
       9

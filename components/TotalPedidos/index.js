@@ -13,34 +13,16 @@ const TotalPedidos = props => {
     setCountPedidosLocal(LocalStorageHandler.count("products"));
   });
 
-  /*
-  if (countPedidosLocal <= 0) {
-    return (
-      <Badge badgeContent={0} color="primary">
-        <ShoppingCartOutlined />
-      </Badge>
-    );
-  } else {
-    if (!carregado) {
-      return <CircularProgress disableShrink />;
-    }
-    return (
-      <Badge badgeContent={countPedidosLocal} color="primary">
-        <ShoppingCartOutlined />
-      </Badge>
-    );
-  }*/
-
   if (props.countProdutos) {
     return (
-      <Badge badgeContent={props.countProdutos} color="primary">
+      <Badge badgeContent={props.countProdutos} showZero color="primary">
         <ShoppingCartOutlined />
       </Badge>
     );
   } else {
     //Tela Inicial
     return (
-      <Badge badgeContent={countPedidosLocal} color="primary">
+      <Badge badgeContent={countPedidosLocal} showZero color="primary">
         <ShoppingCartOutlined />
       </Badge>
     );

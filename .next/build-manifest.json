@@ -2,29 +2,34 @@
   "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack-6bd4635d1c59d1826990.js",
-      "static/chunks/commons.ba3352141374dbb86e50.js",
-      "static/runtime/main-53165d49d68dd6c90805.js"
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
     ],
     "/[id]": [
-      "static/runtime/webpack-6bd4635d1c59d1826990.js",
-      "static/chunks/commons.ba3352141374dbb86e50.js",
-      "static/runtime/main-53165d49d68dd6c90805.js"
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
     ],
     "/_app": [
-      "static/runtime/webpack-6bd4635d1c59d1826990.js",
-      "static/chunks/commons.ba3352141374dbb86e50.js",
-      "static/runtime/main-53165d49d68dd6c90805.js"
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
     ],
     "/_error": [
-      "static/runtime/webpack-6bd4635d1c59d1826990.js",
-      "static/chunks/commons.ba3352141374dbb86e50.js",
-      "static/runtime/main-53165d49d68dd6c90805.js"
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
+    ],
+    "/drawers-demo": [
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
     ],
     "/index": [
-      "static/runtime/webpack-6bd4635d1c59d1826990.js",
-      "static/chunks/commons.ba3352141374dbb86e50.js",
-      "static/runtime/main-53165d49d68dd6c90805.js"
+      "static/runtime/webpack-d16d3cf1d43eb71b984a.js",
+      "static/chunks/commons.7e62b68f4528a26ff234.js",
+      "static/runtime/main-25b505fb81639e980690.js"
     ]
   }
 }

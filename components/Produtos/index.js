@@ -8,6 +8,8 @@ import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RemoveCircleOutlineRoundedIcon from "@material-ui/icons/RemoveCircleOutlineRounded";
+import LocalStorageHandler from "../LocalStorageHandler";
+
 //values: { xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920 },
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   quantidade: {
-    textAlign: "center",
+    textAlign: "right",
     width: 30,
     paddingTop: 5,
     paddingBottom: 5,
@@ -243,8 +245,8 @@ export default function Produtos(props) {
       setValorTotal(0);
       setQuantidade(0);
     }
-    props.callbackParent(quantidade);
-  });
+    props.callbackParent(LocalStorageHandler.count("products"));
+  },[quantidade]);
 
   return (
     <>
