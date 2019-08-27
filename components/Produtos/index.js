@@ -58,12 +58,14 @@ const useStyles = makeStyles(theme => ({
   },
   quantidade: {
     textAlign: "right",
-    width: 30,
+    width: 40,
     paddingTop: 5,
     paddingBottom: 5,
     display: "inline",
     border: "0",
-    borderBottom: "1px solid #ccc"
+    borderBottom: "1px solid #ccc",
+position:'relative',
+top:-4
   },
   cardAvatar: {
     border: "1px solid red"

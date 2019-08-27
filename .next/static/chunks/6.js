@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Menu */ "./components/Menu/index.js");
 /* harmony import */ var _LazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../LazyLoad */ "./components/LazyLoad/index.js");
 
-var _jsxFileName = "E:\\delivery\\components\\NavigationBottom\\index.js";
+var _jsxFileName = "D:\\node\\delivery\\components\\NavigationBottom\\index.js";
 
 
 
