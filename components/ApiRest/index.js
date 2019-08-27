@@ -1,8 +1,4 @@
 import axios from "axios";
-const os = require("os");
-
-let index = "server";
-let host = os.hostname();
 
 const apiConfig = [
  {
@@ -13,10 +9,6 @@ const apiConfig = [
   }
 ];
 
-if (host  === "cryptopc" || host  === "saude") {
-  index = "local";
-}
-
-const instance = axios.create(apiConfig[1]);
+const instance = axios.create(apiConfig[0]);
 
 export default instance;

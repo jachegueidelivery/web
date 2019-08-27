@@ -47,10 +47,10 @@ export default function App() {
             </div>
             <div className={classes.div123} style={{ flexGrow: "8" }}>
               <p className={classes.p1}>
-                <Skeleton height={15} width="50%" />
+                <Skeleton height={15} width="80%" />
               </p>
               <p className={classes.p1}>
-                <Skeleton height={10} width="30%" />
+                <Skeleton height={10} width="60%" />
               </p>
             </div>
           </div>

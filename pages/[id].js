@@ -1,21 +1,33 @@
-﻿import { makeStyles, useTheme } from "@material-ui/core";
+﻿import { makeStyles, useTheme, createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from '@material-ui/styles';
+import { purple } from '@material-ui/core/colors';
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import InputBase from "@material-ui/core/InputBase";
 import Link from "@material-ui/core/Link";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Menu, Search } from "@material-ui/icons";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import MailIcon from "@material-ui/icons/Mail";
+import MenuIcon from "@material-ui/icons/Menu";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import Loadable from "react-loadable";
 import AlertNotHasProducts from "../components/AlertNotHasProducts";
 import ApiRest from "../components/ApiRest";
@@ -28,21 +40,11 @@ import SpinnerTeste from "../components/SpinnerTeste/Produtos";
 import TotalPedidos from "../components/TotalPedidos";
 import useReplaceString from "../components/useReplaceString";
 import useWidth from "../components/useWidth";
-import Fab from "@material-ui/core/Fab";
-import MenuIcon from '@material-ui/icons/Menu';
-import Hidden from '@material-ui/core/Hidden';
-import Drawer from '@material-ui/core/Drawer';
-
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
-
+import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
+import StarsIcon from "@material-ui/icons/Stars";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import PhoneIcon from "@material-ui/icons/Phone";
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
@@ -53,6 +55,21 @@ const NavigationBottom = Loadable({
     );
   }
 });
+
+const theme = createMuiTheme({
+  palette: {
+ primary: {
+      main: '#fff',
+    },
+    secondary: {
+      main: '#880e4f',
+    },
+	action:{
+		main:"#fff"
+	}
+  },
+});
+
 
 const dataCategorias = [
   {
@@ -99,115 +116,125 @@ const dataCategorias = [
 
 const drawerWidth = 240;
 
-const useStylesDrawer  = makeStyles(theme => ({
+const useStylesDrawer = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    display: "flex"
   },
   appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
+    transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+      duration: theme.transitions.duration.leavingScreen
+    })
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
+    transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+      duration: theme.transitions.duration.enteringScreen
+    })
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   hide: {
-    display: 'none',
+    display: "none"
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: drawerWidth
   },
   drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end"
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      duration: theme.transitions.duration.leavingScreen
     }),
-    marginLeft: -drawerWidth,
+    marginLeft: -drawerWidth
   },
   contentShift: {
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      duration: theme.transitions.duration.enteringScreen
     }),
-    marginLeft: 0,
-  },
+    marginLeft: 0
+  }
 }));
 
-function DataASt(props){
 
+function CategoriasDetalhes(){
+  return(
+    <>
+     <Divider />
+	<ThemeProvider theme={theme}>
+        <Categorias datacat={dataCategorias} />
+</ThemeProvider>
+        <Divider />
+<ThemeProvider theme={theme}>
+        <List>
+          {[
+            { itemName: "Promoções", icone: <StarsIcon /> },
+            { itemName: "Meu Pedido", icone: <ShoppingCartIcon /> },
+            { itemName: "Minha Conta", icone: <AccountCircleIcon /> },
+            { itemName: "Pedir Por Telefone", icone: <PhoneIcon /> }
+          ].map((item, index) => (
+            <ListItem button key={index}>
+              <ListItemIcon>{item.icone}</ListItemIcon>
+              <ListItemText primary={item.itemName} />
+            </ListItem>
+          ))}
+        </List></ThemeProvider>
+    </>
+  )
+}
+
+
+function DataASt(props) {
   const classes = useStylesDrawer();
 
-const theme = useTheme();
+  const theme = useTheme();
 
-  const [open, setOpen] = React.useState(false);
-
-  function handleDrawerOpen() {
-    setOpen(true);
+  function handleDrawerClose() {
+    props.handleDrawerClose(false);
   }
 
-function handleDrawerClose() {
-	props.handleDrawerClose(false);
-  }
-
-return(
-<>
- <Drawer
+  return (
+    <>
+<ThemeProvider theme={theme}>
+      <Drawer
         className={classes.drawer}
         variant="persistent"
         anchor="left"
         open={props.open}
         classes={{
-          paper: classes.drawerPaper,
+          paper: classes.drawerPaper
         }}
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+<CategoriasDetalhes />
       </Drawer>
-</>
-);
+</ThemeProvider>
+    </>
+  );
 }
 
 const useStyles = makeStyles(theme => ({
@@ -228,13 +255,16 @@ const useStyles = makeStyles(theme => ({
     }
   },
   appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    background:'#a40000',
+	color:"#fff"
   },
   toolbar: {
     flexWrap: "wrap"
   },
   toolbarTitle: {
-    flexGrow: 1
+    flexGrow: 1,
+     color:"#ffffff"
   },
   link: {
     margin: theme.spacing(1, 1.5)
@@ -251,15 +281,14 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up("xs")]: {
-     width: "100%",
+      width: "100%"
     },
     [theme.breakpoints.up("sm")]: {
       width: "96%"
     },
-    [theme.breakpoints.up("md")]: {
-    },
+    [theme.breakpoints.up("md")]: {},
     [theme.breakpoints.up("lg")]: {
-      width: "96%",
+      width: "96%"
     },
     margin: "0px auto",
     paddingLeft: 10,
@@ -431,23 +460,35 @@ BUSCA OS DADOS DA EMPRESA
   return (
     <React.Fragment>
       <CssBaseline />
-<DataASt  open={abrirDrawer} handleDrawerClose={(valor)=>setAbrirDrawer(valor)}/>
+      <DataASt
+        open={abrirDrawer}
+        handleDrawerClose={valor => setAbrirDrawer(valor)}
+      />
       <AppBar
         position="fixed"
-        color="default"
         elevation={0}
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-{ /*         <IconButton onClick={goBack} className={classes.margin}>
+          {/*<IconButton onClick={goBack} className={classes.margin}>
             <ArrowBackIcon color="default" fontSize="large"/>
           </IconButton>*/}
-<IconButton onClick={()=>{setAbrirDrawer(!0)}}>
-	<MenuIcon color="primary" fontSize="default"/>
- </IconButton>
+		  	<ThemeProvider theme={theme}>
+	<Hidden only={["sm","lg", "md"]}>
+          <IconButton
+		  color="primary"
+            onClick={() => {
+              setAbrirDrawer(!0);
+            }}
+          >
+            <MenuIcon fontSize="default" />
+          </IconButton>
+	</Hidden>
+	</ThemeProvider>
+<ThemeProvider theme={theme}>
           <Typography
             variant="h6"
-            color="inherit"
+            color="error"
             noWrap
             className={classes.toolbarTitle}
           >
@@ -458,11 +499,13 @@ BUSCA OS DADOS DA EMPRESA
                 </>
               ) : (
                 <>
-                  <Grid>{nome_fantasia}</Grid>
+                  <Grid style={{color:"#fff"}}>{nome_fantasia}</Grid>
                 </>
               )}
             </Link>
           </Typography>
+
+</ThemeProvider>
           {!1 && (
             <>
               <Button
@@ -492,7 +535,29 @@ BUSCA OS DADOS DA EMPRESA
         {produtos.isLoading == false && (
           <>
             <br />
-            <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7]} />
+            <Grid container justify="center">
+	<Hidden only={["xs"]}>
+              <Grid xs="12" sm="4" md="3">
+                <Grid item>
+                  {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <div style={{ marginBottom: 20 }}>
+                          <Skeleton variant="text" height={20} />
+                          <Skeleton variant="text" width="70%" height={15} />
+                        </div>
+                      </Fragment>
+                    );
+                  })}
+                </Grid>
+              </Grid>
+	</Hidden>
+              <Grid xs="12" sm="8" md="9">
+                <Grid item>
+                  <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7]} />
+                </Grid>
+              </Grid>
+            </Grid>
           </>
         )}
         {produtos.isLoading == true && empresaId != null && (
@@ -505,24 +570,25 @@ BUSCA OS DADOS DA EMPRESA
             ) : (
               <>
                 <Grid container justify="center">
-  <Hidden only={['xs']}>                
-<Grid  xs="12" sm="4" md="3" className={classes.categorias}>
-                    <Grid item>
-                      <Categorias datacat={dataCategorias} />
+                  <Hidden only={["xs"]}>
+                    <Grid xs="12" sm="4" md="3" className={classes.categorias}>
+                      <Grid item>
+		<CategoriasDetalhes/>
+                      </Grid>
                     </Grid>
-                  </Grid>
-  </Hidden>  
-                  <Grid xs="12" sm="8"  md="9">
+                  </Hidden>
+                  <Grid xs="12" sm="8" md="9">
                     <Grid item>
                       <Grid container justify="center">
                         <Grid container>
                           <Paper className={classes.rootinput}>
-                            <IconButton
+                             <IconButton
                               className={classes.iconButton}
-                              aria-label="Menu"
+                              aria-label="Search"
                             >
-                              <Menu />
+                              <Search />
                             </IconButton>
+							<Divider className={classes.divider} />
                             <InputBase
                               className={classes.textFieldInput}
                               placeholder="Pesquisar"
@@ -530,13 +596,7 @@ BUSCA OS DADOS DA EMPRESA
                                 "aria-label": "Search Google Maps"
                               }}
                             />
-                            <Divider className={classes.divider} />
-                            <IconButton
-                              className={classes.iconButton}
-                              aria-label="Search"
-                            >
-                              <Search />
-                            </IconButton>
+         
                           </Paper>
                         </Grid>
                       </Grid>

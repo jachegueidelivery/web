@@ -12,22 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-
-var os = __webpack_require__(/*! os */ "./node_modules/os-browserify/browser.js");
-
-var index = "server";
-var host = os.hostname();
 var apiConfig = [{
   baseURL: "http://127.0.0.1:3333"
 }, {
   baseURL: "https://api.rsvtelecom.com.br"
 }];
-
-if (host === "cryptopc" || host === "saude") {
-  index = "local";
-}
-
-var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[1]);
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[0]);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),
@@ -72,7 +62,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\MostrarEmpresas\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\MostrarEmpresas\\index.js";
 
 
 
@@ -3122,66 +3112,6 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
   (result.e ? promiseCapability.reject : promiseCapability.resolve)(result.v);
   return promiseCapability.promise;
 } });
-
-
-/***/ }),
-
-/***/ "./node_modules/os-browserify/browser.js":
-/*!***********************************************!*\
-  !*** ./node_modules/os-browserify/browser.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-exports.endianness = function () { return 'LE' };
-
-exports.hostname = function () {
-    if (typeof location !== 'undefined') {
-        return location.hostname
-    }
-    else return '';
-};
-
-exports.loadavg = function () { return [] };
-
-exports.uptime = function () { return 0 };
-
-exports.freemem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.totalmem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.cpus = function () { return [] };
-
-exports.type = function () { return 'Browser' };
-
-exports.release = function () {
-    if (typeof navigator !== 'undefined') {
-        return navigator.appVersion;
-    }
-    return '';
-};
-
-exports.networkInterfaces
-= exports.getNetworkInterfaces
-= function () { return {} };
-
-exports.arch = function () { return 'javascript' };
-
-exports.platform = function () { return 'browser' };
-
-exports.tmpdir = exports.tmpDir = function () {
-    return '/tmp';
-};
-
-exports.EOL = '\n';
-
-exports.homedir = function () {
-	return '/'
-};
 
 
 /***/ }),

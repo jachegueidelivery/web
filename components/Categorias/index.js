@@ -33,14 +33,14 @@ function Categorias(props) {
                 <List style={{ border: "0px solid red", padding: "0" }}>
                   <ListItem>
                     <ListItemText
-                      primary={
-                        <b>
-                          <Link>{item.nome}</Link>
-                        </b>
+                     secondary={
+                        <Typography color="secondary"><b>
+                          {item.nome}
+                        </b></Typography>
                       }
                     />
                     <ListItemSecondaryAction>
-                      <Typography color="primary">
+                      <Typography color="secondary">
                         <b>{item.quantidade}</b>
                       </Typography>
                     </ListItemSecondaryAction>
