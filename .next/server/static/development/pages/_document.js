@@ -1551,7 +1551,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "E:\\delivery\\pages\\_document.js";
+var _jsxFileName = "D:\\node\\delivery\\pages\\_document.js";
 
 
 
@@ -1740,7 +1740,9 @@ __webpack_require__.r(__webpack_exports__);
 var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
   palette: {
     primary: {
-      main: '#556cd6'
+      main: '#a40000'
+      /*#556cd6*/
+
     },
     secondary: {
       main: '#19857b'

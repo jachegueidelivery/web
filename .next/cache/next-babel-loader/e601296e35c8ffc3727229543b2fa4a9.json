@@ -1,1 +1,0 @@
-{"ast":null,"code":"import axios from \"axios\";\nvar apiConfig = [{\n  baseURL: \"http://127.0.0.1:3333\"\n}, {\n  baseURL: \"https://api.rsvtelecom.com.br\"\n}];\nvar instance = axios.create(apiConfig[0]);\nexport default instance;","map":null,"metadata":{},"sourceType":"module"}

@@ -14,9 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 var apiConfig = [{
-  baseURL: "http://127.0.0.1:3333"
+  baseURL: "http://192.168.129.171:3300"
 }, {
-  baseURL: "https://api.rsvtelecom.com.br"
+  baseURL: "http://deliverytest-com-br.umbler.net"
 }];
 var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[0]);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
@@ -76,7 +76,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "E:\\delivery\\components\\MostrarEmpresas\\index.js";
+var _jsxFileName = "D:\\node\\delivery\\components\\MostrarEmpresas\\index.js";
 
 
 
@@ -146,7 +146,7 @@ function MostrarEmpresas(props) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _ApiRest__WEBPACK_IMPORTED_MODULE_18__["default"].get("/empresas");
+                return _ApiRest__WEBPACK_IMPORTED_MODULE_18__["default"].get("/companies");
 
               case 2:
                 result = _context.sent;
@@ -259,17 +259,17 @@ function MostrarEmpresas(props) {
       lineNumber: 110
     },
     __self: this
-  }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(empresas).map(function (empresa, _key) {
+  }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(empresas).map(function (empresa, index) {
     return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_12___default.a, {
       item: true,
-      key: _key,
-      title: "Clique para entrar em " + empresa.nome_fantasia,
+      key: index,
+      title: "Clique para entrar em " + empresa.company_fantasy_name,
       xs: 12,
       sm: 6,
       md: 4,
       className: classes._grid,
       onClick: function onClick() {
-        window.location.href = empresa.url.toLowerCase();
+        window.location.href = empresa.company_url.toLowerCase();
       },
       __source: {
         fileName: _jsxFileName,
@@ -279,10 +279,10 @@ function MostrarEmpresas(props) {
     }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_8___default.a, {
       className: classes.card,
       onMouseOut: function onMouseOut(ev) {
-        return mouseOutStyle(ev, empresa.id);
+        return mouseOutStyle(ev, empresa.company_id);
       },
       onMouseOver: function onMouseOver(ev) {
-        return mouseOverStyle(ev, empresa.id);
+        return mouseOverStyle(ev, empresa.company_id);
       },
       __source: {
         fileName: _jsxFileName,
@@ -297,7 +297,7 @@ function MostrarEmpresas(props) {
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_11___default.a, {
       className: classes.cardMedia,
-      image: empresa.logomarca,
+      image: empresa.company_logo,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 130
@@ -319,19 +319,19 @@ function MostrarEmpresas(props) {
         lineNumber: 136
       },
       __self: this
-    }, empresa.nome_fantasia), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    }, empresa.company_fantasy_name), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 139
       },
       __self: this
-    }, " ", empresa.telefone), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_13___default.a, {
+    }, " ", empresa.company_phone), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_13___default.a, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 140
       },
       __self: this
-    }, empresa.descricao)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    }, empresa.company_description)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_9___default.a, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 142

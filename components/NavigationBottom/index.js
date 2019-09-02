@@ -1,12 +1,12 @@
-﻿import React, { Fragment, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
+﻿import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import { Home, Check } from "@material-ui/icons";
-import TotalPedidos from "../TotalPedidos";
+import { makeStyles } from "@material-ui/core/styles";
+import { Check, Home } from "@material-ui/icons";
+import React, { Fragment, useState } from "react";
 import Loadable from "react-loadable";
-import MyMenu from "../Menu";
 import LazyLoad from "../LazyLoad";
+import MyMenu from "../Menu";
+import TotalPedidos from "../TotalPedidos";
 
 const DialogFormConfirm = Loadable({
   loader: () => import("../DialogFormConfirm"),
@@ -65,9 +65,9 @@ export default function LabelBottomNavigation(props) {
         <BottomNavigationAction
           label="INÍCIO"
           value="recents"
-          icon={<Home color="default" fontSize="small" />}
+          icon={<Home color="primary" fontSize="small" />} 
           onClick={()=>window.location.href="../"}
-        />
+        />{/*"inherit","primary","secondary","action","error","disabled" */}
         <BottomNavigationAction
           label="CARRINHO"
           value="favorites"
@@ -78,7 +78,7 @@ export default function LabelBottomNavigation(props) {
           label="CONCLUIR PEDIDO"
           value="nearby"
           onClick={()=>setOpenDialog(true)}
-          icon={<Check color="default" fontSize="small" />}
+          icon={<Check color="primary" fontSize="small" />}
         />
       </BottomNavigation>
       <DialogFormConfirm

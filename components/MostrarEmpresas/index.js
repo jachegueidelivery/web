@@ -51,7 +51,7 @@ export default function MostrarEmpresas(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await ApiRest.get("/empresas");
+      const result = await ApiRest.get("/companies");
       setEmpresas(result.data);
       props.onLoadedComplete(!0);
     };
@@ -108,36 +108,36 @@ export default function MostrarEmpresas(props) {
         </Toolbar>
       </AppBar>
       <Grid container spacing={2}>
-        {Object.values(empresas).map((empresa, _key) => (
+        {Object.values(empresas).map((empresa, index) => (
           <Grid
             item
-            key={_key}
-            title={"Clique para entrar em " + empresa.nome_fantasia}
+            key={index}
+            title={"Clique para entrar em " + empresa.company_fantasy_name}
             xs={12}
             sm={6}
             md={4}
             className={classes._grid}
             onClick={() => {
-              window.location.href = empresa.url.toLowerCase();
+              window.location.href = empresa.company_url.toLowerCase();
             }}
           >
             <Card
               className={classes.card}
-              onMouseOut={ev => mouseOutStyle(ev, empresa.id)}
-              onMouseOver={ev => mouseOverStyle(ev, empresa.id)}
+              onMouseOut={ev => mouseOutStyle(ev, empresa.company_id)}
+              onMouseOver={ev => mouseOverStyle(ev, empresa.company_id)}
             >
               <LazyLoad>
                 <CardMedia
                   className={classes.cardMedia}
-                  image={empresa.logomarca}
+                  image={empresa.company_logo}
                 />
               </LazyLoad>
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
-                  {empresa.nome_fantasia}
+                  {empresa.company_fantasy_name}
                 </Typography>
-                <div> {empresa.telefone}</div>
-                <Typography>{empresa.descricao}</Typography>
+                <div> {empresa.company_phone}</div>
+                <Typography>{empresa.company_description}</Typography>
               </CardContent>
               <CardActions>
                 <Button size="small" color="primary" dataobj={empresa}>

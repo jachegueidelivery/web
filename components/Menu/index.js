@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
 import Menu from "@material-ui/core/Menu";
+import React, { useEffect, useState } from "react";
 import Carrinho from "../Carrinho";
 import LocalStorageHandler from "../LocalStorageHandler";
 
 const renderMenu = props => {
-
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
   function onAtualizarCount() {
@@ -27,8 +26,13 @@ const renderMenu = props => {
       open={props.abrir}
       onClose={props.handleMenuClose}
     >
-      <div style={{ padding: 10 }}>
-       <Carrinho count={countPedidosLocal} />
+      <div style={{ padding: 5 }}>
+        <Carrinho
+          count={countPedidosLocal}
+          fecharMenu={value => {
+            props.handleMenuClose(value);
+          }}
+        />
       </div>
     </Menu>
   );

@@ -1,10 +1,10 @@
-﻿import React from "react";
-import Container from "@material-ui/core/Container";
+﻿import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
-import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
 
 let Footers = [
   {
@@ -65,36 +65,43 @@ function MadeWithLove() {
   );
 }
 
-const useStyles = makeStyles({
-  footer: {
-    background: "white"
+const useStylesMy = makeStyles(theme => ({
+  footerEnd: {
+    border:"0px solid lime !important", 
+    padding:0,
+    margin:0
+  },
+  footer2:{
+    padding:0
   }
-});
+}));
 
 /**
  * Footer (Rodapé)
  */
 function Footer(props) {
   let _footer = props.footer == undefined ? Footers : props.footer;
+  const classes = useStylesMy();
   return (
     <>
-      <Container maxWidth="lg" component="footer" p={0}>
+      <Container maxWidth="md" component="footer" p={0} className={classes.footer2}>
         <Grid
-          container
-          spacing={2}
-          alignContent="center"
-          justify="space-evenly"
-          p={0}
+           container
+           spacing={0}
+           direction="row"
+           justify="space-between"
+           alignItems="flex-start"
+           p={0}
         >
           {_footer.map((footer, key) => (
-            <Grid item xs={6} lg={2} sm={4} key={key}>
+            <Grid item xs={6} lg={2} md={2} sm={2} key={key} style={{padding:0}}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}
               </Typography>
               <ul>
-                {footer.description.map((item, key) => {
+                {footer.description.map((item, subKey) => {
                   return (
-                    <li key={key}>
+                    <li key={subKey}>
                       <Link
                         href={item.url}
                         variant="subtitle1"
@@ -110,20 +117,19 @@ function Footer(props) {
           ))}
         </Grid>
       </Container>
-      <Divider />
-      <Container maxWidth="lg" component="footer" p={0}>
+      <br/><Divider /><br/>
+      <Container maxWidth="md" component="footer" p={0}  className={classes.footer2}>
         <Grid
           container
-          spacing={2}
-          alignContent="center"
-          justify="space-evenly"
+          spacing={0}
           p={0}
+          className={classes.footer2}
         >
-          <Grid item xs={6} lg={2} sm={4}>
+          <Grid item xs={6} lg={8} sm={8} md={8} className={classes.footerEnd}>
             <MadeWithLove />
           </Grid>
-          <Grid item xs={6} lg={2} sm={4}/>
-          <Grid item xs={6} lg={2} sm={4} />
+          <Grid item xs={6} lg={2} sm={2} md={2} className={classes.footerEnd}/>
+          <Grid item xs={6} lg={2} sm={2} md={2} className={classes.footerEnd}/>
         </Grid>
       </Container>
       <br />

@@ -1,23 +1,23 @@
-﻿import React, { useState } from "react";
-import AppBar from "@material-ui/core/AppBar";
+﻿import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Loadable from "react-loadable";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
-import LocalStorageHandler from "../components/LocalStorageHandler";
-import MyMenu from "../components/Menu";
-import LazyLoad from "../components/LazyLoad";
-import {TelaInicial} from "../components/SpinnerTeste";
+import InputBase from "@material-ui/core/InputBase";
+import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import TotalPedidos from "../components/TotalPedidos";
-import Grid from "@material-ui/core/Grid";
 import { Menu, Search } from "@material-ui/icons";
+import React, { useState } from "react";
+import Loadable from "react-loadable";
+import LazyLoad from "../components/LazyLoad";
+import LocalStorageHandler from "../components/LocalStorageHandler";
+import MyMenu from "../components/Menu";
+import { TelaInicial } from "../components/SpinnerTeste";
+import TotalPedidos from "../components/TotalPedidos";
 
 const Footer = Loadable({
   loader: () => import("../components/Footer"),
@@ -131,7 +131,24 @@ const useStyles = makeStyles(theme => ({
     margin: 4
   },
   footerNavigationBottom: {
-    background: "white"
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(0),
+    background: "white",
+    position:"absolute",
+    display:"block",
+    border: "0px solid gold",
+    margin:"0px auto",
+    left:0,
+    right:0,
+    width:"100%",
+    "& p": {
+      border: "0px solid red",
+      "& span": {}
+    },
+    "& div": {
+      border: "0px solid lime"
+    }
   }
 }));
 
@@ -186,27 +203,27 @@ const Main = props => {
       <div className={classes.SiteSearchPanel__Background} />
       <AppBar
         position="fixed"
-        color="default"
+        color="primary"
         elevation={0}
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
           <Typography
             variant="h6"
-            color="textPrimary"
+            color="inherit"
             noWrap
             className={classes.toolbarTitle}
           >
             Delivery
           </Typography>
-          <Button
+          {/* <Button
             href="#"
-            color="primary"
+            color="default"
             variant="outlined"
             className={classes.link}
           >
             Entrar
-          </Button>
+          </Button> */}
           <IconButton
             onClick={handleProfileMenuOpen}
             aria-label="Account of current user"

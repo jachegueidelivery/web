@@ -1,6 +1,4 @@
-﻿import { makeStyles, useTheme, createMuiTheme } from "@material-ui/core";
-import { ThemeProvider } from '@material-ui/styles';
-import { purple } from '@material-ui/core/colors';
+﻿import { createMuiTheme, makeStyles, useTheme } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
@@ -19,15 +17,18 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { Menu, Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import PhoneIcon from "@material-ui/icons/Phone";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import StarsIcon from "@material-ui/icons/Stars";
 import Skeleton from "@material-ui/lab/Skeleton";
+import { ThemeProvider } from "@material-ui/styles";
 import { useRouter } from "next/router";
-import React, { useEffect, useState, Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Loadable from "react-loadable";
 import AlertNotHasProducts from "../components/AlertNotHasProducts";
 import ApiRest from "../components/ApiRest";
@@ -40,11 +41,6 @@ import SpinnerTeste from "../components/SpinnerTeste/Produtos";
 import TotalPedidos from "../components/TotalPedidos";
 import useReplaceString from "../components/useReplaceString";
 import useWidth from "../components/useWidth";
-import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
-import StarsIcon from "@material-ui/icons/Stars";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import PhoneIcon from "@material-ui/icons/Phone";
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
@@ -58,61 +54,17 @@ const NavigationBottom = Loadable({
 
 const theme = createMuiTheme({
   palette: {
- primary: {
-      main: '#fff',
+    primary: {
+      main: "#fff"
     },
     secondary: {
-      main: '#880e4f',
+      main: "#880e4f"
     },
-	action:{
-		main:"#fff"
-	}
-  },
-});
-
-
-const dataCategorias = [
-  {
-    nome: "ALIMENTOS",
-    quantidade: parseInt(2),
-    mostrar: !0
-  },
-  {
-    nome: "BEBIDAS",
-    quantidade: parseInt(3),
-    mostrar: !0
-  },
-  {
-    nome: "BAZAR",
-    quantidade: parseInt(5),
-    mostrar: !0
-  },
-  {
-    nome: "DESCARTÁVEIS",
-    quantidade: parseInt(8),
-    mostrar: !0
-  },
-  {
-    nome: "MATINAIS",
-    quantidade: parseInt(4),
-    mostrar: !0
-  },
-  {
-    nome: "PERECÍVEIS",
-    quantidade: parseInt(45),
-    mostrar: !0
-  },
-  {
-    nome: "HIGIENE",
-    quantidade: parseInt(4),
-    mostrar: !0
-  },
-  {
-    nome: "LIMPEZA",
-    quantidade: parseInt(8),
-    mostrar: !0
+    action: {
+      main: "#fff"
+    }
   }
-];
+});
 
 const drawerWidth = 240;
 
@@ -172,16 +124,15 @@ const useStylesDrawer = makeStyles(theme => ({
   }
 }));
 
-
-function CategoriasDetalhes(){
-  return(
+function CategoriasDetalhes() {
+  return (
     <>
-     <Divider />
-	<ThemeProvider theme={theme}>
-        <Categorias datacat={dataCategorias} />
-</ThemeProvider>
-        <Divider />
-<ThemeProvider theme={theme}>
+      <Divider />
+      <ThemeProvider theme={theme}>
+        <Categorias />
+      </ThemeProvider>
+      <Divider />
+      <ThemeProvider theme={theme}>
         <List>
           {[
             { itemName: "Promoções", icone: <StarsIcon /> },
@@ -194,11 +145,11 @@ function CategoriasDetalhes(){
               <ListItemText primary={item.itemName} />
             </ListItem>
           ))}
-        </List></ThemeProvider>
+        </List>
+      </ThemeProvider>
     </>
-  )
+  );
 }
-
 
 function DataASt(props) {
   const classes = useStylesDrawer();
@@ -211,28 +162,28 @@ function DataASt(props) {
 
   return (
     <>
-<ThemeProvider theme={theme}>
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={props.open}
-        classes={{
-          paper: classes.drawerPaper
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-<CategoriasDetalhes />
-      </Drawer>
-</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Drawer
+          className={classes.drawer}
+          variant="persistent"
+          anchor="left"
+          open={props.open}
+          classes={{
+            paper: classes.drawerPaper
+          }}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </div>
+          <CategoriasDetalhes />
+        </Drawer>
+      </ThemeProvider>
     </>
   );
 }
@@ -256,15 +207,15 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    background:'#a40000',
-	color:"#fff"
+    background: "#a40000",
+    color: "#fff"
   },
   toolbar: {
     flexWrap: "wrap"
   },
   toolbarTitle: {
     flexGrow: 1,
-     color:"#ffffff"
+    color: "#ffffff"
   },
   link: {
     margin: theme.spacing(1, 1.5)
@@ -277,7 +228,7 @@ const useStyles = makeStyles(theme => ({
     border: "0px solid blue"
   },
   rootinput: {
-    borderRadius: 0,
+    borderRadius: 30,
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up("xs")]: {
@@ -297,6 +248,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 5
   },
   textFieldInput: {
+    borderRadius: 30,
     backgroundColor: theme.palette.common.white,
     fontSize: 16,
     width: "100%",
@@ -316,9 +268,12 @@ const useStyles = makeStyles(theme => ({
     margin: 4
   },
   footerNavigationBottom: {
-    paddingLeft: theme.spacing(0),
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(0),
     background: "white",
+    position: "absolute",
+    display: "block",
     border: "0px solid gold",
     "& p": {
       border: "0px solid red",
@@ -346,10 +301,9 @@ const Index = props => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [iniciar, setIniciar] = useState(true);
   const [empresa, setEmpresa] = useState({ config: [] });
-  const [nome_fantasia, setNomeFantasia] = useState("Carregando...");
+  const [nome_fantasia, setNomeFantasia] = useState("");
   const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
   const [empresaId, setEmpresaId] = useState(null);
-  const [daaaaaaata, setDaaaaaaata] = useState(null);
   const [abrirDrawer, setAbrirDrawer] = useState(!1);
 
   let screenSize = useWidth();
@@ -375,7 +329,7 @@ BUSCA OS DADOS DA EMPRESA
   useEffect(() => {
     let id = router.query.id;
     const fetchData = async () => {
-      const result = await ApiRest.get("/empresas/" + id);
+      const result = await ApiRest.get("/companies/" + id);
       setEmpresa(result.data);
     };
     fetchData();
@@ -388,7 +342,7 @@ BUSCA OS DADOS DA EMPRESA
   useEffect(() => {
     const fetchData = async () => {
       if (empresaId !== null) {
-        const result = await ApiRest.get("/produtos/empresa/" + empresaId);
+        const result = await ApiRest.get("/products/companie/" + empresaId);
         setProdutos({ data: result.data, isLoading: true });
       }
     };
@@ -398,11 +352,11 @@ BUSCA OS DADOS DA EMPRESA
   useEffect(() => {
     if (!empresa.config) {
       if (screenSize === "xs") {
-        setNomeFantasia(useReplaceString(empresa["0"].nome_fantasia, 2));
+        setNomeFantasia(useReplaceString(empresa["0"].company_fantasy_name, 2));
       } else {
-        setNomeFantasia(empresa["0"].nome_fantasia);
+        setNomeFantasia(empresa["0"].company_fantasy_name);
       }
-      setEmpresaId(empresa["0"].id);
+      setEmpresaId(empresa["0"].company_id);
     }
   }, [empresa]);
 
@@ -433,10 +387,6 @@ BUSCA OS DADOS DA EMPRESA
     setCountPedidosLocal(LocalStorageHandler.count("products"));
   }
 
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
-
   function handleProfileMenuOpen(event) {
     if (LocalStorageHandler.count("products") > 0) {
       setAnchorEl(event.currentTarget);
@@ -464,48 +414,43 @@ BUSCA OS DADOS DA EMPRESA
         open={abrirDrawer}
         handleDrawerClose={valor => setAbrirDrawer(valor)}
       />
-      <AppBar
-        position="fixed"
-        elevation={0}
-        className={classes.appBar}
-      >
+      <AppBar position="fixed" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           {/*<IconButton onClick={goBack} className={classes.margin}>
             <ArrowBackIcon color="default" fontSize="large"/>
           </IconButton>*/}
-		  	<ThemeProvider theme={theme}>
-	<Hidden only={["sm","lg", "md"]}>
-          <IconButton
-		  color="primary"
-            onClick={() => {
-              setAbrirDrawer(!0);
-            }}
-          >
-            <MenuIcon fontSize="default" />
-          </IconButton>
-	</Hidden>
-	</ThemeProvider>
-<ThemeProvider theme={theme}>
-          <Typography
-            variant="h6"
-            color="error"
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            <Link href="../">
+          <ThemeProvider theme={theme}>
+            <Hidden only={["sm", "lg", "md", "xl"]}>
+              <IconButton
+                color="primary"
+                onClick={() => {
+                  setAbrirDrawer(!0);
+                }}
+              >
+                <MenuIcon fontSize="default" />
+              </IconButton>
+            </Hidden>
+          </ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <Typography
+              variant="h6"
+              color="error"
+              noWrap
+              className={classes.toolbarTitle}
+            >
               {produtos.isLoading == false ? (
                 <>
-                  <Skeleton variante="text" height={20} width={200} />
+                  <Skeleton variante="text" height={10} width={200} />
                 </>
               ) : (
                 <>
-                  <Grid style={{color:"#fff"}}>{nome_fantasia}</Grid>
+                  <Link href="../">
+                    <span style={{ color: "#fff" }}>{nome_fantasia}</span>
+                  </Link>
                 </>
               )}
-            </Link>
-          </Typography>
-
-</ThemeProvider>
+            </Typography>
+          </ThemeProvider>
           {!1 && (
             <>
               <Button
@@ -536,23 +481,23 @@ BUSCA OS DADOS DA EMPRESA
           <>
             <br />
             <Grid container justify="center">
-	<Hidden only={["xs"]}>
-              <Grid xs="12" sm="4" md="3">
-                <Grid item>
-                  {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
-                    return (
-                      <Fragment key={index}>
-                        <div style={{ marginBottom: 20 }}>
-                          <Skeleton variant="text" height={20} />
-                          <Skeleton variant="text" width="70%" height={15} />
-                        </div>
-                      </Fragment>
-                    );
-                  })}
+              <Hidden only={["xs", "xl"]}>
+                <Grid item xs={12} sm={4} md={3}>
+                  <Grid item>
+                    {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
+                      return (
+                        <Fragment key={index}>
+                          <div style={{ marginBottom: 20 }}>
+                            <Skeleton variant="text" height={15} />
+                            <Skeleton variant="text" width="70%" height={15} />
+                          </div>
+                        </Fragment>
+                      );
+                    })}
+                  </Grid>
                 </Grid>
-              </Grid>
-	</Hidden>
-              <Grid xs="12" sm="8" md="9">
+              </Hidden>
+              <Grid item xs={12} sm={8} md={9}>
                 <Grid item>
                   <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7]} />
                 </Grid>
@@ -571,50 +516,56 @@ BUSCA OS DADOS DA EMPRESA
               <>
                 <Grid container justify="center">
                   <Hidden only={["xs"]}>
-                    <Grid xs="12" sm="4" md="3" className={classes.categorias}>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={4}
+                      md={3}
+                      className={classes.categorias}
+                    >
                       <Grid item>
-		<CategoriasDetalhes/>
+                        <CategoriasDetalhes />
                       </Grid>
                     </Grid>
                   </Hidden>
-                  <Grid xs="12" sm="8" md="9">
+                  <Grid item xs={12} sm={8} md={9}>
                     <Grid item>
                       <Grid container justify="center">
                         <Grid container>
                           <Paper className={classes.rootinput}>
-                             <IconButton
+                            <IconButton
                               className={classes.iconButton}
                               aria-label="Search"
                             >
                               <Search />
                             </IconButton>
-							<Divider className={classes.divider} />
+                            <Divider className={classes.divider} />
                             <InputBase
+                              autoFocus
                               className={classes.textFieldInput}
                               placeholder="Pesquisar"
                               inputProps={{
                                 "aria-label": "Search Google Maps"
                               }}
                             />
-         
                           </Paper>
                         </Grid>
                       </Grid>
                     </Grid>
                     <Grid item>
-                      {Object.values(produtos.data).map((product, _key) => {
+                      {Object.values(produtos.data).map((product, index) => {
                         return (
-                          <React.Fragment key={_key}>
+                          <React.Fragment key={index}>
                             <Produtos
                               callbackParent={valor =>
                                 setCountPedidosLocal(valor)
                               }
                               produto={product}
-                              id={product.id}
-                              nome={product.nome.toUpperCase()}
-                              imagem={product.imagem}
-                              precoUnitario={product.preco}
-                              descricao={product.descricao}
+                              id={product.product_id}
+                              nome={product.product_name.toUpperCase()}
+                              imagem={product.product_image}
+                              precoUnitario={2.6}
+                              descricao={product.product_description}
                             />
                           </React.Fragment>
                         );
@@ -635,7 +586,6 @@ BUSCA OS DADOS DA EMPRESA
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}
       />
-      {/* <NavigationBottom totalPro={countPedidosLocal} /> */}
     </React.Fragment>
   );
 };
