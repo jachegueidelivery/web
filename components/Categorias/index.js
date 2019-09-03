@@ -12,8 +12,11 @@ import ApiRest from "../ApiRest";
  * Componente categoria
  */
 function Categorias(props) {
+
   const [categorias, setCategorias] = useState({ data: null, isLoaded: false });
+
   const router = useRouter();
+
   useEffect(() => {
     const { id } = router.query;
 
@@ -22,7 +25,8 @@ function Categorias(props) {
       setCategorias({ data: result.data, isLoaded: true });
     };
     fetchData();
-  }, []);
+  }, []); /*categorias*/
+
 
   return (
     <>
@@ -35,12 +39,11 @@ function Categorias(props) {
       <Divider light variant="middle" />
       {!categorias.isLoaded && (
         <>
-          {[1, 2, 3, 4].map((value, index) => {
+          {[1,2,3,4,5,6,7,8,9,10].map((value, index) => {
             return (
               <List key={index} style={{ border: "0px solid red", padding: "0" }}>
                 <ListItem>
                   <ListItemText primary={<Skeleton width="90%" height={10} />} />
-                  <ListItemSecondaryAction></ListItemSecondaryAction>
                 </ListItem>
               </List>
             );
@@ -54,7 +57,7 @@ function Categorias(props) {
               <Fragment key={index}>
                 <List
                 title={`Clique para pesquisar produtos da categoria: ${category.category_name}`}
-                onClick={()=>{alert(JSON.stringify(category))}} style={{ border: "0px solid red", padding: "0" }}>
+                onClick={()=>{props.loadProductsByCategory(JSON.stringify(category))}} style={{ border: "0px solid red", padding: "0", cursor:"pointer" }}>
                   <ListItem>
                     <ListItemText
                       secondary={

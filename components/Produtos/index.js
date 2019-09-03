@@ -185,6 +185,8 @@ export default function Produtos(props) {
     props.callbackParent(LocalStorageHandler.count("products"));
   }, [quantidade]);
 
+
+
   return (
     <>
       <div className={classes.cardItemMenu} id={props.id} title={props.nome}>

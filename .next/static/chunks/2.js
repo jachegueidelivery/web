@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 var apiConfig = [{
+  baseURL: "http://localhost:3300"
+}, {
   baseURL: "http://192.168.129.171:3300"
 }, {
   baseURL: "http://deliverytest-com-br.umbler.net"
@@ -62,7 +64,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\MostrarEmpresas\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\MostrarEmpresas\\index.js";
 
 
 

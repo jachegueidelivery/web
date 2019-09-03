@@ -124,12 +124,12 @@ const useStylesDrawer = makeStyles(theme => ({
   }
 }));
 
-function CategoriasDetalhes() {
+function CategoriasDetalhes(props) {
   return (
     <>
       <Divider />
       <ThemeProvider theme={theme}>
-        <Categorias />
+        <Categorias loadProductsByCategory={(category)=>props.loadProductsByCategory(category)} />
       </ThemeProvider>
       <Divider />
       <ThemeProvider theme={theme}>
@@ -305,6 +305,7 @@ const Index = props => {
   const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
   const [empresaId, setEmpresaId] = useState(null);
   const [abrirDrawer, setAbrirDrawer] = useState(!1);
+  const [category, setCategory] = useState({});  
 
   let screenSize = useWidth();
 
@@ -359,6 +360,31 @@ BUSCA OS DADOS DA EMPRESA
       setEmpresaId(empresa["0"].company_id);
     }
   }, [empresa]);
+
+/*Para fazer o filtro*/
+useEffect(()=>{
+
+
+
+if(produtos.isLoading){
+
+if(category.length > 0){
+
+let inCategory = JSON.parse(category);
+
+console.log(inCategory.category_id);
+
+	let products = produtos.data.filter((product, index)=>product.category_id == inCategory.category_id);
+
+setProdutos({ data: products, isLoading: true });
+
+}
+	
+
+}
+
+},[category])
+
 
   function onChangeInputSearch(ev) {
     let valor = ev.target.value;
@@ -524,7 +550,7 @@ BUSCA OS DADOS DA EMPRESA
                       className={classes.categorias}
                     >
                       <Grid item>
-                        <CategoriasDetalhes />
+                        <CategoriasDetalhes  loadProductsByCategory={(categories)=>setCategory(categories)}/>
                       </Grid>
                     </Grid>
                   </Hidden>
@@ -560,6 +586,7 @@ BUSCA OS DADOS DA EMPRESA
                               callbackParent={valor =>
                                 setCountPedidosLocal(valor)
                               }
+		 loadProductsWithCategory={valor => true}
                               produto={product}
                               id={product.product_id}
                               nome={product.product_name.toUpperCase()}
