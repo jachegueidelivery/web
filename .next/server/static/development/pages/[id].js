@@ -121,7 +121,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3644,29 +3644,39 @@ var Index = function Index(props) {
       setNomeFantasia = _useState14[1];
 
   var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])({
-    dados: [],
-    isLoading: false
+    dados: []
   }),
       _useState16 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState15, 2),
       produtos = _useState16[0],
       setProdutos = _useState16[1];
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])(null),
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])(false),
       _useState18 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState17, 2),
-      empresaId = _useState18[0],
-      setEmpresaId = _useState18[1];
+      isLoaded = _useState18[0],
+      setIsLoaded = _useState18[1];
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])(!1),
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])(null),
       _useState20 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState19, 2),
-      abrirDrawer = _useState20[0],
-      setAbrirDrawer = _useState20[1];
+      empresaId = _useState20[0],
+      setEmpresaId = _useState20[1];
 
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])({}),
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])(!1),
       _useState22 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState21, 2),
-      category = _useState22[0],
-      setCategory = _useState22[1];
+      abrirDrawer = _useState22[0],
+      setAbrirDrawer = _useState22[1];
+
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])({}),
+      _useState24 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState23, 2),
+      category = _useState24[0],
+      setCategory = _useState24[1];
+
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_37__["useState"])([]),
+      _useState26 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState25, 2),
+      fetchProdutos = _useState26[0],
+      setFetchProdutos = _useState26[1];
 
   var screenSize = Object(_components_useWidth__WEBPACK_IMPORTED_MODULE_49__["default"])();
+  var pt = null;
   var isMenuOpen = Boolean(anchorEl);
 
   function goBack() {
@@ -3726,6 +3736,8 @@ var Index = function Index(props) {
    */
 
   Object(react__WEBPACK_IMPORTED_MODULE_37__["useEffect"])(function () {
+    setIsLoaded(false);
+
     var fetchData =
     /*#__PURE__*/
     function () {
@@ -3738,7 +3750,7 @@ var Index = function Index(props) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 if (!(empresaId !== null)) {
-                  _context2.next = 5;
+                  _context2.next = 7;
                   break;
                 }
 
@@ -3748,11 +3760,12 @@ var Index = function Index(props) {
               case 3:
                 result = _context2.sent;
                 setProdutos({
-                  data: result.data,
-                  isLoading: true
+                  data: result.data
                 });
+                setIsLoaded(true);
+                pt = result.data;
 
-              case 5:
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -3781,16 +3794,23 @@ var Index = function Index(props) {
   /*Para fazer o filtro*/
 
   Object(react__WEBPACK_IMPORTED_MODULE_37__["useEffect"])(function () {
-    if (produtos.isLoading) {
+    if (isLoaded) {
       if (category.length > 0) {
         var inCategory = JSON.parse(category);
-        console.log(inCategory.category_id);
-        var products = produtos.data.filter(function (product, index) {
-          return product.category_id == inCategory.category_id;
+        console.log(inCategory);
+        var arr = [];
+        produtos.data.map(function (product, index) {
+          if (product.category_id == inCategory.category_id) {
+            product.product_show = true;
+            arr.push(product);
+          } else {
+            product.product_show = false;
+            arr.push(product);
+          }
         });
+        console.log(arr);
         setProdutos({
-          data: products,
-          isLoading: true
+          data: arr
         });
       }
     }
@@ -3845,13 +3865,13 @@ var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 437
+      lineNumber: 457
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_11___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 438
+      lineNumber: 458
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(DataASt, {
@@ -3861,7 +3881,7 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 439
+      lineNumber: 459
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -3870,28 +3890,28 @@ var Index = function Index(props) {
     className: classes.appBar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 443
+      lineNumber: 463
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_24___default.a, {
     className: classes.toolbar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 444
+      lineNumber: 464
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_35__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 448
+      lineNumber: 468
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_15___default.a, {
     only: ["sm", "lg", "md", "xl"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 449
+      lineNumber: 469
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -3901,21 +3921,21 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 450
+      lineNumber: 470
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_30___default.a, {
     fontSize: "default",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 456
+      lineNumber: 476
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_35__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 460
+      lineNumber: 480
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_25___default.a, {
@@ -3925,23 +3945,23 @@ var Index = function Index(props) {
     className: classes.toolbarTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 461
+      lineNumber: 481
     },
     __self: this
-  }, produtos.isLoading == false ? react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_34___default.a, {
+  }, isLoaded == false ? react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_34___default.a, {
     variante: "text",
     height: 10,
     width: 200,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 469
+      lineNumber: 489
     },
     __self: this
   })) : react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_18___default.a, {
     href: "../",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 473
+      lineNumber: 493
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("span", {
@@ -3950,7 +3970,7 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 474
+      lineNumber: 494
     },
     __self: this
   }, nome_fantasia))))),  false && false, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -3961,14 +3981,14 @@ var Index = function Index(props) {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 493
+      lineNumber: 513
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_TotalPedidos__WEBPACK_IMPORTED_MODULE_47__["default"], {
     countProdutos: countPedidosLocal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 500
+      lineNumber: 520
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -3976,13 +3996,13 @@ var Index = function Index(props) {
     className: classes.cardGrid,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 505
+      lineNumber: 525
     },
     __self: this
-  }, produtos.isLoading == false && react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("br", {
+  }, isLoaded == false && react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 508
+      lineNumber: 528
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -3990,14 +4010,14 @@ var Index = function Index(props) {
     justify: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 509
+      lineNumber: 529
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_15___default.a, {
     only: ["xs", "xl"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 510
+      lineNumber: 530
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -4007,14 +4027,14 @@ var Index = function Index(props) {
     md: 3,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 511
+      lineNumber: 531
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 512
+      lineNumber: 532
     },
     __self: this
   }, [1, 2, 3, 4, 5, 6, 7].map(function (item, index) {
@@ -4022,7 +4042,7 @@ var Index = function Index(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 515
+        lineNumber: 535
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("div", {
@@ -4031,7 +4051,7 @@ var Index = function Index(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 516
+        lineNumber: 536
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_34___default.a, {
@@ -4039,7 +4059,7 @@ var Index = function Index(props) {
       height: 15,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 517
+        lineNumber: 537
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_34___default.a, {
@@ -4048,7 +4068,7 @@ var Index = function Index(props) {
       height: 15,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 518
+        lineNumber: 538
       },
       __self: this
     })));
@@ -4059,34 +4079,34 @@ var Index = function Index(props) {
     md: 9,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 526
+      lineNumber: 546
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 527
+      lineNumber: 547
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_SpinnerTeste_Produtos__WEBPACK_IMPORTED_MODULE_46__["default"], {
     data: [1, 2, 3, 4, 5, 6, 7],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 528
+      lineNumber: 548
     },
     __self: this
-  }))))), produtos.isLoading == true && empresaId != null && react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("br", {
+  }))))), isLoaded == true && empresaId != null && react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 536
+      lineNumber: 556
     },
     __self: this
   }), produtos.data.hasOwnProperty("erro") && produtos.data ? react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_AlertNotHasProducts__WEBPACK_IMPORTED_MODULE_39__["default"], {
     label: "N\xE3o h\xE1 Produtos para esta empresa.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 539
+      lineNumber: 559
     },
     __self: this
   })) : react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -4094,14 +4114,14 @@ var Index = function Index(props) {
     justify: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 543
+      lineNumber: 563
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_15___default.a, {
     only: ["xs"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 544
+      lineNumber: 564
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -4112,14 +4132,14 @@ var Index = function Index(props) {
     className: classes.categorias,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 545
+      lineNumber: 565
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 552
+      lineNumber: 572
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(CategoriasDetalhes, {
@@ -4128,7 +4148,7 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 553
+      lineNumber: 573
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -4138,14 +4158,14 @@ var Index = function Index(props) {
     md: 9,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 557
+      lineNumber: 577
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 558
+      lineNumber: 578
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -4153,21 +4173,21 @@ var Index = function Index(props) {
     justify: "center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 559
+      lineNumber: 579
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     container: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 560
+      lineNumber: 580
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_23___default.a, {
     className: classes.rootinput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 561
+      lineNumber: 581
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -4175,20 +4195,20 @@ var Index = function Index(props) {
     "aria-label": "Search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 562
+      lineNumber: 582
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_26__["Search"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 566
+      lineNumber: 586
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_12___default.a, {
     className: classes.divider,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 568
+      lineNumber: 588
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -4200,55 +4220,73 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 569
+      lineNumber: 589
     },
     __self: this
-  }))))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
+  })), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    item: true,
+    xs: 12,
+    sm: 8,
+    md: 9,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 598
+    },
+    __self: this
+  }, category.length > 0 && react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_25___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 599
+    },
+    __self: this
+  }, JSON.parse(category).category_name)))))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_14___default.a, {
     item: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 581
+      lineNumber: 605
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(produtos.data).map(function (product, index) {
-    return react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, {
-      key: index,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 584
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_Produtos__WEBPACK_IMPORTED_MODULE_45__["default"], {
-      callbackParent: function callbackParent(valor) {
-        return setCountPedidosLocal(valor);
-      },
-      loadProductsWithCategory: function loadProductsWithCategory(valor) {
-        return true;
-      },
-      produto: product,
-      id: product.product_id,
-      nome: product.product_name.toUpperCase(),
-      imagem: product.product_image,
-      precoUnitario: 2.6,
-      descricao: product.product_description,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 585
-      },
-      __self: this
-    }));
+    if (product.product_show == true) {
+      return react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_37___default.a.Fragment, {
+        key: index,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 608
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_Produtos__WEBPACK_IMPORTED_MODULE_45__["default"], {
+        callbackParent: function callbackParent(valor) {
+          return setCountPedidosLocal(valor);
+        },
+        loadProductsWithCategory: function loadProductsWithCategory(valor) {
+          return true;
+        },
+        produto: product,
+        id: product.product_id,
+        nome: product.product_name.toUpperCase(),
+        imagem: product.product_image,
+        precoUnitario: 2.6,
+        descricao: product.product_description,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 609
+        },
+        __self: this
+      }));
+    }
   }))))))), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_10___default.a, {
     className: classes.footerNavigationBottom,
     maxWidth: "xl",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 608
+      lineNumber: 634
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_42__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 609
+      lineNumber: 635
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_37___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_44__["default"], {
@@ -4257,7 +4295,7 @@ var Index = function Index(props) {
     abrir: isMenuOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 611
+      lineNumber: 637
     },
     __self: this
   }));
@@ -4300,7 +4338,7 @@ function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/[id].js ***!
   \*****************************/

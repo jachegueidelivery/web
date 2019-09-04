@@ -302,12 +302,15 @@ const Index = props => {
   const [iniciar, setIniciar] = useState(true);
   const [empresa, setEmpresa] = useState({ config: [] });
   const [nome_fantasia, setNomeFantasia] = useState("");
-  const [produtos, setProdutos] = useState({ dados: [], isLoading: false });
+  const [produtos, setProdutos] = useState({ dados: []});
+  const [isLoaded, setIsLoaded] = useState(false);
   const [empresaId, setEmpresaId] = useState(null);
   const [abrirDrawer, setAbrirDrawer] = useState(!1);
   const [category, setCategory] = useState({});  
-
+  const [fetchProdutos, setFetchProdutos] = useState([]);
   let screenSize = useWidth();
+
+ let pt = null;
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -341,14 +344,18 @@ BUSCA OS DADOS DA EMPRESA
    */
 
   useEffect(() => {
+  setIsLoaded(false); 
     const fetchData = async () => {
       if (empresaId !== null) {
         const result = await ApiRest.get("/products/companie/" + empresaId);
-        setProdutos({ data: result.data, isLoading: true });
+        setProdutos({ data: result.data});
+        setIsLoaded(true); 
+        pt = result.data;
       }
     };
     fetchData();
   }, [empresaId]);
+
 
   useEffect(() => {
     if (!empresa.config) {
@@ -361,29 +368,42 @@ BUSCA OS DADOS DA EMPRESA
     }
   }, [empresa]);
 
+
+
 /*Para fazer o filtro*/
 useEffect(()=>{
-
-
-
-if(produtos.isLoading){
+if(isLoaded){
 
 if(category.length > 0){
 
 let inCategory = JSON.parse(category);
 
-console.log(inCategory.category_id);
+console.log(inCategory);
 
-	let products = produtos.data.filter((product, index)=>product.category_id == inCategory.category_id);
+var arr = [];
 
-setProdutos({ data: products, isLoading: true });
+produtos.data.map((product, index) => {
 
+if(product.category_id == inCategory.category_id){
+ product.product_show = true;
+ 
+arr.push(product);
+}
+else{
+product.product_show = false;
+
+arr.push(product);
+}
+
+});
+	console.log(arr);
+
+setProdutos({data:arr});
 }
 	
-
 }
 
-},[category])
+},[category]);
 
 
   function onChangeInputSearch(ev) {
@@ -464,7 +484,7 @@ setProdutos({ data: products, isLoading: true });
               noWrap
               className={classes.toolbarTitle}
             >
-              {produtos.isLoading == false ? (
+              {isLoaded == false ? (
                 <>
                   <Skeleton variante="text" height={10} width={200} />
                 </>
@@ -503,7 +523,7 @@ setProdutos({ data: products, isLoading: true });
       </AppBar>
 
       <Container maxWidth="md" className={classes.cardGrid}>
-        {produtos.isLoading == false && (
+        {isLoaded == false && (
           <>
             <br />
             <Grid container justify="center">
@@ -531,7 +551,7 @@ setProdutos({ data: products, isLoading: true });
             </Grid>
           </>
         )}
-        {produtos.isLoading == true && empresaId != null && (
+        {isLoaded == true && empresaId != null && (
           <>
             <br />
             {produtos.data.hasOwnProperty("erro") && produtos.data ? (
@@ -575,13 +595,17 @@ setProdutos({ data: products, isLoading: true });
                               }}
                             />
                           </Paper>
+		     <Grid item xs={12} sm={8} md={9}>
+{category.length > 0 && (<><Typography>{JSON.parse(category).category_name}</Typography></>)}
+     </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
+
                     <Grid item>
-                      {Object.values(produtos.data).map((product, index) => {
-                        return (
-                          <React.Fragment key={index}>
+ {Object.values(produtos.data).map((product, index) => {
+	if(product.product_show == true){return (
+  <React.Fragment key={index}>
                             <Produtos
                               callbackParent={valor =>
                                 setCountPedidosLocal(valor)
@@ -595,10 +619,12 @@ setProdutos({ data: products, isLoading: true });
                               descricao={product.product_description}
                             />
                           </React.Fragment>
-                        );
-                      })}
-                    </Grid>
+)}	
+                       })}
+
+
                   </Grid>
+	   </Grid>
                 </Grid>
               </>
             )}
