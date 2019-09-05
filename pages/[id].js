@@ -41,6 +41,9 @@ import SpinnerTeste from "../components/SpinnerTeste/Produtos";
 import TotalPedidos from "../components/TotalPedidos";
 import useReplaceString from "../components/useReplaceString";
 import useWidth from "../components/useWidth";
+
+const drawerWidth = 240;
+
 const NavigationBottom = Loadable({
   loader: () => import("../components/NavigationBottom"),
   loading() {
@@ -65,8 +68,6 @@ const theme = createMuiTheme({
     }
   }
 });
-
-const drawerWidth = 240;
 
 const useStylesDrawer = makeStyles(theme => ({
   root: {
@@ -94,10 +95,12 @@ const useStylesDrawer = makeStyles(theme => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    zIndex:9999,
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    zIndex:9999,
   },
   drawerHeader: {
     display: "flex",
@@ -129,7 +132,19 @@ function CategoriasDetalhes(props) {
     <>
       <Divider />
       <ThemeProvider theme={theme}>
-        <Categorias loadProductsByCategory={(category)=>props.loadProductsByCategory(category)} />
+        <Grid
+          style={{
+            maxHeight: "400px",
+            overflow: "auto",
+            border: "0px solid red"
+          }}
+        >
+          <Categorias
+            loadProductsByCategory={category =>
+              props.loadProductsByCategory(category)
+            }
+          />
+        </Grid>
       </ThemeProvider>
       <Divider />
       <ThemeProvider theme={theme}>
@@ -151,7 +166,8 @@ function CategoriasDetalhes(props) {
   );
 }
 
-function DataASt(props) {
+function DrawerCategory(props) {
+  
   const classes = useStylesDrawer();
 
   const theme = useTheme();
@@ -165,7 +181,7 @@ function DataASt(props) {
       <ThemeProvider theme={theme}>
         <Drawer
           className={classes.drawer}
-          variant="persistent"
+          style={{opacity:props.opacity == undefined ? 1 : parseFloat(props.opacity)}}
           anchor="left"
           open={props.open}
           classes={{
@@ -181,7 +197,11 @@ function DataASt(props) {
               )}
             </IconButton>
           </div>
-          <CategoriasDetalhes />
+          <CategoriasDetalhes
+            loadProductsByCategory={category =>
+              props.loadProductsByCategory(category)
+            }
+          />
         </Drawer>
       </ThemeProvider>
     </>
@@ -247,6 +267,31 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 5,
     paddingBottom: 5
   },
+  panelCategory: {
+    borderRadius: 10,
+    alignItems: "center",
+    [theme.breakpoints.up("xs")]: {
+      width: "96%",
+      border: "0px solid lime"
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "96%",
+      border: "0px solid red"
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "96%",
+      border: "0px solid green"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "100%",
+      border: "0px solid yellow"
+    },
+    margin: "0px auto",
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 10,
+    paddingBottom: 0
+  },
   textFieldInput: {
     borderRadius: 30,
     backgroundColor: theme.palette.common.white,
@@ -288,7 +333,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Index = props => {
+const Index = () => {
   const router = useRouter();
   const classes = useStyles();
 
@@ -302,21 +347,20 @@ const Index = props => {
   const [iniciar, setIniciar] = useState(true);
   const [empresa, setEmpresa] = useState({ config: [] });
   const [nome_fantasia, setNomeFantasia] = useState("");
-  const [produtos, setProdutos] = useState({ dados: []});
+  const [produtos, setProdutos] = useState({ dados: [] });
   const [isLoaded, setIsLoaded] = useState(false);
   const [empresaId, setEmpresaId] = useState(null);
   const [abrirDrawer, setAbrirDrawer] = useState(!1);
-  const [category, setCategory] = useState({});  
+  const [category, setCategory] = useState({});
   const [fetchProdutos, setFetchProdutos] = useState([]);
+  const [_opacity, set_Opacity] = useState(1);
   let screenSize = useWidth();
 
- let pt = null;
-
   const isMenuOpen = Boolean(anchorEl);
-
+  /*
   function goBack() {
     window.history.back();
-  }
+  }*/
 
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("products")));
@@ -344,18 +388,16 @@ BUSCA OS DADOS DA EMPRESA
    */
 
   useEffect(() => {
-  setIsLoaded(false); 
+    setIsLoaded(false);
     const fetchData = async () => {
       if (empresaId !== null) {
         const result = await ApiRest.get("/products/companie/" + empresaId);
-        setProdutos({ data: result.data});
-        setIsLoaded(true); 
-        pt = result.data;
+        setProdutos({ data: result.data });
+        setIsLoaded(true);
       }
     };
     fetchData();
   }, [empresaId]);
-
 
   useEffect(() => {
     if (!empresa.config) {
@@ -368,43 +410,34 @@ BUSCA OS DADOS DA EMPRESA
     }
   }, [empresa]);
 
+  /*Para fazer o filtro*/
+  useEffect(() => {
+    if (isLoaded) {
+      if (category.length > 0) {
+        set_Opacity(0.1);
+        setProdutos({ data: null });
 
+        let inCategory = JSON.parse(category);
 
-/*Para fazer o filtro*/
-useEffect(()=>{
-if(isLoaded){
+        var arr = [];
 
-if(category.length > 0){
+        produtos.data.map((product, index) => {
+          if (product.category_id == inCategory.category_id) {
+            product.product_show = true;
 
-let inCategory = JSON.parse(category);
+            arr.push(product);
+          } else {
+            product.product_show = false;
 
-console.log(inCategory);
+            arr.push(product);
+          }
+        });
 
-var arr = [];
-
-produtos.data.map((product, index) => {
-
-if(product.category_id == inCategory.category_id){
- product.product_show = true;
- 
-arr.push(product);
-}
-else{
-product.product_show = false;
-
-arr.push(product);
-}
-
-});
-	console.log(arr);
-
-setProdutos({data:arr});
-}
-	
-}
-
-},[category]);
-
+        setProdutos({ data: arr });
+        set_Opacity(1);
+      }
+    }
+  }, [category]);
 
   function onChangeInputSearch(ev) {
     let valor = ev.target.value;
@@ -456,9 +489,11 @@ setProdutos({data:arr});
   return (
     <React.Fragment>
       <CssBaseline />
-      <DataASt
+      <DrawerCategory
         open={abrirDrawer}
         handleDrawerClose={valor => setAbrirDrawer(valor)}
+        opacity={_opacity}
+        loadProductsByCategory={categories => setCategory(categories)}
       />
       <AppBar position="fixed" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
@@ -529,13 +564,14 @@ setProdutos({data:arr});
             <Grid container justify="center">
               <Hidden only={["xs", "xl"]}>
                 <Grid item xs={12} sm={4} md={3}>
+                  <Skeleton variant="text" width="90%" height={10} />
                   <Grid item>
                     {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
                       return (
                         <Fragment key={index}>
                           <div style={{ marginBottom: 20 }}>
-                            <Skeleton variant="text" height={15} />
-                            <Skeleton variant="text" width="70%" height={15} />
+                            <Skeleton variant="text" width="90%" height={10} />
+                            <Skeleton variant="text" width="70%" height={10} />
                           </div>
                         </Fragment>
                       );
@@ -543,9 +579,9 @@ setProdutos({data:arr});
                   </Grid>
                 </Grid>
               </Hidden>
-              <Grid item xs={12} sm={8} md={9}>
+              <Grid item xs={12} sm={8} md={8}>
                 <Grid item>
-                  <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7]} />
+                  <SpinnerTeste data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
                 </Grid>
               </Grid>
             </Grid>
@@ -570,7 +606,11 @@ setProdutos({data:arr});
                       className={classes.categorias}
                     >
                       <Grid item>
-                        <CategoriasDetalhes  loadProductsByCategory={(categories)=>setCategory(categories)}/>
+                        <CategoriasDetalhes
+                          loadProductsByCategory={categories =>
+                            setCategory(categories)
+                          }
+                        />
                       </Grid>
                     </Grid>
                   </Hidden>
@@ -595,36 +635,59 @@ setProdutos({data:arr});
                               }}
                             />
                           </Paper>
-		     <Grid item xs={12} sm={8} md={9}>
-{category.length > 0 && (<><Typography>{JSON.parse(category).category_name}</Typography></>)}
-     </Grid>
+                        </Grid>
+                        <Grid container>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={9}
+                            md={9}
+                            lg={11}
+                            className={classes.panelCategory}
+                          >
+                            {category.length > 0 && (
+                              <>
+                                <Typography>
+                                  <b>
+                                    CATEGORIA:{" "}
+                                    {JSON.parse(category).category_name}
+                                  </b>{" "}
+                                  -{" "}
+                                  <b>
+                                    Quantidade de produtos{" "}
+                                    {JSON.parse(category).amount_products}
+                                  </b>
+                                </Typography>
+                              </>
+                            )}
+                          </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
 
                     <Grid item>
- {Object.values(produtos.data).map((product, index) => {
-	if(product.product_show == true){return (
-  <React.Fragment key={index}>
-                            <Produtos
-                              callbackParent={valor =>
-                                setCountPedidosLocal(valor)
-                              }
-		 loadProductsWithCategory={valor => true}
-                              produto={product}
-                              id={product.product_id}
-                              nome={product.product_name.toUpperCase()}
-                              imagem={product.product_image}
-                              precoUnitario={2.6}
-                              descricao={product.product_description}
-                            />
-                          </React.Fragment>
-)}	
-                       })}
-
-
+                      {Object.values(produtos.data).map((product, index) => {
+                        if (product.product_show == true) {
+                          return (
+                            <React.Fragment key={index}>
+                              <Produtos
+                                callbackParent={valor =>
+                                  setCountPedidosLocal(valor)
+                                }
+                                loadProductsWithCategory={valor => true}
+                                produto={product}
+                                id={product.product_id}
+                                nome={product.product_name.toUpperCase()}
+                                imagem={product.product_image}
+                                precoUnitario={2.6}
+                                descricao={product.product_description}
+                              />
+                            </React.Fragment>
+                          );
+                        }
+                      })}
+                    </Grid>
                   </Grid>
-	   </Grid>
                 </Grid>
               </>
             )}
