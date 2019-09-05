@@ -352,6 +352,7 @@ const Index = () => {
   const [empresaId, setEmpresaId] = useState(null);
   const [abrirDrawer, setAbrirDrawer] = useState(!1);
   const [category, setCategory] = useState({});
+  const [shopCar, setShopCar] = useState({});
   const [fetchProdutos, setFetchProdutos] = useState([]);
   const [_opacity, set_Opacity] = useState(1);
   let screenSize = useWidth();
@@ -467,6 +468,7 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleProfileMenuOpen(event) {
+   setShopCar(LocalStorageHandler.getDataByKey("products"));
     if (LocalStorageHandler.count("products") > 0) {
       setAnchorEl(event.currentTarget);
     }
@@ -698,6 +700,7 @@ BUSCA OS DADOS DA EMPRESA
         <Footer />
       </Container>
       <MyMenu
+       data={shopCar}
         anchorEl={anchorEl}
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}

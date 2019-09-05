@@ -9,7 +9,7 @@ const TotalPedidos = props => {
   useEffect(() => {
     setCountPedidosLocal(LocalStorageHandler.count("products"));
   });
-
+  
   if (props.countProdutos) {
     return (
       <Badge

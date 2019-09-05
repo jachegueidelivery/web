@@ -4,6 +4,7 @@ import Carrinho from "../Carrinho";
 import LocalStorageHandler from "../LocalStorageHandler";
 
 const renderMenu = props => {
+
   const [countPedidosLocal, setCountPedidosLocal] = useState(0);
 
   function onAtualizarCount() {
@@ -28,6 +29,7 @@ const renderMenu = props => {
     >
       <div style={{ padding: 5 }}>
         <Carrinho
+          data={props.data}
           count={countPedidosLocal}
           fecharMenu={value => {
             props.handleMenuClose(value);

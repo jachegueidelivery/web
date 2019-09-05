@@ -18,9 +18,11 @@ var apiConfig = [{
 }, {
   baseURL: "http://192.168.129.171:3300"
 }, {
-  baseURL: "http://deliverytest-com-br.umbler.net"
+  baseURL: "http://192.168.11.32:3300"
+}, {
+  baseURL: "https://api.rsvtelecom.com.br"
 }];
-var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[0]);
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create(apiConfig[3]);
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),
@@ -78,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\node\\delivery\\components\\MostrarEmpresas\\index.js";
+var _jsxFileName = "E:\\delivery\\components\\MostrarEmpresas\\index.js";
 
 
 
