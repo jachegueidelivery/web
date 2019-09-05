@@ -7,8 +7,8 @@ const apiConfig = [
     baseURL: "http://192.168.129.171:3300"
   },
   {
-    baseURL: "http://deliverytest-com-br.umbler.net"
+    baseURL: "https://api.rsvtelecom.com.br/"
   }
 ];
-const instance = axios.create(apiConfig[0]);
+const instance = axios.create(apiConfig[2]);
 export default instance;
