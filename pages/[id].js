@@ -96,11 +96,11 @@ const useStylesDrawer = makeStyles(theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    zIndex:9999,
+    zIndex: 9999
   },
   drawerPaper: {
     width: drawerWidth,
-    zIndex:9999,
+    zIndex: 9999
   },
   drawerHeader: {
     display: "flex",
@@ -143,6 +143,7 @@ function CategoriasDetalhes(props) {
             loadProductsByCategory={category =>
               props.loadProductsByCategory(category)
             }
+            quantSkeleton={20}
           />
         </Grid>
       </ThemeProvider>
@@ -167,7 +168,6 @@ function CategoriasDetalhes(props) {
 }
 
 function DrawerCategory(props) {
-  
   const classes = useStylesDrawer();
 
   const theme = useTheme();
@@ -181,7 +181,9 @@ function DrawerCategory(props) {
       <ThemeProvider theme={theme}>
         <Drawer
           className={classes.drawer}
-          style={{opacity:props.opacity == undefined ? 1 : parseFloat(props.opacity)}}
+          style={{
+            opacity: props.opacity == undefined ? 1 : parseFloat(props.opacity)
+          }}
           anchor="left"
           open={props.open}
           classes={{
@@ -333,12 +335,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+let ws = null;
+
 const Index = () => {
   const router = useRouter();
   const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
-  const [produtosAsObject, setProdutosAsObject] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [countPedidosLocal, setCountPedidosLocal] = useState(!1);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -355,9 +358,11 @@ const Index = () => {
   const [shopCar, setShopCar] = useState({});
   const [fetchProdutos, setFetchProdutos] = useState([]);
   const [_opacity, set_Opacity] = useState(1);
+
   let screenSize = useWidth();
 
   const isMenuOpen = Boolean(anchorEl);
+
   /*
   function goBack() {
     window.history.back();
@@ -371,12 +376,13 @@ const Index = () => {
       //setProdutosAsObject(props.shows);
     }
   }, []);
-
+  let isConnected = false;
   /*
 BUSCA OS DADOS DA EMPRESA
 */
   useEffect(() => {
     let id = router.query.id;
+
     const fetchData = async () => {
       const result = await ApiRest.get("/companies/" + id);
       setEmpresa(result.data);
@@ -392,7 +398,7 @@ BUSCA OS DADOS DA EMPRESA
     setIsLoaded(false);
     const fetchData = async () => {
       if (empresaId !== null) {
-        const result = await ApiRest.get("/products/companie/" + empresaId);
+        const result = await ApiRest.get("/products/company/" + empresaId);
         setProdutos({ data: result.data });
         setIsLoaded(true);
       }
@@ -441,24 +447,35 @@ BUSCA OS DADOS DA EMPRESA
   }, [category]);
 
   function onChangeInputSearch(ev) {
-    let valor = ev.target.value;
+    let query = ev.target.value;
 
-    setSearch(valor.toUpperCase());
+    setSearch(query.toUpperCase());
 
-    if (valor.trim() !== "") {
-      /*let adults = Object.values(props.shows).filter(produto => {
-				if (produto.id !== undefined) {
-					if (produto.nome.toUpperCase().includes(valor.toUpperCase())) {
-						return produto;
-					}
-				}
-			});
-			setProdutosAsObject(adults);*/
+    let arr = [];
+
+    if (query.trim() !== "") {
+      console.log(category);
+
+      produtos.data.map((product, index) => {
+        if (
+          product.product_name.toLowerCase().indexOf(query.toLowerCase()) > -1
+        ) {
+          product.product_show = true;
+
+          arr.push(product);
+        } else {
+          product.product_show = false;
+
+          arr.push(product);
+        }
+      });
+
+      setProdutos({ data: arr });
     } else {
-      //setProdutosAsObject(props.shows);
+      setProdutos({ data: produtos });
     }
     if (ev.keyCode == 27) {
-      //setProdutosAsObject(props.shows);
+      setProdutos({ data: produtos });
       setSearch("");
     }
   }
@@ -468,7 +485,7 @@ BUSCA OS DADOS DA EMPRESA
   }
 
   function handleProfileMenuOpen(event) {
-   setShopCar(LocalStorageHandler.getDataByKey("products"));
+    setShopCar(LocalStorageHandler.getDataByKey("products"));
     if (LocalStorageHandler.count("products") > 0) {
       setAnchorEl(event.currentTarget);
     }
@@ -558,8 +575,18 @@ BUSCA OS DADOS DA EMPRESA
           </IconButton>
         </Toolbar>
       </AppBar>
-
       <Container maxWidth="md" className={classes.cardGrid}>
+        <Button
+          onClick={() => {
+            enviarPedido();
+          }}
+          href="#"
+          color="primary"
+          variant="outlined"
+          className={classes.link}
+        >
+          WS
+        </Button>
         {isLoaded == false && (
           <>
             <br />
@@ -629,6 +656,7 @@ BUSCA OS DADOS DA EMPRESA
                             </IconButton>
                             <Divider className={classes.divider} />
                             <InputBase
+                              onChange={valor => onChangeInputSearch(valor)}
                               autoFocus
                               className={classes.textFieldInput}
                               placeholder="Pesquisar"
@@ -666,7 +694,6 @@ BUSCA OS DADOS DA EMPRESA
                         </Grid>
                       </Grid>
                     </Grid>
-
                     <Grid item>
                       {Object.values(produtos.data).map((product, index) => {
                         if (product.product_show == true) {
@@ -700,7 +727,7 @@ BUSCA OS DADOS DA EMPRESA
         <Footer />
       </Container>
       <MyMenu
-       data={shopCar}
+        data={shopCar}
         anchorEl={anchorEl}
         handleMenuClose={handleMenuClose}
         abrir={isMenuOpen}

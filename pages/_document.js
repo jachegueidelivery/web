@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 import theme from '../src/theme';
@@ -23,6 +23,8 @@ class MyDocument extends Document {
           />
           <meta name="description" content="O jeito mais fácil de pedir delivery na comodidade da sua casa. Leia avaliações e faça seu pedido online na maior lista de empresas da sua cidade. Faça seu pedido pela internet e receba em casa."></meta>
           <link rel="shortcut icon" href="/static/favicon.ico"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" />
+	<script src="https://unpkg.com/@adonisjs/websocket-client@1.0.9/dist/Ws.browser.js" />
         </Head>
         <body>
           <Main />

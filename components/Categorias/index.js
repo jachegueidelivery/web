@@ -26,18 +26,24 @@ function Categorias(props) {
     fetchData();
   }, []); /*categorias*/
 
+  const items = [];
+  
+  for(let k = 0; k < parseInt(props.quantSkeleton); k ++){
+    items.push(k);
+  }
+
   return (
     <>
       <List style={{ border: "0px solid red", padding: "0" }}>
         <ListItem>
           <ListItemText primary={<b>CATEGORIAS</b>} />
-          <ListItemSecondaryAction></ListItemSecondaryAction>
         </ListItem>
       </List>
       <Divider light variant="middle" />
       {!categorias.isLoaded && (
         <>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value, index) => {
+        {}
+          {items.map((value, index) => {
             return (
               <List
                 key={index}
@@ -47,11 +53,9 @@ function Categorias(props) {
                   <ListItemText
                     primary={<Skeleton width="80%" height={10} />}
                   />
-                  <ListItemSecondaryAction>
-                    <Typography color="secondary">
+                  {/* <ListItemSecondaryAction>
                       <Skeleton width="20%" height={10} />
-                    </Typography>
-                  </ListItemSecondaryAction>
+                  </ListItemSecondaryAction> */}
                 </ListItem>
               </List>
             );

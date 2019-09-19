@@ -1551,7 +1551,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "E:\\delivery\\pages\\_document.js";
+var _jsxFileName = "D:\\node\\delivery\\pages\\_document.js";
 
 
 
@@ -1631,22 +1631,36 @@ function (_Document) {
           lineNumber: 25
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("body", {
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("script", {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("script", {
+        src: "https://unpkg.com/@adonisjs/websocket-client@1.0.9/dist/Ws.browser.js",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 27
         },
         __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("body", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_10__["Main"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 30
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_10__["NextScript"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 31
         },
         __self: this
       })));
@@ -1678,7 +1692,7 @@ function () {
                     return sheets.collect(react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(App, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 44
+                        lineNumber: 46
                       },
                       __self: this
                     })));
@@ -1698,7 +1712,7 @@ function () {
                 key: "styles",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 53
+                  lineNumber: 55
                 },
                 __self: this
               }, initialProps.styles, sheets.getStyleElement())]
